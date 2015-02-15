@@ -13,6 +13,19 @@
 
 ## Work Division
 
+### Mike's Tasks:
+
+* Description
+* Software Design
+* Scheduling
+* Requirements
+
+### Billy's Tasks:
+
+* Description
+* Concept Drawings
+* Scheduling
+* Requirements
 
 ## Schedule
 
