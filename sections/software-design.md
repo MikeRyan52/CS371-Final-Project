@@ -28,8 +28,8 @@ A level's configuration file may look something like this:
         "path-name-4"
     ],
     "nodes" : [
-        { x : 120, y : 65 },
-        { x : 30, y : 200 }
+        { "x" : 120, "y" : 65 },
+        { "x" : 30, "y" : 200 }
     ],
     "waves" : [
         {
