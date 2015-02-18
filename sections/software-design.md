@@ -39,6 +39,11 @@ mike.hello() -- prints 'Hello Mike'
 billy.hello() -- prints 'Hello Billy'
 ```
 
+### JSON
+In our goal to achieve a declarative game engine for our tower defense game, we'll store much of our configuration in JSON files. JSON stands for JavaScript Object Notation. Due to the similarities in Lua tables and JavaScript objects, this particular data serialization format seems most appropriate for describing the properties of many assets in our application. 
+
+By separating our configuration from the internals of the game engine, we can build out both the content of our game and the mechanics separately. This drastically reduces the risk of breaking old content with new mechanical changes. Additionally, creating new content becomes a very straightforward task. This would theoretically increase the longevity of our users' interest in the game.
+
 
 ## Classes
 
@@ -48,9 +53,7 @@ The Level object describes the base health of your base, how many waves are in t
 
 ### LevelLoader
 
-The LevelLoader creates a Level object from a JSON file. JSON stands for JavaScript Object Notation. Due to the similarities in Lua tables and JavaScript objects, this particular data serialization format seems most appropriate for describing the properties of many assets in our application. 
-
-A level's configuration file may look something like this:
+The LevelLoader creates a Level object from a JSON file. A level's configuration file may look something like this:
 
 ````json
 
