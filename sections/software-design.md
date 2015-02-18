@@ -1,8 +1,46 @@
 # Components
 
-Our application architecture is heavily object oriented, with a focus on declarative programming. 
+Our application architecture is heavily object oriented, with a focus on declarative programming.
 
-## Core Classes
+## Core Concepts
+
+### Object Oriented Programming in Lua
+Lua does not have a true class feature. However, because it is a prototypical language classes can be easily fudged:
+
+Class declaration:
+```lua
+local class = {}
+local classMetaTable = { __index = class }
+ 
+function class.new( name )
+		
+	local newObj = {
+		name = name
+	}
+	
+	return setmetatable( newObj, classMetaTable )
+end
+ 
+function class:hello()
+	print( "Hello " .. self.name )
+end
+ 
+return class
+```
+
+Using the class:
+```lua
+local class = require('class')
+
+local mike = class.new('Mike')
+local billy = class.new('Billy')
+
+mike.hello() -- prints 'Hello Mike'
+billy.hello() -- prints 'Hello Billy'
+```
+
+
+## Classes
 
 ### Level
 
