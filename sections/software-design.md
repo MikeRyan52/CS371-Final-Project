@@ -1,6 +1,6 @@
 # Components
 
-Our application architecture is heavily object oriented, with a focus on declarative programming.
+Our application architecture is heavily object oriented, with a focus on a declarative programming style that separates configuration from implementation. The game will be supported by a unified game loop that handles communication across various components.
 
 ## Core Concepts
 
