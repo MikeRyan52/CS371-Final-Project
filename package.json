@@ -1,0 +1,27 @@
+{
+  "name": "FinalProject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MikeRyan52/CS371-Final-Project.git"
+  },
+  "author": "Mike Ryan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MikeRyan52/CS371-Final-Project/issues"
+  },
+  "homepage": "https://github.com/MikeRyan52/CS371-Final-Project",
+  "dependencies": {
+    "gulp": "^3.8.11",
+    "lodash": "^3.6.0",
+    "request": "^2.55.0"
+  }
+}
