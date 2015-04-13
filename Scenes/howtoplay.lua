@@ -18,13 +18,17 @@ function scene:show( event )
 	local phase = event.phase
 
 	if ( phase == "will" ) then
-		local bg = display.newImage( sceneGroup,"space-background3.png", display.contentCenterX, display.contentCenterY)
+		local bg = display.newImage( sceneGroup,"spacebackground.png", display.contentCenterX, display.contentCenterY)
 		bg.xScale = display.contentWidth/ bg.width
 		bg.yScale = display.contentHeight/ bg.height
 		local mainbutton = display.newRoundedRect(sceneGroup, display.contentWidth/2, 100, 530, 150 , 25)
 		mainbutton.alpha = .3
 		local maintext = display.newText( sceneGroup, "Main Menu", display.contentWidth/2, 100, system.NativeFont, 100 )
 		maintext:setFillColor( 0,0,0 )
+		local firsttext = display.newText( sceneGroup, "You will click on the space to pull up the menu for tower palcement", 350, 250, system.NativeFont, 20)
+		local secondtext = display.newText( sceneGroup, "There will be three waves per level where enemies will come at your city", 350, 300, system.NativeFont, 20)
+		local thirdtext = display.newText( sceneGroup, "You must create and upgrade towers in order defend your city from the invading ships", 350, 350, system.NativeFont, 17)
+		--local fourthtext = display.newText( sceneGroup, "", x, y, [width, height,], font, fontSize )
 		local function GoToMainMenu()
 			composer.gotoScene( "menu.menu" )
 		end
