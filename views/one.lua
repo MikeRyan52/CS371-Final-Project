@@ -32,6 +32,7 @@ scrollView:insert(bg)
 
 local spawnId
 
+
 for id, space in pairs(level.grid)  do
 	local rect = display.newRect(
 		grid.x(space.column),
@@ -47,6 +48,8 @@ for id, space in pairs(level.grid)  do
 		spawnId = id
 	elseif space.type == 'goal' then
 		rect:setFillColor( 0, 200, 0, 0.5 )
+	elseif space.type == 'tower' then
+		rect:setFillColor( 0, 200, 0, .5 )
 	end
 
 	scrollView:insert(rect)
