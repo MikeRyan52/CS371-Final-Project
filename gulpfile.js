@@ -39,17 +39,23 @@ function findPaths(level){
 
 	cameFrom[start.id] = false;
 	distance[start.id] = 0;
+
+	_.each(level, function(){
+		level.goesTo = [];
+		level.cameFrom = [];
+	});
 	
 
 	while( frontier.length > 0 ){
 		var current = frontier.shift();
-		paths.push(current);
+		current.goesTo = [];
+
 		_.each(current.adjacentTo, function(neighbor){
 			var next = _.find(level, function(path){
 				return path.id === neighbor;
 			});
 
-			if( ! cameFrom[next.id] && ( next.type == 'path' || next.type == 'spawn' )){
+			if( next && ! cameFrom[next.id] && ( next.type == 'path' || next.type == 'spawn' )){
 				
 
 				next.cameFrom = current.id;
@@ -60,7 +66,18 @@ function findPaths(level){
 				frontier.push(next);
 			}
 		});
+
+		paths.push(current);
 	}
+
+	_.each(paths, function(path){
+		if(path.cameFrom)
+		{
+			_.find(paths, function(targetPath){
+				return targetPath.id == path.cameFrom
+			}).goesTo.push(path.id);
+		}
+	});
 
 	return paths;
 }
