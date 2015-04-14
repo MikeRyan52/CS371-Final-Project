@@ -54,18 +54,18 @@ function Enemies:move(startingId, paths)
 	local y = grid.y(target.row)
 	local it = self
 
-	if current.type == 'goal' then
-	else
-		print('moving')
-		transition.to(self.shape, {
-			x = x,
-			y = y,
-			time = 1000,
-			onComplete = function()
+	transition.to(self.shape, {
+		x = x,
+		y = y,
+		time = 200,
+		onComplete = function()
+			if target.type == 'goal' then
+				print('finished')
+			else
 				it:move(current.cameFrom, paths)
 			end
-		})
-	end
+		end
+	})
 end
 
 return Enemies
