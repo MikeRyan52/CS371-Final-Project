@@ -15,9 +15,20 @@ gulp.task('levels', function(){
 function generateLevels(paths){
 	var level = {
 		id : 'level-one',
-		name : 'Level One',
-		grid : findPaths(paths)
+		name : 'Level One'
 	};
+
+	var paths = findPaths(paths);
+	var grid = {};
+
+	_.each(paths, function(path){
+		var id = path.id;
+		delete path.id;
+
+		grid[id] = path;
+	});
+
+	level.grid = grid;
 
 	fs.writeFile('./levels/' + level.id + '.json', JSON.stringify(level, null, '\t'), function(e){
 		if(e)

@@ -1,16 +1,15 @@
 local composer = require 'composer'
 local widget = require 'widget'
 local loadLevel = require 'utilities.load-level'
+local grid = require 'utilities.grid'
+local Enemies = require 'objects.enemies'
+local physics = require 'physics'
 
-local CELL_SIZE = 50
+physics.start()
 
-function x( column )
-	return ( column * CELL_SIZE ) + ( CELL_SIZE / 2 )
-end
+local CELL_SIZE = grid.cellSize
 
-function y( row )
-	return ( row * CELL_SIZE ) + ( CELL_SIZE / 2 )
-end
+
 
 local scene = composer.newScene()
 local level = loadLevel('one')
@@ -31,11 +30,12 @@ bg.yScale = display.contentHeight / bg.height
 
 scrollView:insert(bg)
 
+local spawnId
 
-for index, space in ipairs(level.grid)  do
+for id, space in pairs(level.grid)  do
 	local rect = display.newRect(
-		x(space.column),
-		y(space.row),
+		grid.x(space.column),
+		grid.y(space.row),
 		CELL_SIZE,
 		CELL_SIZE
 	)
@@ -44,6 +44,7 @@ for index, space in ipairs(level.grid)  do
 		rect:setFillColor( 0, 0, 200, 0.5 )
 	elseif space.type == 'spawn' then
 		rect:setFillColor( 200, 0, 0, 0.5 )
+		spawnId = id
 	elseif space.type == 'goal' then
 		rect:setFillColor( 0, 200, 0, 0.5 )
 	end
@@ -51,6 +52,11 @@ for index, space in ipairs(level.grid)  do
 	scrollView:insert(rect)
 end
 
-
+local enemy = Enemies:new()
+enemy.xSpawn = 0
+enemy.ySpawn = 0
+enemy:spawn()
+scrollView:insert(enemy.shape)
+enemy:move(spawnId, level.grid)
 
 return scene

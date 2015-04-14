@@ -1,10 +1,12 @@
+local grid = require 'utilities.grid'
+
 local Enemies = {frame=1, xSpawn = display.contentCenterX, ySpawn = display.contentCenterY, HP = 1};
 function Enemies:new (o) --constructor
- o = o or {};
- --print(o.r, o.g, o.b)
- setmetatable(o, self);
- self.__index = self;
- return o;
+	o = o or {};
+	--print(o.r, o.g, o.b)
+	setmetatable(o, self);
+	self.__index = self;
+	return o;
 end
 local opt = 
 {
@@ -15,23 +17,21 @@ local opt =
 		{x= 94, y = 35, width = 35, height = 30}, --frame 3
 		{x = 190, y = 224, width = 35, height = 30}, --frame 4
 		{x = 225, y = 219, width = 35, height = 30}, --frame 5
-
-}
-
+	}
 }
 local sheet = graphics.newImageSheet( "spaceships2.png", opt)
 function Enemies:spawn()
-self.shape= display.newImage( sheet, 4)
-self.shape.x = self.xSpawn
-self.shape.y = self.ySpawn
-self.shape.xScale = 1.6
-self.shape.yScale = 1.6
-self.shape.y = display.contentCenterY
-self.shape.pp = self; -- parent object
-self.shape.tag = self.tag; -- “enemy”
-physics.addBody(self.shape, "static");
-return self
+	self.shape= display.newImage( sheet, 4)
+	self.shape.x = self.xSpawn
+	self.shape.y = self.ySpawn
+	self.shape.xScale = 1.6
+	self.shape.yScale = 1.6
+	self.shape.y = display.contentCenterY
+	self.shape.pp = self; -- parent object
+	self.shape.tag = self.tag; -- “enemy”
+	physics.addBody(self.shape, "static");
 
+	return self
 end
 
 function Enemies:hit ()
@@ -43,4 +43,29 @@ function Enemies:hit ()
 		self = nil;
 	end
 end
+
+function Enemies:move(startingId, paths)
+	local current = paths[startingId];
+	local target = paths[current.cameFrom] or {};
+
+	local json = require 'json'
+
+	local x = grid.x(target.column)
+	local y = grid.y(target.row)
+	local it = self
+
+	if current.type == 'goal' then
+	else
+		print('moving')
+		transition.to(self.shape, {
+			x = x,
+			y = y,
+			time = 1000,
+			onComplete = function()
+				it:move(current.cameFrom, paths)
+			end
+		})
+	end
+end
+
 return Enemies
