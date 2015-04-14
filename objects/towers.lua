@@ -30,7 +30,6 @@ function Towers:spawn()
 	self.shape.y = self.yLocation
 	self.shape.xScale = 1
 	self.shape.yScale = 1
-	self.shape.y = display.contentCenterY
 	self.shape.pp = self; -- parent object
 	self.shape.tag = self.tag; -- “enemy”
 	physics.addBody(self.shape, "static");
