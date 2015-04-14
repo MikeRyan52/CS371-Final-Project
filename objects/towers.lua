@@ -41,15 +41,25 @@ function Towers:Upgrade()
 		self.frame = 2
 		self:spawn()
 	elseif self.frame == 2 then
+		self.shape.removeSelf()
 		self.frame = 3
+		self:spawn()
 	elseif self.frame == 4 then
+		self.shape.removeSelf()
 		self.frame = 5
+		self:spawn()
 	elseif self.frame == 5 then
-		self.frame = 6	
+		self.shape.removeSelf()
+		self.frame = 6
+		self:spawn()
 	elseif self.frame == 7 then
+		self.shape.removeSelf()
 		self.frame = 8
+		self:spawn()
 	elseif self.frame == 8 then
-		self.frame = 9
+		self.shape.removeSelf()
+		self.frame = 
+		self:spawn()
 	end
 end
 

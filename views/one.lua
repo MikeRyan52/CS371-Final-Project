@@ -4,6 +4,7 @@ local loadLevel = require 'utilities.load-level'
 local grid = require 'utilities.grid'
 local Enemies = require 'objects.enemies'
 local physics = require 'physics'
+local Asteroid = require("objects.asteroid")
 
 physics.start()
 
@@ -30,6 +31,8 @@ bg.yScale = display.contentHeight / bg.height
 
 scrollView:insert(bg)
 
+local meteor = Asteroid:new()
+Asteroid:spawn()
 local spawnId
 
 
