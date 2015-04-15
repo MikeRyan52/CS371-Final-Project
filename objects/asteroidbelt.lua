@@ -21,8 +21,8 @@ function Asteroid:spawn()
 	self.shape = display.newImage( sheet, 1)
 	self.shape.x = display.contentCenterX
 	self.shape.y = display.contentCenterY
-	self.shape.xScale = .4
-	self.shape.yScale = .4
+	self.shape.xScale = .1
+	self.shape.yScale = .1
 	self.shape.pp = self; -- parent object
 	self.shape.tag = self.tag; -- “enemy”
 	physics.addBody(self.shape, "static");
