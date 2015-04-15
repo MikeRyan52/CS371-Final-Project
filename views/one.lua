@@ -60,7 +60,7 @@ end
 
 local enemy = Enemies:new()
 enemy.xSpawn = 0
-enemy.ySpawn = 0
+enemy.ySpawn = 0															
 enemy:spawn()
 scrollView:insert(enemy.shape)
 enemy:move(spawnId, level.grid)
