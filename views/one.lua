@@ -4,6 +4,10 @@ local loadLevel = require 'utilities.load-level'
 local grid = require 'utilities.grid'
 local Enemies = require 'objects.enemies'
 local physics = require 'physics'
+local Game = require 'objects.game'
+
+local thisGame = Game:new()
+thisGame:start()
 
 physics.start()
 

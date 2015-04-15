@@ -1,6 +1,80 @@
 {
 	"id": "level-one",
 	"name": "Level One",
+	"towers": {
+		"4,16": {
+			"adjacentTo": [],
+			"type": "tower",
+			"column": 16,
+			"row": 4
+		},
+		"8,13": {
+			"adjacentTo": [],
+			"type": "tower",
+			"column": 13,
+			"row": 8
+		},
+		"12,18": {
+			"adjacentTo": [],
+			"type": "tower",
+			"column": 18,
+			"row": 12
+		},
+		"12,22": {
+			"adjacentTo": [],
+			"type": "tower",
+			"column": 22,
+			"row": 12
+		},
+		"14,18": {
+			"adjacentTo": [],
+			"type": "tower",
+			"column": 18,
+			"row": 14
+		},
+		"14,22": {
+			"adjacentTo": [],
+			"type": "tower",
+			"column": 22,
+			"row": 14
+		},
+		"19,13": {
+			"adjacentTo": [],
+			"type": "tower",
+			"column": 13,
+			"row": 19
+		},
+		"22,9": {
+			"adjacentTo": [],
+			"type": "tower",
+			"column": 9,
+			"row": 22
+		},
+		"26,8": {
+			"adjacentTo": [],
+			"type": "tower",
+			"column": 8,
+			"row": 26
+		},
+		"37,3": {
+			"adjacentTo": [],
+			"type": "tower",
+			"column": 3,
+			"row": 37
+		},
+		"42,7": {
+			"adjacentTo": [],
+			"type": "tower",
+			"column": 7,
+			"row": 42
+		},
+		"47,3": {
+			"adjacentTo": [],
+			"type": "tower",
+			"column": 3,
+			"row": 47
+		}
+	},
 	"grid": {
 		"49,5": {
 			"adjacentTo": [

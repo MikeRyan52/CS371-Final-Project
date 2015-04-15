@@ -1,13 +1,22 @@
 local grid = require 'utilities.grid'
 
-local Enemies = {frame=1, xSpawn = display.contentCenterX, ySpawn = display.contentCenterY, HP = 1};
+local Enemies = {
+	frame=1, 
+	xSpawn = display.contentCenterX, 
+	ySpawn = display.contentCenterY, 
+	HP = 1,
+	speed = 200
+}
+
+
 function Enemies:new (o) --constructor
 	o = o or {};
-	--print(o.r, o.g, o.b)
+
 	setmetatable(o, self);
 	self.__index = self;
 	return o;
 end
+
 local opt = 
 {
 
@@ -19,6 +28,7 @@ local opt =
 		{x = 225, y = 219, width = 35, height = 30}, --frame 5
 	}
 }
+
 local sheet = graphics.newImageSheet( "spaceships2.png", opt)
 function Enemies:spawn()
 	self.shape= display.newImage( sheet, 4)
@@ -47,17 +57,20 @@ end
 function Enemies:move(startingId, paths)
 	local current = paths[startingId];
 	local target = paths[current.cameFrom] or {};
-
-	local json = require 'json'
+	if not self.pathId then self.pathId = current.id end
 
 	local x = grid.x(target.column)
 	local y = grid.y(target.row)
 	local it = self
 
+	timer.performWithDelay( self.speed / 2, function() 
+		it.pathId = target.id
+	end)
+
 	transition.to(self.shape, {
 		x = x,
 		y = y,
-		time = 200,
+		time = self.speed,
 		onComplete = function()
 			if target.type == 'goal' then
 				print('finished')

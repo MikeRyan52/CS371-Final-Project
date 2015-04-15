@@ -15,7 +15,8 @@ gulp.task('levels', function(){
 function generateLevels(paths){
 	var level = {
 		id : 'level-one',
-		name : 'Level One'
+		name : 'Level One',
+		towers : findTowers(paths)
 	};
 
 	var paths = findPaths(paths);
@@ -36,6 +37,22 @@ function generateLevels(paths){
 			console.log(e);
 		}
 	});
+}
+
+function findTowers(level){
+	var towersById = {};
+
+	_.each(level, function(path){
+		console.log(path);
+		if(path.type == 'tower'){
+			var id = path.id;
+			delete path.id;
+
+			towersById[id] = path;
+		}
+	});
+
+	return towersById;
 }
 
 function findPaths(level){
