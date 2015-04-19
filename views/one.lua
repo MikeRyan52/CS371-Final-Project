@@ -5,17 +5,11 @@ local grid = require 'utilities.grid'
 local Enemies = require 'objects.enemies'
 local physics = require 'physics'
 local Game = require 'objects.game'
-
 local thisGame = Game:new()
 thisGame:start()
 local Asteroid = require("objects.asteroid")
-
 physics.start()
-
 local CELL_SIZE = grid.cellSize
-
-
-
 local scene = composer.newScene()
 local level = loadLevel('one')
 local scrollView = widget.newScrollView
