@@ -126,18 +126,9 @@ function Spawn:begin()
 				table.insert(self.game.enemies, enemy)
 			end
 
-<<<<<<< HEAD
 			time = time + 900
 
 			timer.performWithDelay(time, spawn)
-=======
-			local time = 0
-			while count > 0 do
-				time = time + 300
-				timer.performWithDelay(time, spawn)
-				count = count - 1
-			end
->>>>>>> 377f8e29a53856077f1e3d1d5ce15bfa83ae0930
 		end
 		index = index + 1
 	end
