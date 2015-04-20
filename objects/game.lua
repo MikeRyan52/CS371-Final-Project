@@ -29,6 +29,7 @@ function Game:init(levelFile, displayGroup, uiGroup)
 	self.grid = level.grid
 
 	self.parentView = displayGroup
+	self.uiView = uiGroup
 
 	self.enemies = {}
 	self.enemyList = {}
@@ -39,6 +40,7 @@ function Game:init(levelFile, displayGroup, uiGroup)
 	self.stopped = false
 	self.updateMoney = true
 	self.updateHealth = true
+	self.time = 3000
 
 	self:draw(level)
 	self:renderUI(uiGroup)
@@ -49,6 +51,26 @@ end
 function Game:start()
 	for index,spawnPoint in ipairs(self.spawnPoints) do
 		spawnPoint:begin()
+
+		self.playText:removeSelf()
+		
+		self.menuText = display.newText({
+			text = 'Main Menu',
+			width = (display.actualContentWidth / 2) - 20,
+			height = 150,
+			x = display.actualContentWidth - (display.actualContentWidth / 4 ) - 20,
+			y = 135,
+			font = native.systemFontBold,
+			fontSize = 42,
+			align = 'right'
+		})
+		self.menuText:setFillColor(0, 0.3, 0.9)
+		self.uiView:insert(self.menuText)
+
+		self.menuText:addEventListener('tap', function()
+			self:stop()
+			composer.gotoScene('menu.menu')
+		end)
 	end
 end
 
@@ -56,9 +78,9 @@ function Game:renderUI(uiGroup)
 	self.moneyText = display.newText({
 		text = 'Money: ' .. self.money,
 		width = (display.actualContentWidth / 2) - 20,
-		height = 150,
+		height = 75,
 		x = ( display.actualContentWidth / 4 ) + 20,
-		y = 150,
+		y = 85,
 		font = native.systemFont,
 		fontSize = 32, 
 		align = 'left'
@@ -70,16 +92,34 @@ function Game:renderUI(uiGroup)
 	self.healthText = display.newText({
 		text = 'Health: ' .. self.health,
 		width = (display.actualContentWidth / 2) - 20,
-		height = 150,
-		x = display.actualContentWidth - ( display.actualContentWidth / 4 ) - 20,
-		y = 150,
+		height = 75,
+		x = ( display.actualContentWidth / 4 ) + 20,
+		y = 130,
 		font = native.systemFont,
 		fontSize = 32, 
-		align = 'right'
+		align = 'left'
 	})
 
 	self.healthText:setFillColor(1, 1, 1)
 	uiGroup:insert(self.healthText)
+
+	self.playText = display.newText({
+		text = 'Start',
+		width = (display.actualContentWidth / 2) - 20,
+		height = 150,
+		x = display.actualContentWidth - (display.actualContentWidth / 4 ) - 20,
+		y = 135,
+		font = native.systemFontBold,
+		fontSize = 42,
+		align = 'right'
+	})
+	self.playText:setFillColor(0, 0.3, 0.9)
+	uiGroup:insert(self.playText)
+
+	self.playText:addEventListener('tap', function()
+		self:start()
+		self.playText:removeSelf()
+	end)
 end
 
 function Game:draw(level)
@@ -144,8 +184,6 @@ function Game:stop()
 	for index,spawn in ipairs(self.spawnPoints) do
 		spawn:stop()
 	end
-
-	composer.gotoScene('views.game-over')
 end
 
 function Game:purchaseItem(cost)
@@ -159,6 +197,7 @@ function Game:enemyReachedGoal(damage)
 
 	if self.health <= 0 then
 		self:stop()
+		composer.gotoScene('views.game-over')
 	end
 end
 

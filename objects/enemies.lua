@@ -7,7 +7,7 @@ local Enemies = {
 	HP = 240,
 	speed = 400,
 	damage = 1,
-	value = 75
+	value = 60
 }
 
 
@@ -38,15 +38,15 @@ function Enemies:spawn(game, startingId, shipType)
 	if shipType == 'shipType1' then
 		self.frame = 1
 	elseif shipType == 'shipType2' then
-		self.value = 50
+		self.value = 30
 		self.frame = 2
-		self.HP = 80
-		self.speed = 200
+		self.HP = 120
+		self.speed = 180
 		scale = 2
 	elseif shipType == 'shipType3' then
 		self.value = 150
 		self.frame = 3
-		self.HP = 800
+		self.HP = 900
 		self.speed = 600
 		scale = 3.5
 	end

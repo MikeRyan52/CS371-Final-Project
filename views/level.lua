@@ -37,12 +37,13 @@ function scene:create(event)
 
 	scrollView:setScrollWidth(30*CELL_SIZE)
 	scrollView:setScrollHeight(50*CELL_SIZE)
-
-	timer.performWithDelay( 1000, function()
-		thisGame:start()
-	end)
 end
 
+function scene:destroy(event)
+	thisGame = nil
+end
+
+scene:addEventListener('destroy', scene)
 scene:addEventListener( 'create', scene )
 
 return scene

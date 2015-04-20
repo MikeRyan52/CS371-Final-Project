@@ -1,12 +1,12 @@
 local TowerTypes = {
 	laser = {
 		{
-			cost = 300,
+			cost = 150,
 			value = 100,
 			frame = 1,
 			radius = 6,
 			damage = 50,
-			fireSpeed = 350
+			fireSpeed = 500
 		},
 		{
 			cost = 300,
@@ -14,7 +14,7 @@ local TowerTypes = {
 			frame = 2,
 			radius = 7,
 			damage = 60,
-			fireSpeed = 300
+			fireSpeed = 400
 		},
 		{
 			cost = 300,
@@ -22,7 +22,7 @@ local TowerTypes = {
 			frame = 3,
 			radius = 8,
 			damage = 70,
-			fireSpeed = 250
+			fireSpeed = 300
 		}
 	},
 	cannon = {
@@ -32,7 +32,7 @@ local TowerTypes = {
 			frame = 4,
 			radius = 5,
 			damage = 20,
-			fireSpeed = 500
+			fireSpeed = 1000
 		},
 		{
 			cost = 200,
@@ -40,7 +40,7 @@ local TowerTypes = {
 			frame = 5,
 			radius = 6,
 			damage = 40,
-			fireSpeed = 350
+			fireSpeed = 750
 		},
 		{
 			cost = 400,
@@ -48,17 +48,17 @@ local TowerTypes = {
 			frame = 6,
 			radius = 7,
 			damage = 40,
-			fireSpeed = 200
+			fireSpeed = 500
 		}
 	},
 	aoe = {
 		{
-			cost = 400,
+			cost = 350,
 			value = 200,
 			frame = 1,
 			radius = 5,
-			damage = 5,
-			fireSpeed = 300
+			damage = 10,
+			fireSpeed = 900
 		},
 		{
 			cost = 350,
@@ -66,7 +66,7 @@ local TowerTypes = {
 			frame = 2,
 			radius = 6,
 			damage = 20,
-			fireSpeed = 400
+			fireSpeed = 800
 		},
 		{
 			cost = 400,
@@ -74,7 +74,7 @@ local TowerTypes = {
 			frame = 3,
 			radius = 6,
 			damage = 50,
-			fireSpeed = 500
+			fireSpeed = 600
 		}
 	}
 }
