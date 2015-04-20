@@ -18,7 +18,7 @@ function scene:show( event )
 	local phase = event.phase
 
 	if ( phase == "will" ) then
-		local bg = display.newImage( sceneGroup,"space-background3.png", display.contentCenterX, display.contentCenterY)
+		local bg = display.newImage( sceneGroup,"spacebackground.png", display.contentCenterX, display.contentCenterY)
 		bg.xScale = display.contentWidth/ bg.width
 		bg.yScale = display.contentHeight/ bg.height
 		local mainbutton = display.newRoundedRect(sceneGroup, display.contentWidth/2, 100, 530, 150 , 25)
