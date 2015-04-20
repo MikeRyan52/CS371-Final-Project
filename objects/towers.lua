@@ -9,6 +9,10 @@ local Tower = {
 	radius = 4,
 	damage = 50,
 	fireSpeed = 300,
+<<<<<<< HEAD
+=======
+	damage = 10
+>>>>>>> 377f8e29a53856077f1e3d1d5ce15bfa83ae0930
 	towertype = "damage"
 };
 
@@ -54,8 +58,11 @@ function Tower:spawn(game, type, id, node)
 	self.type = type
 	self.game = game
 	self.node = node
+<<<<<<< HEAD
 	self.fired = false;
 	self.destroy = false;
+=======
+>>>>>>> 377f8e29a53856077f1e3d1d5ce15bfa83ae0930
 
 	self.targetNodes = {}
 
@@ -234,7 +241,7 @@ function Tower:tap()
 			y = math.ceil( y / 150 )
 
 			if ((x == 2 and y == 1) or (x == 3 and y == 1)) then 
-				self:upgrade()
+				self:Upgrade()
 			elseif  ((x == 0 and y == 3) or (x == 1 and y == 2) or (x == 2 and y == 2) or (x == 2 and y == 3) or (x == 1 and y == 3)) then
 				self:sell()
 			end
@@ -247,14 +254,30 @@ function Tower:tap()
 	end
 end
 
+<<<<<<< HEAD
+=======
+function Tower:Upgrade()
+	local function regenerate(frame)
+		self.shape:removeSelf()
+		self.frame = frame
+		self:spawn()
+	end
+>>>>>>> 377f8e29a53856077f1e3d1d5ce15bfa83ae0930
 
 
+<<<<<<< HEAD
 function Tower:sell ()
 	self.destroy = true;
 end
 
 function Tower:demolish()
 	self.shape:removeSelf()
+=======
+function Tower:Sell ()
+	self.shape:removeSelf();
+	self.shape=nil;
+	self = nil;
+>>>>>>> 377f8e29a53856077f1e3d1d5ce15bfa83ae0930
 end
 
 return Tower
