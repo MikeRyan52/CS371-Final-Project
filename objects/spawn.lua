@@ -26,11 +26,11 @@ function Spawn:init(id, node, game)
 		}
 	}
 	local sheet = graphics.newImageSheet( "Scribblenauts_item_black_hole.png", opt)
-	self.shape = display.newImage( sheet, self.frame)
+	self.shape = display.newImage( sheet, 1)
 	self.shape.x = grid.x(node.column)
 	self.shape.y = grid.y(node.row)
-	self.shape.xScale = 1.5
-	self.shape.yScale = 1.5
+	self.shape.xScale = 2.25
+	self.shape.yScale = 2.25
 
 	game.parentView:insert(self.shape)
 end
