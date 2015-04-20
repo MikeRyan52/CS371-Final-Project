@@ -25,7 +25,7 @@ function Spawn:init(id, node, game)
 			{x = 0, y = 0, width = 60, height = 60}
 		}
 	}
-	local sheet = graphics.newImageSheet( "Scribblenauts_item_black_hole.png", opt)
+	local sheet = graphics.newImageSheet( "portalspawnpoint.png", opt)
 	self.shape = display.newImage( sheet, self.frame)
 	self.shape.x = grid.x(node.column)
 	self.shape.y = grid.y(node.row)
