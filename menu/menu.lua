@@ -54,11 +54,7 @@ function scene:show( event )
 		end
 		local function startlevelone ()
 		
-			composer.gotoScene( 'views.level', {
-				params = {
-					level = 1
-				}
-			})
+			composer.gotoScene( "levels.levelselector")
 		end
 		local function Credits()
 			composer.gotoScene( "Scenes.credits" )
