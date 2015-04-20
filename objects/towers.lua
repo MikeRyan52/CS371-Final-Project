@@ -4,9 +4,9 @@ local Tower = {
 	frame = 1, 
 	xLocation = display.contentCenterX, 
 	yLocation = display.contentCenterY, 
+	cost = 300,
 	value = 100,
 	radius = 4,
-	damage = 50,
 	fireSpeed = 300,
 	towertype = "damage"
 };
@@ -38,9 +38,9 @@ local opt2 =
 {
 
 	frames = {
-		{x = 0, y=0, width = 100, height = 68}, --frame 1 of aoe Tower
-		{x = 75, y = 0, width = 100, height = 68}, --frame 2 of aoe
-		{x = 150, y = 0, width = 100, height = 68},	--frame 3 of aoe
+		{x = 0, y=0, width = 69, height = 68}, --frame 1 of aoe Tower
+		{x = 75, y = 0, width = 75, height = 68}, --frame 2 of aoe
+		{x = 150, y = 0, width = 75, height = 68},	--frame 3 of aoe
 	}
 }
 
@@ -51,13 +51,12 @@ function Tower:spawn(game, type, id, node)
 	self.type = type
 	self.game = game
 	self.node = node
-	self.fired = false;
-	self.destroy = false;
 
 	self.targetNodes = {}
 
 	self:draw()
 	self:findNodes()
+	self:target()
 end
 
 function Tower:findNodes()
@@ -96,13 +95,13 @@ function Tower:findNodes()
 	self.nodes = nodes
 end
 
-function Tower:target(enemies)
+function Tower:target()
 	local targetEnemy = false
 
 	for index,node in ipairs(self.nodes) do
-		for index,enemy in ipairs(enemies) do
-			if enemy.nodeId == node.id and not enemy.exploding then
-				targetEnemy = enemy 
+		for index,enemy in ipairs(self.game.enemies) do
+			if enemy.nodeId == node.id then
+				targetEnemy = enemy
 				break
 			end
 		end
@@ -111,7 +110,7 @@ function Tower:target(enemies)
 	end
 
 	if targetEnemy then 
-		targetEnemy:hit(self.damage) 
+		targetEnemy:hit(500) 
 
 		local deltaY = self.shape.y - targetEnemy.shape.y
 		local deltaX = self.shape.x - targetEnemy.shape.x
@@ -120,10 +119,8 @@ function Tower:target(enemies)
 		targetEnemy = false
 	end
 
-	self.fired = true
-
-	timer.performWithDelay(self.fireSpeed, function() 
-		self.fired = false
+	self.targetRef = timer.performWithDelay(self.fireSpeed, function()
+		self:target()
 	end)
 end
 
@@ -164,7 +161,7 @@ function Tower:tap()
 			y = math.ceil( y / 150 )
 			print(x,y)
 			if ((x == 2 and y == 1) or (x == 3 and y == 1)) then 
-				self:upgrade()
+				self:Upgrade()
 			elseif  ((x == 0 and y == 3) or (x == 1 and y == 2) or (x == 2 and y == 2) or (x == 2 and y == 3) or (x == 1 and y == 3)) then
 				self:sell()
 			end
@@ -177,7 +174,7 @@ function Tower:tap()
 	end
 end
 
-function Tower:upgrade()
+function Tower:Upgrade()
 	local function regenerate(frame)
 		self.shape:removeSelf()
 		self.frame = frame
@@ -199,9 +196,10 @@ function Tower:upgrade()
 	end
 end
 
-function Tower:sell ()
+function Tower:Sell ()
 	self.shape:removeSelf();
-	self.destroy = true;
+	self.shape=nil;
+	self = nil;
 end
 
 return Tower
