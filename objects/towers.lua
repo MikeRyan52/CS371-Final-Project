@@ -8,7 +8,7 @@ local Tower = {
 	value = 100,
 	radius = 4,
 	fireSpeed = 300,
-	damage = 10,
+	damage = 10
 	towertype = "damage"
 };
 
@@ -39,9 +39,9 @@ local opt2 =
 {
 
 	frames = {
-		{x = 0, y=0, width = 60, height = 68}, --frame 1 of aoe Tower, cost = 400, value = 200, radius = 3, firespeed = 150, damage = 5
-		{x = 70, y = 0, width = 60, height = 68}, --frame 2 of aoe, cost = 350, value = 300, radius = 4, fireSpeed = 150, damage = 20
-		{x = 130, y = 0, width = 60, height = 68},	--frame 3 of aoe, cost = 400, value = 500, radius = 4, fireSpeed = 350, damage = 20
+		{x = 0, y=0, width = 69, height = 68}, --frame 1 of aoe Tower, cost = 400, value = 200, radius = 3, firespeed = 150, damage = 5
+		{x = 75, y = 0, width = 75, height = 68}, --frame 2 of aoe, cost = 350, value = 300, radius = 4, fireSpeed = 150, damage = 20
+		{x = 150, y = 0, width = 75, height = 68},	--frame 3 of aoe, cost = 400, value = 500, radius = 4, fireSpeed = 350, damage = 20
 	}
 }
 
@@ -179,28 +179,16 @@ function Tower:Upgrade()
 	local function regenerate(frame)
 		self.shape:removeSelf()
 		self.frame = frame
-		self:draw()
+		self:spawn()
 	end
 
 	if self.frame == 1 then
-		self.damage = 40
-		self.fireSpeed = 300
-		self.radius = 5
 		regenerate(2)
 	elseif self.frame == 2 then
-		self.damage = 80
-		self.fireSpeed = 350
-		self.radius = 6
 		regenerate(3)
 	elseif self.frame == 4 then
-		self.damage = 20
-		self.fireSpeed = 400
-		self.radius = 4
 		regenerate(5)
 	elseif self.frame == 5 then
-		self.damage = 20
-		self.fireSpeed = 600
-		self.radius = 5
 		regenerate(6)
 	elseif self.frame == 7 then
 		regenerate(8)
@@ -213,7 +201,6 @@ function Tower:Sell ()
 	self.shape:removeSelf();
 	self.shape=nil;
 	self = nil;
-	
 end
 
 return Tower
