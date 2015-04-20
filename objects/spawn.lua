@@ -68,19 +68,24 @@ function Spawn:init(id, node, game)
 			shipType3 = 5
 		}
 	}
+
 	self.game = game
 
+	self:begin()
+end
+
+function Spawn:begin()
 	local index = 1
 	local function wave()
 		for shipType,count in pairs(self.enemies[index]) do
 			local function spawn()
 				local enemy = Enemy:new()
-				enemy.xSpawn = grid.x(node.column)
-				enemy.ySpawn = grid.y(node.row)
+				enemy.xSpawn = grid.x(self.node.column)
+				enemy.ySpawn = grid.y(self.node.row)
 
-				enemy:spawn(game, self.id)
+				enemy:spawn(self.game, self.id)
 
-				table.insert(game.enemies, enemy)
+				table.insert(self.game.enemies, enemy)
 			end
 
 			local time = 0

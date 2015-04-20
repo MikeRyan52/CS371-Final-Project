@@ -4,7 +4,7 @@ local Enemies = {
 	frame=1, 
 	xSpawn = display.contentCenterX, 
 	ySpawn = display.contentCenterY, 
-	HP = 500,
+	HP = 200,
 	speed = 200
 }
 
@@ -41,6 +41,8 @@ function Enemies:spawn(game, startingId)
 	self.shape.yScale = 2.5
 	self.shape.pp = self; -- parent object
 	self.shape.tag = self.tag; -- “enemy”
+	self.exploding = false
+	self.destroy = false
 
 	game.parentView:insert(self.shape)
 
@@ -63,12 +65,22 @@ end
 function Enemies:explode()
 	local x = self.shape.x
 	local y = self.shape.y
+	self.exploding = true
 
 	self.shape:removeSelf()
 	self.shape = display.newImage( sheet, 4 )
 	self.shape.x = x
 	self.shape.y = y
 	self.game.parentView:insert(self.shape)
+
+	transition.to(self.shape, {
+		alpha = 0,
+		xScale = 2.5,
+		yScale = 2.5,
+		onComplete = function() 
+			self.destroy = true
+		end
+	})
 end
 
 function Enemies:move()

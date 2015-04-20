@@ -27,6 +27,7 @@ function Game:init(levelFile, displayGroup)
 	self.enemies = {}
 	self.enemyList = {}
 	self.spawnPoints = {}
+	self.towers = {}
 	self:draw(level)
 
 	Runtime:addEventListener( 'enterFrame', self )
@@ -89,6 +90,10 @@ function Game:draw(level)
 	end
 end
 
+function Game:getEnemies()
+	return self.enemies
+end
+
 function Game:stop()
 	Runtime:removeEventListener( 'enterFrame', self )
 end
@@ -106,6 +111,20 @@ end
 function Game:enterFrame()
 	if self.updateHealth then
 
+	end
+
+	for index,tower in ipairs(self.towers) do
+		if tower.destroy then
+			table.remove(self.towers, index)
+		elseif not tower.fired then
+			tower:target(self.enemies)
+		end
+	end
+
+	for index,enemy in ipairs(self.enemies) do
+		if enemy.destroy then
+			table.remove(self.enemies, index)
+		end
 	end
 end
 

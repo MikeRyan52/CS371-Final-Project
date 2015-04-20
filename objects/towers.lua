@@ -6,6 +6,7 @@ local Tower = {
 	yLocation = display.contentCenterY, 
 	value = 100,
 	radius = 4,
+	damage = 50,
 	fireSpeed = 300,
 	towertype = "damage"
 };
@@ -50,12 +51,13 @@ function Tower:spawn(game, type, id, node)
 	self.type = type
 	self.game = game
 	self.node = node
+	self.fired = false;
+	self.destroy = false;
 
 	self.targetNodes = {}
 
 	self:draw()
 	self:findNodes()
-	self:target()
 end
 
 function Tower:findNodes()
@@ -94,13 +96,13 @@ function Tower:findNodes()
 	self.nodes = nodes
 end
 
-function Tower:target()
+function Tower:target(enemies)
 	local targetEnemy = false
 
 	for index,node in ipairs(self.nodes) do
-		for index,enemy in ipairs(self.game.enemies) do
-			if enemy.nodeId == node.id then
-				targetEnemy = enemy
+		for index,enemy in ipairs(enemies) do
+			if enemy.nodeId == node.id and not enemy.exploding then
+				targetEnemy = enemy 
 				break
 			end
 		end
@@ -109,7 +111,7 @@ function Tower:target()
 	end
 
 	if targetEnemy then 
-		targetEnemy:hit(500) 
+		targetEnemy:hit(self.damage) 
 
 		local deltaY = self.shape.y - targetEnemy.shape.y
 		local deltaX = self.shape.x - targetEnemy.shape.x
@@ -118,8 +120,10 @@ function Tower:target()
 		targetEnemy = false
 	end
 
-	self.targetRef = timer.performWithDelay(self.fireSpeed, function()
-		self:target()
+	self.fired = true
+
+	timer.performWithDelay(self.fireSpeed, function() 
+		self.fired = false
 	end)
 end
 
@@ -160,7 +164,7 @@ function Tower:tap()
 			y = math.ceil( y / 150 )
 
 			if ((x == 2 and y == 1) or (x == 3 and y == 1)) then 
-				self:Upgrade()
+				self:upgrade()
 			elseif  ((x == 0 and y == 3) or (x == 1 and y == 2) or (x == 2 and y == 2) or (x == 2 and y == 3) or (x == 1 and y == 3)) then
 				self:sell()
 			end
@@ -173,7 +177,7 @@ function Tower:tap()
 	end
 end
 
-function Tower:Upgrade()
+function Tower:upgrade()
 	local function regenerate(frame)
 		self.shape:removeSelf()
 		self.frame = frame
@@ -195,10 +199,9 @@ function Tower:Upgrade()
 	end
 end
 
-function Tower:Sell ()
+function Tower:sell ()
 	self.shape:removeSelf();
-	self.shape=nil;
-	self = nil;
+	self.destroy = true;
 end
 
 return Tower

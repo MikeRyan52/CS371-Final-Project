@@ -65,6 +65,7 @@ function Asteroid:tap(event)
 				newTower.frame = 10
 				newTower:spawn(self.game, 'aoe', self.id, self.node)
 				isout = false
+				table.insert(self.game.towers, newTower)
 			elseif  ((x == 0 and y == 3) or (x == 1 and y == 2) or (x == 2 and y == 2) or (x == 2 and y == 3) or (x == 1 and y == 3)) then
 				towermenu:removeSelf( )
 				local newTower = towers:new()
@@ -74,6 +75,7 @@ function Asteroid:tap(event)
 				newTower:spawn(self.game, 'cannon', self.id, self.node)
 				isout = false
 				self.shape:removeSelf( )
+				table.insert(self.game.towers, newTower)
 			elseif ((x == 3 and y == 3) or (x == 3 and y == 2) or (x == 4 and y == 3) or (x == 4 and y == 2)) then
 				towermenu:removeSelf( )
 				isout = false
@@ -82,6 +84,7 @@ function Asteroid:tap(event)
 				newTower.yLocation = self.shape.y
 				newTower:spawn(self.game, 'laser', self.id, self.node)
 				self.shape:removeSelf()
+				table.insert(self.game.towers, newTower)
 			end
 		end
 
