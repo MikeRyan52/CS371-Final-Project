@@ -14,65 +14,14 @@ function Spawn:new(o)
 end
 
 function Spawn:init(id, node, game)
+	self.timers = {}
 	self.id = id
 	self.node = node
-	self.enemies = game.enemyList[id] or {
-		{
-			shipType1 = 5,
-			shipType2 = 3,
-			shipType3 = 1
-		},
-		{
-			shipType1 = 5,
-			shipType2 = 3,
-			shipType3 = 1
-		},
-		{
-			shipType1 = 5,
-			shipType2 = 3,
-			shipType3 = 1
-		},
-		{
-			shipType1 = 5,
-			shipType2 = 3,
-			shipType3 = 1
-		},
-		{
-			shipType1 = 5,
-			shipType2 = 3,
-			shipType3 = 1
-		},
-		{
-			shipType1 = 5,
-			shipType2 = 3,
-			shipType3 = 1
-		},
-		{
-			shipType1 = 5,
-			shipType2 = 3,
-			shipType3 = 1
-		},
-		{
-			shipType1 = 5,
-			shipType2 = 3,
-			shipType3 = 1
-		},
-		{
-			shipType1 = 5,
-			shipType2 = 3,
-			shipType3 = 1
-		},
-		{
-			shipType1 = 5,
-			shipType2 = 3,
-			shipType3 = 1
-		}
-	}
+	self.enemies = game.waves 
 
 	self.game = game
 
 	self:createWaves()
-	self:begin()
 end
 
 function Spawn:createWaves()
@@ -128,7 +77,7 @@ function Spawn:begin()
 
 			time = time + 900
 
-			timer.performWithDelay(time, spawn)
+			table.insert(self.timers, timer.performWithDelay(time, spawn))
 		end
 		index = index + 1
 	end
@@ -139,6 +88,9 @@ end
 
 function Spawn:stop()
 	timer.cancel(self.timerRef)
+	for index,timerRef in ipairs(self.timers) do
+		timer.cancel(timerRef)
+	end
 end
 
 return Spawn

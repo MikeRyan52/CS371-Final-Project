@@ -1,4 +1,4 @@
-local cellSize = 30
+local cellSize = 40
 
 function x( column )
 	return ( column * cellSize ) + ( cellSize / 2 )

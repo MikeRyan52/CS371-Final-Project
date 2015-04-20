@@ -81,7 +81,6 @@ function Asteroid:tap(event)
 				return nil
 			end
 
-			self.game.menuOpen = false
 			towermenu:removeSelf( )
 			local cost = TowerTypes[selectedType][1].cost
 
@@ -95,6 +94,11 @@ function Asteroid:tap(event)
 				self.shape:removeSelf()
 				table.insert(self.game.towers, newTower)
 			end
+
+			
+			timer.performWithDelay(10, function()
+				self.game.menuOpen = false
+			end)
 		end
 
 		towermenu:addEventListener( 'tap', zoneHandler )

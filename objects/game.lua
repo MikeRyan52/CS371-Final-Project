@@ -4,6 +4,7 @@ local Spawn = require 'objects.spawn'
 local loadLevel = require 'utilities.load-level'
 local grid = require 'utilities.grid'
 local CELL_SIZE = grid.cellSize
+local composer = require 'composer'
 
 local Game = {
 	health = 20,
@@ -22,23 +23,37 @@ end
 
 function Game:init(levelFile, displayGroup, uiGroup)
 	local level = loadLevel(levelFile)
+	self.health = level.health
+	self.money = level.money
+	self.waves = level.waves
 	self.grid = level.grid
+
 	self.parentView = displayGroup
-	self.uiView = uiGroup
+
 	self.enemies = {}
 	self.enemyList = {}
 	self.spawnPoints = {}
 	self.towers = {}
+
 	self.menuOpen = false
+	self.stopped = false
+	self.updateMoney = true
+	self.updateHealth = true
+
 	self:draw(level)
-	self:renderUI()
+	self:renderUI(uiGroup)
 
 	Runtime:addEventListener( 'enterFrame', self )
 end
 
-function Game:renderUI()
+function Game:start()
+	for index,spawnPoint in ipairs(self.spawnPoints) do
+		spawnPoint:begin()
+	end
+end
+
+function Game:renderUI(uiGroup)
 	self.moneyText = display.newText({
-		parent = self.uiGroup,
 		text = 'Money: ' .. self.money,
 		width = (display.actualContentWidth / 2) - 20,
 		height = 150,
@@ -50,9 +65,9 @@ function Game:renderUI()
 	})
 
 	self.moneyText:setFillColor(1, 1, 1)
+	uiGroup:insert(self.moneyText)
 
 	self.healthText = display.newText({
-		parent = self.uiGroup,
 		text = 'Health: ' .. self.health,
 		width = (display.actualContentWidth / 2) - 20,
 		height = 150,
@@ -64,6 +79,7 @@ function Game:renderUI()
 	})
 
 	self.healthText:setFillColor(1, 1, 1)
+	uiGroup:insert(self.healthText)
 end
 
 function Game:draw(level)
@@ -119,22 +135,22 @@ function Game:getEnemies()
 end
 
 function Game:stop()
+	self.stopped = true
 	Runtime:removeEventListener( 'enterFrame', self )
 
 	for index,tower in ipairs(self.towers) do
-		table.remove(self.towers, index)
 		tower:demolish()
 	end
 
 	for index,enemy in ipairs(self.enemies) do
-		table.remove(self.enemies, index)
 		enemy:dead()
 	end
 
 	for index,spawn in ipairs(self.spawnPoints) do
-		table.remove(self.spawnPoints, index)
 		spawn:stop()
 	end
+
+	composer.gotoScene('views.game-over')
 end
 
 function Game:purchaseItem(cost)
@@ -152,40 +168,42 @@ function Game:enemyReachedGoal(damage)
 end
 
 function Game:enterFrame()
-	if self.updateHealth then
-		self.healthText.text = 'Health: ' .. self.health
-	end
-
-	if self.updateMoney then
-		self.moneyText.text = 'Money: ' .. self.money
-	end
-
-	for index,tower in ipairs(self.towers) do
-		if tower.destroy then
-			local node = tower.node
-			local id = tower.id
-			table.remove(self.towers, index)
-			tower:demolish()
-
-			local meteor = Asteroid:new()
-			meteor.xLocation = grid.x(node.column)
-			meteor.yLocation = grid.y(node.row)
-			meteor:spawn(id, node, self)
-		elseif not tower.fired then
-			tower:target(self.enemies)
-		end
-	end
-
-	for index,enemy in ipairs(self.enemies) do
-		if enemy.atGoal then
-			self:enemyReachedGoal(enemy.damage)
+	if not self.stopped then
+		if self.updateHealth then
+			self.healthText.text = 'Health: ' .. self.health
 		end
 
-		if enemy.destroy then
-			table.remove(self.enemies, index)
-			enemy:dead()
-			if not enemy.atGoal then 
-				self:purchaseItem(-1 * enemy.value)
+		if self.updateMoney then
+			self.moneyText.text = 'Money: ' .. self.money
+		end
+
+		for index,tower in ipairs(self.towers) do
+			if tower.destroy then
+				local node = tower.node
+				local id = tower.id
+				table.remove(self.towers, index)
+				tower:demolish()
+
+				local meteor = Asteroid:new()
+				meteor.xLocation = grid.x(node.column)
+				meteor.yLocation = grid.y(node.row)
+				meteor:spawn(id, node, self)
+			elseif not tower.fired then
+				tower:target(self.enemies)
+			end
+		end
+
+		for index,enemy in ipairs(self.enemies) do
+			if enemy.atGoal then
+				self:enemyReachedGoal(enemy.damage)
+			end
+
+			if enemy.destroy then
+				table.remove(self.enemies, index)
+				enemy:dead()
+				if not enemy.atGoal then 
+					self:purchaseItem(-1 * enemy.value)
+				end
 			end
 		end
 	end

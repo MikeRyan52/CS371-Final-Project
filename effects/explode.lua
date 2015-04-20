@@ -1,4 +1,4 @@
-function explode(displayGroup, targetShape, radius)
+function explode(displayGroup, sourceShape, targetShape, radius)
 	local opt = 
 	{
 
@@ -13,18 +13,31 @@ function explode(displayGroup, targetShape, radius)
 
 	local sheet = graphics.newImageSheet( "spaceships2.png", opt)
 
-	local explosion = display.newImage(sheet, 4)
-	displayGroup:insert(explosion)
-	explosion.x = targetShape.x
-	explosion.y = targetShape.y
+	local circle = display.newCircle(sourceShape.x, sourceShape.y, 14)
+	displayGroup:insert(circle)
+	circle:setFillColor(0, 0, 0)
 
-	transition.to(explosion, {
+	transition.to(circle, {
 		time = 200,
-		xScale = radius,
-		yScale = radius,
-		alpha = 0,
+		x = targetShape.x,
+		y = targetShape.y,
 		onComplete = function()
-			explosion:removeSelf()
+			circle:removeSelf()
+			
+			local explosion = display.newImage(sheet, 4)
+			displayGroup:insert(explosion)
+			explosion.x = targetShape.x
+			explosion.y = targetShape.y
+
+			transition.to(explosion, {
+				time = 200,
+				xScale = radius * 1.2,
+				yScale = radius * 1.2,
+				alpha = 0,
+				onComplete = function()
+					explosion:removeSelf()
+				end
+			})
 		end
 	})
 end

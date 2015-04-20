@@ -176,7 +176,8 @@ function Tower:target(enemies)
 				end
 			end
 			if found then
-				explode(self.game.parentView, found.shape, self.radius)
+				explode(self.game.parentView, self.shape, found.shape, self.radius)
+				self.shape:toFront()
 				break
 			end
 		end
@@ -226,8 +227,8 @@ function Tower:draw()
 
 	self.shape.x = self.xLocation
 	self.shape.y = self.yLocation
-	self.shape.xScale = 1
-	self.shape.yScale = 1
+	self.shape.xScale = 1.5
+	self.shape.yScale = 1.5
 	self.shape.pp = self; -- parent object
 	self.shape.tag = self.tag; -- “enemy”
 
@@ -257,7 +258,9 @@ function Tower:tap()
 			end
 
 			menu:removeSelf()
-			self.game.menuOpen = false
+			timer.performWithDelay(10, function()
+				self.game.menuOpen = false
+			end)
 		end
 
 		menu:addEventListener('tap', zoneHandler)

@@ -33,6 +33,8 @@ local opt =
 
 local sheet = graphics.newImageSheet( "spaceships2.png", opt)
 function Enemies:spawn(game, startingId, shipType)
+	local scale = 2.5
+
 	if shipType == 'shipType1' then
 		self.frame = 1
 	elseif shipType == 'shipType2' then
@@ -40,11 +42,13 @@ function Enemies:spawn(game, startingId, shipType)
 		self.frame = 2
 		self.HP = 80
 		self.speed = 200
+		scale = 2
 	elseif shipType == 'shipType3' then
 		self.value = 150
 		self.frame = 3
 		self.HP = 800
 		self.speed = 600
+		scale = 3.5
 	end
 
 	self.game = game
@@ -53,8 +57,8 @@ function Enemies:spawn(game, startingId, shipType)
 	self.shape= display.newImage( sheet, self.frame)
 	self.shape.x = self.xSpawn
 	self.shape.y = self.ySpawn
-	self.shape.xScale = 2.5
-	self.shape.yScale = 2.5
+	self.shape.xScale = scale
+	self.shape.yScale = scale
 	self.shape.pp = self; -- parent object
 	self.shape.tag = self.tag; -- “enemy”
 	self.exploding = false

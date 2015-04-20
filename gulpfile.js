@@ -7,19 +7,21 @@ gulp.task('levels', function(){
 	request('https://script.google.com/macros/s/AKfycbznZzWm1vML1e7gVJxHLAtEmAUKKmpwpxqmJM8OgaeDi0BFqfC8/exec', function(error, response, body){
 		if( ! error && response.statusCode == 200 )
 		{
-			generateLevels(JSON.parse(body));
+			var levels = JSON.parse(body);
+			
+			for(var i = 0; i < levels.length; i++)
+			{
+				generateLevels(i + 1, levels[i])
+			}
 		}
 	});	
 });
 
-function generateLevels(paths){
-	var level = {
-		id : 'level-one',
-		name : 'Level One',
-		towers : findTowers(paths)
-	};
+function generateLevels(id, level){
+	level.id = 'level-' + id;
+	level.towers = findTowers(level.nodes);
 
-	var paths = findPaths(paths);
+	var paths = findPaths(level.nodes);
 	var grid = {};
 
 	_.each(paths, function(path){
@@ -31,6 +33,8 @@ function generateLevels(paths){
 
 	level.grid = grid;
 
+	delete level.nodes
+
 	fs.writeFile('./levels/' + level.id + '.json', JSON.stringify(level, null, '\t'), function(e){
 		if(e)
 		{
@@ -39,16 +43,15 @@ function generateLevels(paths){
 	});
 }
 
-function findTowers(level){
+function findTowers(nodes){
 	var towersById = {};
 
-	_.each(level, function(path){
-		console.log(path);
-		if(path.type == 'tower'){
-			var id = path.id;
-			delete path.id;
+	_.each(nodes, function(node){
+		if(node.type == 'tower'){
+			var id = node.id;
+			delete node.id;
 
-			towersById[id] = path;
+			towersById[id] = node;
 		}
 	});
 
