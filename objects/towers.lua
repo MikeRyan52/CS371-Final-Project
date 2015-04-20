@@ -8,9 +8,9 @@ local Tower = {
 	value = 100,
 	radius = 4,
 	fireSpeed = 300,
-	damage = 10
+	damage = 10,
 	towertype = "damage"
-};
+}
 
 function Tower:new (o) --constructor
 	o = o or {};
@@ -52,6 +52,7 @@ function Tower:spawn(game, type, id, node)
 	self.type = type
 	self.game = game
 	self.node = node
+	self.destroy = false
 
 	self.targetNodes = {}
 
@@ -162,7 +163,7 @@ function Tower:tap()
 			y = math.ceil( y / 150 )
 			print(x,y)
 			if ((x == 2 and y == 1) or (x == 3 and y == 1)) then 
-				self:Upgrade()
+				self:upgrade()
 			elseif  ((x == 0 and y == 3) or (x == 1 and y == 2) or (x == 2 and y == 2) or (x == 2 and y == 3) or (x == 1 and y == 3)) then
 				self:sell()
 			end
@@ -175,7 +176,7 @@ function Tower:tap()
 	end
 end
 
-function Tower:Upgrade()
+function Tower:upgrade()
 	local function regenerate(frame)
 		self.shape:removeSelf()
 		self.frame = frame
@@ -197,10 +198,8 @@ function Tower:Upgrade()
 	end
 end
 
-function Tower:Sell ()
-	self.shape:removeSelf();
-	self.shape=nil;
-	self = nil;
+function Tower:sell ()
+	self.destroy = true
 end
 
 return Tower

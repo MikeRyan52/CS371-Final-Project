@@ -90,7 +90,7 @@ function Spawn:begin()
 
 			local time = 0
 			while count > 0 do
-				time = time + 300
+				time = time + 500
 				timer.performWithDelay(time, spawn)
 				count = count - 1
 			end
