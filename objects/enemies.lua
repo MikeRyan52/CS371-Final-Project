@@ -4,8 +4,10 @@ local Enemies = {
 	frame=1, 
 	xSpawn = display.contentCenterX, 
 	ySpawn = display.contentCenterY, 
-	HP = 200,
-	speed = 200
+	HP = 240,
+	speed = 400,
+	damage = 1,
+	value = 75
 }
 
 
@@ -21,16 +23,30 @@ local opt =
 {
 
 	frames = { 
-		{x = 100, y = 65, width = 25, height =30},--frame 1
-		{x = 60, y = 35, width = 35, height = 30}, --frame 2
-		{x= 94, y = 35, width = 35, height = 30}, --frame 3
+		{x = 100, y = 65, width = 25, height =30},--frame 1, value 75 
+		{x = 60, y = 35, width = 35, height = 30}, --frame 2, HP 80, speed 400, 50 
+		{x= 94, y = 35, width = 35, height = 30}, --frame 3, HP 800, speed 50, 150
 		{x = 190, y = 224, width = 35, height = 30}, --frame 4
 		{x = 225, y = 219, width = 35, height = 30}, --frame 5
 	}
 }
 
 local sheet = graphics.newImageSheet( "spaceships2.png", opt)
-function Enemies:spawn(game, startingId)
+function Enemies:spawn(game, startingId, shipType)
+	if shipType == 'shipType1' then
+		self.frame = 1
+	elseif shipType == 'shipType2' then
+		self.value = 50
+		self.frame = 2
+		self.HP = 80
+		self.speed = 200
+	elseif shipType == 'shipType3' then
+		self.value = 150
+		self.frame = 3
+		self.HP = 800
+		self.speed = 600
+	end
+
 	self.game = game
 	self.startingId = startingId
 	self.nodeId = startingId;
@@ -43,6 +59,7 @@ function Enemies:spawn(game, startingId)
 	self.shape.tag = self.tag; -- “enemy”
 	self.exploding = false
 	self.destroy = false
+	self.atGoal = false
 
 	game.parentView:insert(self.shape)
 
@@ -52,7 +69,7 @@ function Enemies:spawn(game, startingId)
 end
 
 function Enemies:hit(damage)
-	self.HP = self.HP - damage;
+	self.HP = self.HP - damage
 	if (self.HP <= 0) then
 		-- die
 		timer.cancel( self.timerRef )
@@ -112,12 +129,19 @@ function Enemies:move()
 		time = self.speed,
 		onComplete = function()
 			if target.type == 'goal' then
-
+				self.atGoal = true
+				self.destroy = true
 			else
 				it:move()
 			end
 		end
 	})
+end
+
+function Enemies:dead()
+	self.shape:removeSelf( )
+	timer.cancel( self.timerRef )
+	transition.cancel( self.transitionRef )
 end
 
 return Enemies
