@@ -84,6 +84,8 @@ end
 
 function Game:draw(level)
 	local x = 0
+	local rects = {}
+
 	while x <= 30 do
 		local y = 0
 		while y <= 50 do
@@ -97,21 +99,14 @@ function Game:draw(level)
 					CELL_SIZE,
 					CELL_SIZE
 				)
+				rect:setFillColor( 0, 0.3, 0.8, 0.2 )
+				self.parentView:insert(rect)
 
-				if space.type == 'path' then
-					rect:setFillColor( 0, 0, 200, 0.5 )
-				elseif space.type == 'spawn' then
-					rect:setFillColor( 200, 0, 0, 0.5 )
+				if space.type == 'spawn' then
 					local spawn = Spawn:new()
 					spawn:init(id, space, self)
 					table.insert(self.spawnPoints, spawn)
-				elseif space.type == 'goal' then
-					rect:setFillColor( 0, 200, 0, 0.5 )
-				elseif space.type == 'tower' then
-					rect:setFillColor( 0, 200, 0, .5 )
 				end
-
-				self.parentView:insert(rect)
 
 			elseif level.towers[id] then
 				local space = level.towers[id]

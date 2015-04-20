@@ -10,6 +10,14 @@ local scene = composer.newScene()
 function scene:create(event)
 	local sceneGroup = self.view
 
+	local bg = display.newImageRect('space-background2.jpg', 1920, 1080)
+	bg.x = display.contentCenterX
+	bg.y = display.contentCenterY
+	sceneGroup:insert(bg)
+
+	local topbar = display.newRect(sceneGroup, display.actualContentWidth / 2, 75, display.actualContentWidth, 150)
+	topbar:setFillColor(0.05, 0.09, 0.2)
+
 	local scrollView = widget.newScrollView
 	{
 		top = 150,
@@ -19,13 +27,16 @@ function scene:create(event)
 		scrollWidth = 30 * CELL_SIZE,
 		scrollHeight = 50 * CELL_SIZE,
 		listener = scrollListener,
-		backgroundColor = {0.05, 0.09, 0.2}
+		hideBackground = true
 	}
 
 	sceneGroup:insert(scrollView)
 
 
 	thisGame:init(event.params.level, scrollView, sceneGroup)
+
+	scrollView:setScrollWidth(30*CELL_SIZE)
+	scrollView:setScrollHeight(50*CELL_SIZE)
 
 	timer.performWithDelay( 1000, function()
 		thisGame:start()

@@ -56,138 +56,200 @@
 	],
 	"id": "level-3",
 	"towers": {
-		"5,12": {
+		"8,6": {
 			"adjacentTo": [
-				"5,13",
-				"4,12"
+				"8,5",
+				"7,6"
 			],
 			"type": "tower",
-			"column": 12,
-			"row": 5
-		},
-		"5,18": {
-			"adjacentTo": [
-				"5,17",
-				"4,18"
-			],
-			"type": "tower",
-			"column": 18,
-			"row": 5
-		},
-		"8,12": {
-			"adjacentTo": [
-				"8,13",
-				"9,12"
-			],
-			"type": "tower",
-			"column": 12,
+			"column": 6,
 			"row": 8
 		},
-		"14,8": {
+		"8,23": {
 			"adjacentTo": [
-				"14,7",
-				"13,8"
+				"8,24",
+				"7,23"
 			],
 			"type": "tower",
-			"column": 8,
-			"row": 14
+			"column": 23,
+			"row": 8
 		},
-		"14,15": {
+		"13,6": {
 			"adjacentTo": [
-				"13,15"
+				"13,5",
+				"14,6"
 			],
 			"type": "tower",
-			"column": 15,
-			"row": 14
+			"column": 6,
+			"row": 13
 		},
-		"17,2": {
+		"13,23": {
 			"adjacentTo": [
-				"17,3"
+				"13,24",
+				"14,23"
 			],
 			"type": "tower",
-			"column": 2,
-			"row": 17
+			"column": 23,
+			"row": 13
 		},
-		"20,8": {
+		"20,10": {
 			"adjacentTo": [
-				"20,7",
-				"21,8"
+				"20,11"
 			],
 			"type": "tower",
-			"column": 8,
+			"column": 10,
 			"row": 20
 		},
-		"26,20": {
+		"20,19": {
 			"adjacentTo": [
+				"20,18"
+			],
+			"type": "tower",
+			"column": 19,
+			"row": 20
+		},
+		"27,8": {
+			"adjacentTo": [
+				"27,7",
+				"26,8",
+				"28,8"
+			],
+			"type": "tower",
+			"column": 8,
+			"row": 27
+		},
+		"27,21": {
+			"adjacentTo": [
+				"27,22",
 				"26,21",
-				"25,20"
+				"28,21"
 			],
 			"type": "tower",
-			"column": 20,
-			"row": 26
+			"column": 21,
+			"row": 27
 		},
-		"28,26": {
+		"34,10": {
 			"adjacentTo": [
-				"28,25"
+				"34,11"
 			],
 			"type": "tower",
-			"column": 26,
-			"row": 28
+			"column": 10,
+			"row": 34
 		},
-		"30,20": {
+		"34,19": {
 			"adjacentTo": [
-				"30,21"
+				"34,18"
 			],
 			"type": "tower",
-			"column": 20,
-			"row": 30
+			"column": 19,
+			"row": 34
 		},
-		"36,12": {
+		"41,10": {
 			"adjacentTo": [
-				"36,13"
+				"41,9",
+				"40,10"
 			],
 			"type": "tower",
-			"column": 12,
-			"row": 36
+			"column": 10,
+			"row": 41
 		},
-		"36,18": {
+		"41,19": {
 			"adjacentTo": [
-				"36,17",
-				"35,18"
+				"41,20",
+				"40,19"
 			],
 			"type": "tower",
-			"column": 18,
-			"row": 36
-		},
-		"44,12": {
-			"adjacentTo": [
-				"44,13"
-			],
-			"type": "tower",
-			"column": 12,
-			"row": 44
-		},
-		"44,18": {
-			"adjacentTo": [
-				"44,17"
-			],
-			"type": "tower",
-			"column": 18,
-			"row": 44
+			"column": 19,
+			"row": 41
 		}
 	},
 	"grid": {
+		"49,14": {
+			"adjacentTo": [
+				"49,13",
+				"48,14"
+			],
+			"type": "goal",
+			"column": 14,
+			"row": 49,
+			"goesTo": [
+				"48,14"
+			]
+		},
+		"48,14": {
+			"adjacentTo": [
+				"48,13",
+				"48,15",
+				"47,14"
+			],
+			"type": "path",
+			"column": 14,
+			"row": 48,
+			"cameFrom": "49,14",
+			"distance": 1,
+			"goesTo": [
+				"48,15",
+				"47,14"
+			]
+		},
+		"48,15": {
+			"adjacentTo": [
+				"48,14",
+				"48,16",
+				"47,15"
+			],
+			"type": "path",
+			"column": 15,
+			"row": 48,
+			"cameFrom": "48,14",
+			"distance": 2,
+			"goesTo": [
+				"47,15"
+			]
+		},
+		"47,14": {
+			"adjacentTo": [
+				"47,13",
+				"47,15",
+				"46,14"
+			],
+			"type": "path",
+			"column": 14,
+			"row": 47,
+			"cameFrom": "48,14",
+			"distance": 2,
+			"goesTo": [
+				"46,14"
+			]
+		},
 		"47,15": {
 			"adjacentTo": [
 				"47,14",
 				"47,16",
 				"46,15"
 			],
-			"type": "goal",
+			"type": "path",
 			"column": 15,
 			"row": 47,
+			"cameFrom": "48,15",
+			"distance": 3,
 			"goesTo": [
 				"46,15"
+			]
+		},
+		"46,14": {
+			"adjacentTo": [
+				"46,13",
+				"46,15",
+				"45,14"
+			],
+			"type": "path",
+			"column": 14,
+			"row": 46,
+			"cameFrom": "47,14",
+			"distance": 3,
+			"goesTo": [
+				"45,14"
 			]
 		},
 		"46,15": {
@@ -200,9 +262,24 @@
 			"column": 15,
 			"row": 46,
 			"cameFrom": "47,15",
-			"distance": 1,
+			"distance": 4,
 			"goesTo": [
 				"45,15"
+			]
+		},
+		"45,14": {
+			"adjacentTo": [
+				"45,13",
+				"45,15",
+				"44,14"
+			],
+			"type": "path",
+			"column": 14,
+			"row": 45,
+			"cameFrom": "46,14",
+			"distance": 4,
+			"goesTo": [
+				"44,14"
 			]
 		},
 		"45,15": {
@@ -215,9 +292,24 @@
 			"column": 15,
 			"row": 45,
 			"cameFrom": "46,15",
-			"distance": 2,
+			"distance": 5,
 			"goesTo": [
 				"44,15"
+			]
+		},
+		"44,14": {
+			"adjacentTo": [
+				"44,13",
+				"44,15",
+				"43,14"
+			],
+			"type": "path",
+			"column": 14,
+			"row": 44,
+			"cameFrom": "45,14",
+			"distance": 5,
+			"goesTo": [
+				"44,13"
 			]
 		},
 		"44,15": {
@@ -230,174 +322,714 @@
 			"column": 15,
 			"row": 44,
 			"cameFrom": "45,15",
-			"distance": 3,
-			"goesTo": [
-				"43,15"
-			]
-		},
-		"43,15": {
-			"adjacentTo": [
-				"43,14",
-				"43,16",
-				"42,15"
-			],
-			"type": "path",
-			"column": 15,
-			"row": 43,
-			"cameFrom": "44,15",
-			"distance": 4,
-			"goesTo": [
-				"42,15"
-			]
-		},
-		"42,15": {
-			"adjacentTo": [
-				"42,14",
-				"42,16",
-				"41,15"
-			],
-			"type": "path",
-			"column": 15,
-			"row": 42,
-			"cameFrom": "43,15",
-			"distance": 5,
-			"goesTo": [
-				"41,15"
-			]
-		},
-		"41,15": {
-			"adjacentTo": [
-				"41,14",
-				"41,16",
-				"40,15"
-			],
-			"type": "path",
-			"column": 15,
-			"row": 41,
-			"cameFrom": "42,15",
 			"distance": 6,
 			"goesTo": [
-				"40,15"
+				"44,16"
 			]
 		},
-		"40,15": {
+		"44,13": {
 			"adjacentTo": [
-				"40,14",
-				"40,16",
-				"39,15"
+				"44,12",
+				"44,14",
+				"43,13"
 			],
 			"type": "path",
-			"column": 15,
-			"row": 40,
-			"cameFrom": "41,15",
+			"column": 13,
+			"row": 44,
+			"cameFrom": "44,14",
+			"distance": 6,
+			"goesTo": [
+				"44,12"
+			]
+		},
+		"44,16": {
+			"adjacentTo": [
+				"44,15",
+				"44,17",
+				"43,16"
+			],
+			"type": "path",
+			"column": 16,
+			"row": 44,
+			"cameFrom": "44,15",
 			"distance": 7,
 			"goesTo": [
-				"39,15"
+				"44,17"
 			]
 		},
-		"39,15": {
+		"44,12": {
 			"adjacentTo": [
-				"39,14",
-				"39,16",
-				"38,15"
+				"44,11",
+				"44,13",
+				"43,12"
 			],
 			"type": "path",
-			"column": 15,
-			"row": 39,
-			"cameFrom": "40,15",
+			"column": 12,
+			"row": 44,
+			"cameFrom": "44,13",
+			"distance": 7,
+			"goesTo": [
+				"44,11"
+			]
+		},
+		"44,17": {
+			"adjacentTo": [
+				"44,16",
+				"44,18",
+				"43,17"
+			],
+			"type": "path",
+			"column": 17,
+			"row": 44,
+			"cameFrom": "44,16",
 			"distance": 8,
 			"goesTo": [
-				"38,15"
+				"44,18"
 			]
 		},
-		"38,15": {
+		"44,11": {
 			"adjacentTo": [
-				"38,14",
-				"38,16",
-				"37,15"
+				"44,10",
+				"44,12",
+				"43,11"
 			],
 			"type": "path",
-			"column": 15,
-			"row": 38,
-			"cameFrom": "39,15",
+			"column": 11,
+			"row": 44,
+			"cameFrom": "44,12",
+			"distance": 8,
+			"goesTo": [
+				"44,10"
+			]
+		},
+		"44,18": {
+			"adjacentTo": [
+				"44,17",
+				"44,19",
+				"43,18"
+			],
+			"type": "path",
+			"column": 18,
+			"row": 44,
+			"cameFrom": "44,17",
 			"distance": 9,
 			"goesTo": [
-				"37,15"
+				"44,19"
 			]
 		},
-		"37,15": {
+		"44,10": {
 			"adjacentTo": [
-				"37,14",
-				"37,16",
-				"36,15"
+				"44,9",
+				"44,11",
+				"43,10"
 			],
 			"type": "path",
-			"column": 15,
-			"row": 37,
-			"cameFrom": "38,15",
+			"column": 10,
+			"row": 44,
+			"cameFrom": "44,11",
+			"distance": 9,
+			"goesTo": [
+				"44,9"
+			]
+		},
+		"44,19": {
+			"adjacentTo": [
+				"44,18",
+				"44,20",
+				"43,19"
+			],
+			"type": "path",
+			"column": 19,
+			"row": 44,
+			"cameFrom": "44,18",
 			"distance": 10,
 			"goesTo": [
-				"36,15"
+				"44,20"
 			]
 		},
-		"36,15": {
+		"44,9": {
 			"adjacentTo": [
-				"36,14",
-				"36,16",
-				"35,15"
+				"44,8",
+				"44,10",
+				"43,9"
 			],
 			"type": "path",
-			"column": 15,
-			"row": 36,
-			"cameFrom": "37,15",
+			"column": 9,
+			"row": 44,
+			"cameFrom": "44,10",
+			"distance": 10,
+			"goesTo": [
+				"44,8"
+			]
+		},
+		"44,20": {
+			"adjacentTo": [
+				"44,19",
+				"44,21",
+				"43,20"
+			],
+			"type": "path",
+			"column": 20,
+			"row": 44,
+			"cameFrom": "44,19",
 			"distance": 11,
 			"goesTo": [
-				"35,15"
+				"44,21"
 			]
 		},
-		"35,15": {
+		"44,8": {
 			"adjacentTo": [
-				"35,14",
-				"35,16",
-				"34,15"
+				"44,7",
+				"44,9",
+				"43,8"
 			],
 			"type": "path",
-			"column": 15,
-			"row": 35,
-			"cameFrom": "36,15",
+			"column": 8,
+			"row": 44,
+			"cameFrom": "44,9",
+			"distance": 11,
+			"goesTo": [
+				"44,7"
+			]
+		},
+		"44,21": {
+			"adjacentTo": [
+				"44,20",
+				"44,22",
+				"43,21"
+			],
+			"type": "path",
+			"column": 21,
+			"row": 44,
+			"cameFrom": "44,20",
 			"distance": 12,
 			"goesTo": [
-				"34,15"
+				"44,22"
 			]
 		},
-		"34,15": {
+		"44,7": {
 			"adjacentTo": [
-				"34,14",
-				"34,16",
-				"33,15"
+				"44,6",
+				"44,8",
+				"43,7"
 			],
 			"type": "path",
-			"column": 15,
-			"row": 34,
-			"cameFrom": "35,15",
+			"column": 7,
+			"row": 44,
+			"cameFrom": "44,8",
+			"distance": 12,
+			"goesTo": [
+				"43,7"
+			]
+		},
+		"44,22": {
+			"adjacentTo": [
+				"44,21",
+				"44,23",
+				"43,22"
+			],
+			"type": "path",
+			"column": 22,
+			"row": 44,
+			"cameFrom": "44,21",
 			"distance": 13,
 			"goesTo": [
-				"33,15"
+				"43,22"
 			]
 		},
-		"33,15": {
+		"43,7": {
 			"adjacentTo": [
-				"33,14",
-				"33,16",
-				"32,15"
+				"43,6",
+				"43,8",
+				"42,7"
 			],
 			"type": "path",
-			"column": 15,
-			"row": 33,
-			"cameFrom": "34,15",
+			"column": 7,
+			"row": 43,
+			"cameFrom": "44,7",
+			"distance": 13,
+			"goesTo": [
+				"42,7"
+			]
+		},
+		"43,22": {
+			"adjacentTo": [
+				"43,21",
+				"43,23",
+				"42,22"
+			],
+			"type": "path",
+			"column": 22,
+			"row": 43,
+			"cameFrom": "44,22",
 			"distance": 14,
 			"goesTo": [
+				"42,22"
+			]
+		},
+		"42,7": {
+			"adjacentTo": [
+				"42,6",
+				"42,8",
+				"41,7"
+			],
+			"type": "path",
+			"column": 7,
+			"row": 42,
+			"cameFrom": "43,7",
+			"distance": 14,
+			"goesTo": [
+				"41,7"
+			]
+		},
+		"42,22": {
+			"adjacentTo": [
+				"42,21",
+				"42,23",
+				"41,22"
+			],
+			"type": "path",
+			"column": 22,
+			"row": 42,
+			"cameFrom": "43,22",
+			"distance": 15,
+			"goesTo": [
+				"41,22"
+			]
+		},
+		"41,7": {
+			"adjacentTo": [
+				"41,6",
+				"41,8",
+				"40,7"
+			],
+			"type": "path",
+			"column": 7,
+			"row": 41,
+			"cameFrom": "42,7",
+			"distance": 15,
+			"goesTo": [
+				"40,7"
+			]
+		},
+		"41,22": {
+			"adjacentTo": [
+				"41,21",
+				"41,23",
+				"40,22"
+			],
+			"type": "path",
+			"column": 22,
+			"row": 41,
+			"cameFrom": "42,22",
+			"distance": 16,
+			"goesTo": [
+				"40,22"
+			]
+		},
+		"40,7": {
+			"adjacentTo": [
+				"40,6",
+				"40,8",
+				"39,7"
+			],
+			"type": "path",
+			"column": 7,
+			"row": 40,
+			"cameFrom": "41,7",
+			"distance": 16,
+			"goesTo": [
+				"39,7"
+			]
+		},
+		"40,22": {
+			"adjacentTo": [
+				"40,21",
+				"40,23",
+				"39,22"
+			],
+			"type": "path",
+			"column": 22,
+			"row": 40,
+			"cameFrom": "41,22",
+			"distance": 17,
+			"goesTo": [
+				"39,22"
+			]
+		},
+		"39,7": {
+			"adjacentTo": [
+				"39,6",
+				"39,8",
+				"38,7"
+			],
+			"type": "path",
+			"column": 7,
+			"row": 39,
+			"cameFrom": "40,7",
+			"distance": 17,
+			"goesTo": [
+				"38,7"
+			]
+		},
+		"39,22": {
+			"adjacentTo": [
+				"39,21",
+				"39,23",
+				"38,22"
+			],
+			"type": "path",
+			"column": 22,
+			"row": 39,
+			"cameFrom": "40,22",
+			"distance": 18,
+			"goesTo": [
+				"38,22"
+			]
+		},
+		"38,7": {
+			"adjacentTo": [
+				"38,6",
+				"38,8",
+				"37,7"
+			],
+			"type": "path",
+			"column": 7,
+			"row": 38,
+			"cameFrom": "39,7",
+			"distance": 18,
+			"goesTo": [
+				"38,8"
+			]
+		},
+		"38,22": {
+			"adjacentTo": [
+				"38,21",
+				"38,23",
+				"37,22"
+			],
+			"type": "path",
+			"column": 22,
+			"row": 38,
+			"cameFrom": "39,22",
+			"distance": 19,
+			"goesTo": [
+				"38,21"
+			]
+		},
+		"38,8": {
+			"adjacentTo": [
+				"38,7",
+				"38,9",
+				"37,8"
+			],
+			"type": "path",
+			"column": 8,
+			"row": 38,
+			"cameFrom": "38,7",
+			"distance": 19,
+			"goesTo": [
+				"38,9"
+			]
+		},
+		"38,21": {
+			"adjacentTo": [
+				"38,20",
+				"38,22",
+				"37,21"
+			],
+			"type": "path",
+			"column": 21,
+			"row": 38,
+			"cameFrom": "38,22",
+			"distance": 20,
+			"goesTo": [
+				"38,20"
+			]
+		},
+		"38,9": {
+			"adjacentTo": [
+				"38,8",
+				"38,10",
+				"37,9"
+			],
+			"type": "path",
+			"column": 9,
+			"row": 38,
+			"cameFrom": "38,8",
+			"distance": 20,
+			"goesTo": [
+				"38,10"
+			]
+		},
+		"38,20": {
+			"adjacentTo": [
+				"38,19",
+				"38,21",
+				"37,20"
+			],
+			"type": "path",
+			"column": 20,
+			"row": 38,
+			"cameFrom": "38,21",
+			"distance": 21,
+			"goesTo": [
+				"38,19"
+			]
+		},
+		"38,10": {
+			"adjacentTo": [
+				"38,9",
+				"38,11",
+				"37,10"
+			],
+			"type": "path",
+			"column": 10,
+			"row": 38,
+			"cameFrom": "38,9",
+			"distance": 21,
+			"goesTo": [
+				"38,11"
+			]
+		},
+		"38,19": {
+			"adjacentTo": [
+				"38,18",
+				"38,20",
+				"37,19"
+			],
+			"type": "path",
+			"column": 19,
+			"row": 38,
+			"cameFrom": "38,20",
+			"distance": 22,
+			"goesTo": [
+				"38,18"
+			]
+		},
+		"38,11": {
+			"adjacentTo": [
+				"38,10",
+				"38,12",
+				"37,11"
+			],
+			"type": "path",
+			"column": 11,
+			"row": 38,
+			"cameFrom": "38,10",
+			"distance": 22,
+			"goesTo": [
+				"38,12"
+			]
+		},
+		"38,18": {
+			"adjacentTo": [
+				"38,17",
+				"38,19",
+				"37,18"
+			],
+			"type": "path",
+			"column": 18,
+			"row": 38,
+			"cameFrom": "38,19",
+			"distance": 23,
+			"goesTo": [
+				"38,17"
+			]
+		},
+		"38,12": {
+			"adjacentTo": [
+				"38,11",
+				"38,13",
+				"37,12"
+			],
+			"type": "path",
+			"column": 12,
+			"row": 38,
+			"cameFrom": "38,11",
+			"distance": 23,
+			"goesTo": [
+				"38,13"
+			]
+		},
+		"38,17": {
+			"adjacentTo": [
+				"38,16",
+				"38,18",
+				"37,17"
+			],
+			"type": "path",
+			"column": 17,
+			"row": 38,
+			"cameFrom": "38,18",
+			"distance": 24,
+			"goesTo": [
+				"38,16"
+			]
+		},
+		"38,13": {
+			"adjacentTo": [
+				"38,12",
+				"38,14",
+				"37,13"
+			],
+			"type": "path",
+			"column": 13,
+			"row": 38,
+			"cameFrom": "38,12",
+			"distance": 24,
+			"goesTo": [
+				"37,13"
+			]
+		},
+		"38,16": {
+			"adjacentTo": [
+				"38,15",
+				"38,17",
+				"37,16"
+			],
+			"type": "path",
+			"column": 16,
+			"row": 38,
+			"cameFrom": "38,17",
+			"distance": 25,
+			"goesTo": [
+				"37,16"
+			]
+		},
+		"37,13": {
+			"adjacentTo": [
+				"37,12",
+				"37,14",
+				"36,13"
+			],
+			"type": "path",
+			"column": 13,
+			"row": 37,
+			"cameFrom": "38,13",
+			"distance": 25,
+			"goesTo": [
+				"36,13"
+			]
+		},
+		"37,16": {
+			"adjacentTo": [
+				"37,15",
+				"37,17",
+				"36,16"
+			],
+			"type": "path",
+			"column": 16,
+			"row": 37,
+			"cameFrom": "38,16",
+			"distance": 26,
+			"goesTo": [
+				"36,16"
+			]
+		},
+		"36,13": {
+			"adjacentTo": [
+				"36,12",
+				"36,14",
+				"35,13"
+			],
+			"type": "path",
+			"column": 13,
+			"row": 36,
+			"cameFrom": "37,13",
+			"distance": 26,
+			"goesTo": [
+				"35,13"
+			]
+		},
+		"36,16": {
+			"adjacentTo": [
+				"36,15",
+				"36,17",
+				"35,16"
+			],
+			"type": "path",
+			"column": 16,
+			"row": 36,
+			"cameFrom": "37,16",
+			"distance": 27,
+			"goesTo": [
+				"35,16"
+			]
+		},
+		"35,13": {
+			"adjacentTo": [
+				"35,12",
+				"35,14",
+				"34,13"
+			],
+			"type": "path",
+			"column": 13,
+			"row": 35,
+			"cameFrom": "36,13",
+			"distance": 27,
+			"goesTo": [
+				"34,13"
+			]
+		},
+		"35,16": {
+			"adjacentTo": [
+				"35,15",
+				"35,17",
+				"34,16"
+			],
+			"type": "path",
+			"column": 16,
+			"row": 35,
+			"cameFrom": "36,16",
+			"distance": 28,
+			"goesTo": [
+				"34,16"
+			]
+		},
+		"34,13": {
+			"adjacentTo": [
+				"34,12",
+				"34,14",
+				"33,13"
+			],
+			"type": "path",
+			"column": 13,
+			"row": 34,
+			"cameFrom": "35,13",
+			"distance": 28,
+			"goesTo": [
+				"33,13"
+			]
+		},
+		"34,16": {
+			"adjacentTo": [
+				"34,15",
+				"34,17",
 				"33,16"
+			],
+			"type": "path",
+			"column": 16,
+			"row": 34,
+			"cameFrom": "35,16",
+			"distance": 29,
+			"goesTo": [
+				"33,16"
+			]
+		},
+		"33,13": {
+			"adjacentTo": [
+				"33,12",
+				"33,14",
+				"32,13"
+			],
+			"type": "path",
+			"column": 13,
+			"row": 33,
+			"cameFrom": "34,13",
+			"distance": 29,
+			"goesTo": [
+				"32,13"
 			]
 		},
 		"33,16": {
@@ -409,145 +1041,295 @@
 			"type": "path",
 			"column": 16,
 			"row": 33,
-			"cameFrom": "33,15",
-			"distance": 15,
+			"cameFrom": "34,16",
+			"distance": 30,
 			"goesTo": [
-				"33,17"
+				"32,16"
 			]
 		},
-		"33,17": {
+		"32,13": {
 			"adjacentTo": [
-				"33,16",
-				"33,18",
-				"32,17"
+				"32,12",
+				"32,14",
+				"31,13"
+			],
+			"type": "path",
+			"column": 13,
+			"row": 32,
+			"cameFrom": "33,13",
+			"distance": 30,
+			"goesTo": [
+				"31,13"
+			]
+		},
+		"32,16": {
+			"adjacentTo": [
+				"32,15",
+				"32,17",
+				"31,16"
+			],
+			"type": "path",
+			"column": 16,
+			"row": 32,
+			"cameFrom": "33,16",
+			"distance": 31,
+			"goesTo": [
+				"31,16"
+			]
+		},
+		"31,13": {
+			"adjacentTo": [
+				"31,12",
+				"31,14",
+				"30,13"
+			],
+			"type": "path",
+			"column": 13,
+			"row": 31,
+			"cameFrom": "32,13",
+			"distance": 31,
+			"goesTo": [
+				"30,13"
+			]
+		},
+		"31,16": {
+			"adjacentTo": [
+				"31,15",
+				"31,17",
+				"30,16"
+			],
+			"type": "path",
+			"column": 16,
+			"row": 31,
+			"cameFrom": "32,16",
+			"distance": 32,
+			"goesTo": [
+				"30,16"
+			]
+		},
+		"30,13": {
+			"adjacentTo": [
+				"30,12",
+				"30,14",
+				"29,13"
+			],
+			"type": "path",
+			"column": 13,
+			"row": 30,
+			"cameFrom": "31,13",
+			"distance": 32,
+			"goesTo": [
+				"30,12"
+			]
+		},
+		"30,16": {
+			"adjacentTo": [
+				"30,15",
+				"30,17",
+				"29,16"
+			],
+			"type": "path",
+			"column": 16,
+			"row": 30,
+			"cameFrom": "31,16",
+			"distance": 33,
+			"goesTo": [
+				"30,17"
+			]
+		},
+		"30,12": {
+			"adjacentTo": [
+				"30,11",
+				"30,13",
+				"29,12"
+			],
+			"type": "path",
+			"column": 12,
+			"row": 30,
+			"cameFrom": "30,13",
+			"distance": 33,
+			"goesTo": [
+				"30,11"
+			]
+		},
+		"30,17": {
+			"adjacentTo": [
+				"30,16",
+				"30,18",
+				"29,17"
 			],
 			"type": "path",
 			"column": 17,
-			"row": 33,
-			"cameFrom": "33,16",
-			"distance": 16,
+			"row": 30,
+			"cameFrom": "30,16",
+			"distance": 34,
 			"goesTo": [
-				"33,18"
+				"30,18"
 			]
 		},
-		"33,18": {
+		"30,11": {
 			"adjacentTo": [
-				"33,17",
-				"33,19",
-				"32,18"
+				"30,10",
+				"30,12",
+				"29,11"
+			],
+			"type": "path",
+			"column": 11,
+			"row": 30,
+			"cameFrom": "30,12",
+			"distance": 34,
+			"goesTo": [
+				"30,10"
+			]
+		},
+		"30,18": {
+			"adjacentTo": [
+				"30,17",
+				"30,19",
+				"29,18"
 			],
 			"type": "path",
 			"column": 18,
-			"row": 33,
-			"cameFrom": "33,17",
-			"distance": 17,
+			"row": 30,
+			"cameFrom": "30,17",
+			"distance": 35,
 			"goesTo": [
-				"33,19"
+				"30,19"
 			]
 		},
-		"33,19": {
+		"30,10": {
 			"adjacentTo": [
-				"33,18",
-				"33,20",
-				"32,19"
+				"30,9",
+				"30,11",
+				"29,10"
+			],
+			"type": "path",
+			"column": 10,
+			"row": 30,
+			"cameFrom": "30,11",
+			"distance": 35,
+			"goesTo": [
+				"30,9"
+			]
+		},
+		"30,19": {
+			"adjacentTo": [
+				"30,18",
+				"30,20",
+				"29,19"
 			],
 			"type": "path",
 			"column": 19,
-			"row": 33,
-			"cameFrom": "33,18",
-			"distance": 18,
+			"row": 30,
+			"cameFrom": "30,18",
+			"distance": 36,
 			"goesTo": [
-				"33,20"
+				"30,20"
 			]
 		},
-		"33,20": {
+		"30,9": {
 			"adjacentTo": [
-				"33,19",
-				"33,21",
-				"32,20"
+				"30,8",
+				"30,10",
+				"29,9"
+			],
+			"type": "path",
+			"column": 9,
+			"row": 30,
+			"cameFrom": "30,10",
+			"distance": 36,
+			"goesTo": [
+				"30,8"
+			]
+		},
+		"30,20": {
+			"adjacentTo": [
+				"30,19",
+				"30,21",
+				"29,20"
 			],
 			"type": "path",
 			"column": 20,
-			"row": 33,
-			"cameFrom": "33,19",
-			"distance": 19,
+			"row": 30,
+			"cameFrom": "30,19",
+			"distance": 37,
 			"goesTo": [
-				"33,21"
+				"30,21"
 			]
 		},
-		"33,21": {
+		"30,8": {
 			"adjacentTo": [
-				"33,20",
-				"33,22",
-				"32,21"
+				"30,7",
+				"30,9",
+				"29,8"
+			],
+			"type": "path",
+			"column": 8,
+			"row": 30,
+			"cameFrom": "30,9",
+			"distance": 37,
+			"goesTo": [
+				"30,7"
+			]
+		},
+		"30,21": {
+			"adjacentTo": [
+				"30,20",
+				"30,22",
+				"29,21"
 			],
 			"type": "path",
 			"column": 21,
-			"row": 33,
-			"cameFrom": "33,20",
-			"distance": 20,
+			"row": 30,
+			"cameFrom": "30,20",
+			"distance": 38,
 			"goesTo": [
-				"33,22"
+				"30,22"
 			]
 		},
-		"33,22": {
+		"30,7": {
 			"adjacentTo": [
-				"33,21",
-				"33,23",
-				"32,22"
+				"30,6",
+				"30,8",
+				"29,7"
+			],
+			"type": "path",
+			"column": 7,
+			"row": 30,
+			"cameFrom": "30,8",
+			"distance": 38,
+			"goesTo": [
+				"30,6"
+			]
+		},
+		"30,22": {
+			"adjacentTo": [
+				"30,21",
+				"30,23",
+				"29,22"
 			],
 			"type": "path",
 			"column": 22,
-			"row": 33,
-			"cameFrom": "33,21",
-			"distance": 21,
-			"goesTo": [
-				"33,23"
-			]
-		},
-		"33,23": {
-			"adjacentTo": [
-				"33,22",
-				"33,24",
-				"32,23"
-			],
-			"type": "path",
-			"column": 23,
-			"row": 33,
-			"cameFrom": "33,22",
-			"distance": 22,
-			"goesTo": [
-				"32,23"
-			]
-		},
-		"32,23": {
-			"adjacentTo": [
-				"32,22",
-				"32,24",
-				"31,23"
-			],
-			"type": "path",
-			"column": 23,
-			"row": 32,
-			"cameFrom": "33,23",
-			"distance": 23,
-			"goesTo": [
-				"31,23"
-			]
-		},
-		"31,23": {
-			"adjacentTo": [
-				"31,22",
-				"31,24",
-				"30,23"
-			],
-			"type": "path",
-			"column": 23,
-			"row": 31,
-			"cameFrom": "32,23",
-			"distance": 24,
+			"row": 30,
+			"cameFrom": "30,21",
+			"distance": 39,
 			"goesTo": [
 				"30,23"
+			]
+		},
+		"30,6": {
+			"adjacentTo": [
+				"30,5",
+				"30,7",
+				"29,6"
+			],
+			"type": "path",
+			"column": 6,
+			"row": 30,
+			"cameFrom": "30,7",
+			"distance": 39,
+			"goesTo": [
+				"30,5"
 			]
 		},
 		"30,23": {
@@ -559,89 +1341,246 @@
 			"type": "path",
 			"column": 23,
 			"row": 30,
-			"cameFrom": "31,23",
-			"distance": 25,
+			"cameFrom": "30,22",
+			"distance": 40,
 			"goesTo": [
-				"29,23"
+				"30,24"
 			]
 		},
-		"29,23": {
+		"30,5": {
 			"adjacentTo": [
-				"29,22",
-				"29,24",
-				"28,23"
+				"30,4",
+				"30,6",
+				"29,5"
 			],
 			"type": "path",
-			"column": 23,
-			"row": 29,
+			"column": 5,
+			"row": 30,
+			"cameFrom": "30,6",
+			"distance": 40,
+			"goesTo": [
+				"29,5"
+			]
+		},
+		"30,24": {
+			"adjacentTo": [
+				"30,23",
+				"30,25",
+				"29,24"
+			],
+			"type": "path",
+			"column": 24,
+			"row": 30,
 			"cameFrom": "30,23",
-			"distance": 26,
+			"distance": 41,
 			"goesTo": [
-				"28,23"
+				"29,24"
 			]
 		},
-		"28,23": {
+		"29,5": {
 			"adjacentTo": [
-				"28,22",
-				"28,24",
-				"27,23",
-				"29,23"
+				"29,4",
+				"29,6",
+				"28,5"
 			],
 			"type": "path",
-			"column": 23,
+			"column": 5,
+			"row": 29,
+			"cameFrom": "30,5",
+			"distance": 41,
+			"goesTo": [
+				"28,5"
+			]
+		},
+		"29,24": {
+			"adjacentTo": [
+				"29,23",
+				"29,25",
+				"28,24"
+			],
+			"type": "path",
+			"column": 24,
+			"row": 29,
+			"cameFrom": "30,24",
+			"distance": 42,
+			"goesTo": [
+				"28,24"
+			]
+		},
+		"28,5": {
+			"adjacentTo": [
+				"28,4",
+				"28,6",
+				"27,5",
+				"29,5"
+			],
+			"type": "path",
+			"column": 5,
 			"row": 28,
-			"cameFrom": "29,23",
-			"distance": 27,
+			"cameFrom": "29,5",
+			"distance": 42,
 			"goesTo": [
-				"27,23"
+				"27,5"
 			]
 		},
-		"27,23": {
+		"28,24": {
 			"adjacentTo": [
-				"27,22",
+				"28,23",
+				"28,25",
 				"27,24",
-				"26,23",
-				"28,23"
+				"29,24"
 			],
 			"type": "path",
-			"column": 23,
+			"column": 24,
+			"row": 28,
+			"cameFrom": "29,24",
+			"distance": 43,
+			"goesTo": [
+				"27,24"
+			]
+		},
+		"27,5": {
+			"adjacentTo": [
+				"27,4",
+				"27,6",
+				"26,5",
+				"28,5"
+			],
+			"type": "path",
+			"column": 5,
 			"row": 27,
-			"cameFrom": "28,23",
-			"distance": 28,
+			"cameFrom": "28,5",
+			"distance": 43,
 			"goesTo": [
-				"26,23"
+				"26,5"
 			]
 		},
-		"26,23": {
+		"27,24": {
 			"adjacentTo": [
-				"26,22",
+				"27,23",
+				"27,25",
 				"26,24",
-				"25,23",
-				"27,23"
+				"28,24"
 			],
 			"type": "path",
-			"column": 23,
-			"row": 26,
-			"cameFrom": "27,23",
-			"distance": 29,
+			"column": 24,
+			"row": 27,
+			"cameFrom": "28,24",
+			"distance": 44,
 			"goesTo": [
-				"25,23"
+				"26,24"
 			]
 		},
-		"25,23": {
+		"26,5": {
 			"adjacentTo": [
-				"25,22",
-				"25,24",
-				"24,23",
-				"26,23"
+				"26,4",
+				"26,6",
+				"25,5",
+				"27,5"
 			],
 			"type": "path",
-			"column": 23,
+			"column": 5,
+			"row": 26,
+			"cameFrom": "27,5",
+			"distance": 44,
+			"goesTo": [
+				"25,5"
+			]
+		},
+		"26,24": {
+			"adjacentTo": [
+				"26,23",
+				"26,25",
+				"25,24",
+				"27,24"
+			],
+			"type": "path",
+			"column": 24,
+			"row": 26,
+			"cameFrom": "27,24",
+			"distance": 45,
+			"goesTo": [
+				"25,24"
+			]
+		},
+		"25,5": {
+			"adjacentTo": [
+				"25,4",
+				"25,6",
+				"24,5",
+				"26,5"
+			],
+			"type": "path",
+			"column": 5,
 			"row": 25,
-			"cameFrom": "26,23",
-			"distance": 30,
+			"cameFrom": "26,5",
+			"distance": 45,
+			"goesTo": [
+				"24,5"
+			]
+		},
+		"25,24": {
+			"adjacentTo": [
+				"25,23",
+				"25,25",
+				"24,24",
+				"26,24"
+			],
+			"type": "path",
+			"column": 24,
+			"row": 25,
+			"cameFrom": "26,24",
+			"distance": 46,
+			"goesTo": [
+				"24,24"
+			]
+		},
+		"24,5": {
+			"adjacentTo": [
+				"24,4",
+				"24,6",
+				"23,5",
+				"25,5"
+			],
+			"type": "path",
+			"column": 5,
+			"row": 24,
+			"cameFrom": "25,5",
+			"distance": 46,
+			"goesTo": [
+				"24,6"
+			]
+		},
+		"24,24": {
+			"adjacentTo": [
+				"24,23",
+				"24,25",
+				"23,24",
+				"25,24"
+			],
+			"type": "path",
+			"column": 24,
+			"row": 24,
+			"cameFrom": "25,24",
+			"distance": 47,
 			"goesTo": [
 				"24,23"
+			]
+		},
+		"24,6": {
+			"adjacentTo": [
+				"24,5",
+				"24,7",
+				"23,6",
+				"25,6"
+			],
+			"type": "path",
+			"column": 6,
+			"row": 24,
+			"cameFrom": "24,5",
+			"distance": 47,
+			"goesTo": [
+				"24,7"
 			]
 		},
 		"24,23": {
@@ -654,170 +1593,234 @@
 			"type": "path",
 			"column": 23,
 			"row": 24,
-			"cameFrom": "25,23",
-			"distance": 31,
+			"cameFrom": "24,24",
+			"distance": 48,
 			"goesTo": [
-				"23,23"
+				"24,22"
 			]
 		},
-		"23,23": {
+		"24,7": {
 			"adjacentTo": [
-				"23,22",
-				"23,24",
-				"22,23",
-				"24,23"
+				"24,6",
+				"24,8",
+				"23,7",
+				"25,7"
 			],
 			"type": "path",
-			"column": 23,
-			"row": 23,
-			"cameFrom": "24,23",
-			"distance": 32,
+			"column": 7,
+			"row": 24,
+			"cameFrom": "24,6",
+			"distance": 48,
 			"goesTo": [
-				"23,22"
+				"24,8"
 			]
 		},
-		"23,22": {
+		"24,22": {
 			"adjacentTo": [
-				"23,21",
-				"23,23",
-				"22,22",
-				"24,22"
+				"24,21",
+				"24,23",
+				"23,22",
+				"25,22"
 			],
 			"type": "path",
 			"column": 22,
-			"row": 23,
-			"cameFrom": "23,23",
-			"distance": 33,
+			"row": 24,
+			"cameFrom": "24,23",
+			"distance": 49,
 			"goesTo": [
-				"23,21"
+				"24,21"
 			]
 		},
-		"23,21": {
+		"24,8": {
 			"adjacentTo": [
-				"23,20",
-				"23,22",
-				"22,21",
-				"24,21"
+				"24,7",
+				"24,9",
+				"23,8",
+				"25,8"
+			],
+			"type": "path",
+			"column": 8,
+			"row": 24,
+			"cameFrom": "24,7",
+			"distance": 49,
+			"goesTo": [
+				"24,9"
+			]
+		},
+		"24,21": {
+			"adjacentTo": [
+				"24,20",
+				"24,22",
+				"23,21",
+				"25,21"
 			],
 			"type": "path",
 			"column": 21,
-			"row": 23,
-			"cameFrom": "23,22",
-			"distance": 34,
+			"row": 24,
+			"cameFrom": "24,22",
+			"distance": 50,
 			"goesTo": [
-				"23,20"
+				"24,20"
 			]
 		},
-		"23,20": {
+		"24,9": {
 			"adjacentTo": [
-				"23,19",
-				"23,21",
-				"22,20",
-				"24,20"
+				"24,8",
+				"24,10",
+				"23,9",
+				"25,9"
+			],
+			"type": "path",
+			"column": 9,
+			"row": 24,
+			"cameFrom": "24,8",
+			"distance": 50,
+			"goesTo": [
+				"24,10"
+			]
+		},
+		"24,20": {
+			"adjacentTo": [
+				"24,19",
+				"24,21",
+				"23,20",
+				"25,20"
 			],
 			"type": "path",
 			"column": 20,
-			"row": 23,
-			"cameFrom": "23,21",
-			"distance": 35,
+			"row": 24,
+			"cameFrom": "24,21",
+			"distance": 51,
 			"goesTo": [
-				"23,19"
+				"24,19"
 			]
 		},
-		"23,19": {
+		"24,10": {
 			"adjacentTo": [
-				"23,18",
-				"23,20",
-				"22,19",
-				"24,19"
+				"24,9",
+				"24,11",
+				"23,10",
+				"25,10"
+			],
+			"type": "path",
+			"column": 10,
+			"row": 24,
+			"cameFrom": "24,9",
+			"distance": 51,
+			"goesTo": [
+				"24,11"
+			]
+		},
+		"24,19": {
+			"adjacentTo": [
+				"24,18",
+				"24,20",
+				"23,19",
+				"25,19"
 			],
 			"type": "path",
 			"column": 19,
-			"row": 23,
-			"cameFrom": "23,20",
-			"distance": 36,
+			"row": 24,
+			"cameFrom": "24,20",
+			"distance": 52,
 			"goesTo": [
-				"23,18"
+				"24,18"
 			]
 		},
-		"23,18": {
+		"24,11": {
 			"adjacentTo": [
-				"23,17",
-				"23,19",
-				"22,18",
-				"24,18"
+				"24,10",
+				"24,12",
+				"23,11",
+				"25,11"
+			],
+			"type": "path",
+			"column": 11,
+			"row": 24,
+			"cameFrom": "24,10",
+			"distance": 52,
+			"goesTo": [
+				"24,12"
+			]
+		},
+		"24,18": {
+			"adjacentTo": [
+				"24,17",
+				"24,19",
+				"23,18",
+				"25,18"
 			],
 			"type": "path",
 			"column": 18,
-			"row": 23,
-			"cameFrom": "23,19",
-			"distance": 37,
+			"row": 24,
+			"cameFrom": "24,19",
+			"distance": 53,
 			"goesTo": [
-				"23,17"
+				"24,17"
 			]
 		},
-		"23,17": {
+		"24,12": {
 			"adjacentTo": [
-				"23,16",
-				"23,18",
-				"22,17",
-				"24,17"
+				"24,11",
+				"24,13",
+				"23,12",
+				"25,12"
+			],
+			"type": "path",
+			"column": 12,
+			"row": 24,
+			"cameFrom": "24,11",
+			"distance": 53,
+			"goesTo": [
+				"24,13"
+			]
+		},
+		"24,17": {
+			"adjacentTo": [
+				"24,16",
+				"24,18",
+				"23,17",
+				"25,17"
 			],
 			"type": "path",
 			"column": 17,
-			"row": 23,
-			"cameFrom": "23,18",
-			"distance": 38,
+			"row": 24,
+			"cameFrom": "24,18",
+			"distance": 54,
 			"goesTo": [
-				"23,16"
+				"24,16"
 			]
 		},
-		"23,16": {
+		"24,13": {
 			"adjacentTo": [
-				"23,15",
-				"23,17",
-				"22,16",
-				"24,16"
+				"24,12",
+				"24,14",
+				"23,13",
+				"25,13"
+			],
+			"type": "path",
+			"column": 13,
+			"row": 24,
+			"cameFrom": "24,12",
+			"distance": 54,
+			"goesTo": [
+				"23,13"
+			]
+		},
+		"24,16": {
+			"adjacentTo": [
+				"24,15",
+				"24,17",
+				"23,16",
+				"25,16"
 			],
 			"type": "path",
 			"column": 16,
-			"row": 23,
-			"cameFrom": "23,17",
-			"distance": 39,
+			"row": 24,
+			"cameFrom": "24,17",
+			"distance": 55,
 			"goesTo": [
-				"23,15"
-			]
-		},
-		"23,15": {
-			"adjacentTo": [
-				"23,14",
-				"23,16",
-				"22,15",
-				"24,15"
-			],
-			"type": "path",
-			"column": 15,
-			"row": 23,
-			"cameFrom": "23,16",
-			"distance": 40,
-			"goesTo": [
-				"23,14"
-			]
-		},
-		"23,14": {
-			"adjacentTo": [
-				"23,13",
-				"23,15",
-				"22,14",
-				"24,14"
-			],
-			"type": "path",
-			"column": 14,
-			"row": 23,
-			"cameFrom": "23,15",
-			"distance": 41,
-			"goesTo": [
-				"23,13"
+				"23,16"
 			]
 		},
 		"23,13": {
@@ -830,234 +1833,474 @@
 			"type": "path",
 			"column": 13,
 			"row": 23,
-			"cameFrom": "23,14",
-			"distance": 42,
+			"cameFrom": "24,13",
+			"distance": 55,
 			"goesTo": [
-				"23,12"
+				"22,13"
 			]
 		},
-		"23,12": {
+		"23,16": {
 			"adjacentTo": [
-				"23,11",
-				"23,13",
+				"23,15",
+				"23,17",
+				"22,16",
+				"24,16"
+			],
+			"type": "path",
+			"column": 16,
+			"row": 23,
+			"cameFrom": "24,16",
+			"distance": 56,
+			"goesTo": [
+				"22,16"
+			]
+		},
+		"22,13": {
+			"adjacentTo": [
 				"22,12",
-				"24,12"
+				"22,14",
+				"21,13",
+				"23,13"
+			],
+			"type": "path",
+			"column": 13,
+			"row": 22,
+			"cameFrom": "23,13",
+			"distance": 56,
+			"goesTo": [
+				"21,13"
+			]
+		},
+		"22,16": {
+			"adjacentTo": [
+				"22,15",
+				"22,17",
+				"21,16",
+				"23,16"
+			],
+			"type": "path",
+			"column": 16,
+			"row": 22,
+			"cameFrom": "23,16",
+			"distance": 57,
+			"goesTo": [
+				"21,16"
+			]
+		},
+		"21,13": {
+			"adjacentTo": [
+				"21,12",
+				"21,14",
+				"20,13",
+				"22,13"
+			],
+			"type": "path",
+			"column": 13,
+			"row": 21,
+			"cameFrom": "22,13",
+			"distance": 57,
+			"goesTo": [
+				"20,13"
+			]
+		},
+		"21,16": {
+			"adjacentTo": [
+				"21,15",
+				"21,17",
+				"20,16",
+				"22,16"
+			],
+			"type": "path",
+			"column": 16,
+			"row": 21,
+			"cameFrom": "22,16",
+			"distance": 58,
+			"goesTo": [
+				"20,16"
+			]
+		},
+		"20,13": {
+			"adjacentTo": [
+				"20,12",
+				"20,14",
+				"19,13",
+				"21,13"
+			],
+			"type": "path",
+			"column": 13,
+			"row": 20,
+			"cameFrom": "21,13",
+			"distance": 58,
+			"goesTo": [
+				"19,13"
+			]
+		},
+		"20,16": {
+			"adjacentTo": [
+				"20,15",
+				"20,17",
+				"19,16",
+				"21,16"
+			],
+			"type": "path",
+			"column": 16,
+			"row": 20,
+			"cameFrom": "21,16",
+			"distance": 59,
+			"goesTo": [
+				"19,16"
+			]
+		},
+		"19,13": {
+			"adjacentTo": [
+				"19,12",
+				"19,14",
+				"18,13",
+				"20,13"
+			],
+			"type": "path",
+			"column": 13,
+			"row": 19,
+			"cameFrom": "20,13",
+			"distance": 59,
+			"goesTo": [
+				"18,13"
+			]
+		},
+		"19,16": {
+			"adjacentTo": [
+				"19,15",
+				"19,17",
+				"18,16",
+				"20,16"
+			],
+			"type": "path",
+			"column": 16,
+			"row": 19,
+			"cameFrom": "20,16",
+			"distance": 60,
+			"goesTo": [
+				"18,16"
+			]
+		},
+		"18,13": {
+			"adjacentTo": [
+				"18,12",
+				"18,14",
+				"17,13",
+				"19,13"
+			],
+			"type": "path",
+			"column": 13,
+			"row": 18,
+			"cameFrom": "19,13",
+			"distance": 60,
+			"goesTo": [
+				"17,13"
+			]
+		},
+		"18,16": {
+			"adjacentTo": [
+				"18,15",
+				"18,17",
+				"17,16",
+				"19,16"
+			],
+			"type": "path",
+			"column": 16,
+			"row": 18,
+			"cameFrom": "19,16",
+			"distance": 61,
+			"goesTo": [
+				"17,16"
+			]
+		},
+		"17,13": {
+			"adjacentTo": [
+				"17,12",
+				"17,14",
+				"16,13",
+				"18,13"
+			],
+			"type": "path",
+			"column": 13,
+			"row": 17,
+			"cameFrom": "18,13",
+			"distance": 61,
+			"goesTo": [
+				"16,13"
+			]
+		},
+		"17,16": {
+			"adjacentTo": [
+				"17,15",
+				"17,17",
+				"16,16",
+				"18,16"
+			],
+			"type": "path",
+			"column": 16,
+			"row": 17,
+			"cameFrom": "18,16",
+			"distance": 62,
+			"goesTo": [
+				"16,16"
+			]
+		},
+		"16,13": {
+			"adjacentTo": [
+				"16,12",
+				"16,14",
+				"15,13",
+				"17,13"
+			],
+			"type": "path",
+			"column": 13,
+			"row": 16,
+			"cameFrom": "17,13",
+			"distance": 62,
+			"goesTo": [
+				"16,12"
+			]
+		},
+		"16,16": {
+			"adjacentTo": [
+				"16,15",
+				"16,17",
+				"15,16",
+				"17,16"
+			],
+			"type": "path",
+			"column": 16,
+			"row": 16,
+			"cameFrom": "17,16",
+			"distance": 63,
+			"goesTo": [
+				"16,17"
+			]
+		},
+		"16,12": {
+			"adjacentTo": [
+				"16,11",
+				"16,13",
+				"15,12",
+				"17,12"
 			],
 			"type": "path",
 			"column": 12,
-			"row": 23,
-			"cameFrom": "23,13",
-			"distance": 43,
+			"row": 16,
+			"cameFrom": "16,13",
+			"distance": 63,
 			"goesTo": [
-				"23,11"
+				"16,11"
 			]
 		},
-		"23,11": {
+		"16,17": {
 			"adjacentTo": [
-				"23,10",
-				"23,12",
-				"22,11",
-				"24,11"
+				"16,16",
+				"16,18",
+				"15,17",
+				"17,17"
+			],
+			"type": "path",
+			"column": 17,
+			"row": 16,
+			"cameFrom": "16,16",
+			"distance": 64,
+			"goesTo": [
+				"16,18"
+			]
+		},
+		"16,11": {
+			"adjacentTo": [
+				"16,10",
+				"16,12",
+				"15,11",
+				"17,11"
 			],
 			"type": "path",
 			"column": 11,
-			"row": 23,
-			"cameFrom": "23,12",
-			"distance": 44,
+			"row": 16,
+			"cameFrom": "16,12",
+			"distance": 64,
 			"goesTo": [
-				"23,10"
+				"16,10"
 			]
 		},
-		"23,10": {
+		"16,18": {
 			"adjacentTo": [
-				"23,9",
-				"23,11",
-				"22,10",
-				"24,10"
+				"16,17",
+				"16,19",
+				"15,18",
+				"17,18"
+			],
+			"type": "path",
+			"column": 18,
+			"row": 16,
+			"cameFrom": "16,17",
+			"distance": 65,
+			"goesTo": [
+				"16,19"
+			]
+		},
+		"16,10": {
+			"adjacentTo": [
+				"16,9",
+				"16,11",
+				"15,10",
+				"17,10"
 			],
 			"type": "path",
 			"column": 10,
-			"row": 23,
-			"cameFrom": "23,11",
-			"distance": 45,
+			"row": 16,
+			"cameFrom": "16,11",
+			"distance": 65,
 			"goesTo": [
-				"23,9"
+				"16,9"
 			]
 		},
-		"23,9": {
+		"16,19": {
 			"adjacentTo": [
-				"23,8",
-				"23,10",
-				"22,9",
-				"24,9"
+				"16,18",
+				"16,20",
+				"15,19",
+				"17,19"
+			],
+			"type": "path",
+			"column": 19,
+			"row": 16,
+			"cameFrom": "16,18",
+			"distance": 66,
+			"goesTo": [
+				"16,20"
+			]
+		},
+		"16,9": {
+			"adjacentTo": [
+				"16,8",
+				"16,10",
+				"15,9",
+				"17,9"
 			],
 			"type": "path",
 			"column": 9,
-			"row": 23,
-			"cameFrom": "23,10",
-			"distance": 46,
+			"row": 16,
+			"cameFrom": "16,10",
+			"distance": 66,
 			"goesTo": [
-				"23,8"
+				"16,8"
 			]
 		},
-		"23,8": {
+		"16,20": {
 			"adjacentTo": [
-				"23,7",
-				"23,9",
-				"22,8",
-				"24,8"
+				"16,19",
+				"16,21",
+				"15,20",
+				"17,20"
+			],
+			"type": "path",
+			"column": 20,
+			"row": 16,
+			"cameFrom": "16,19",
+			"distance": 67,
+			"goesTo": [
+				"16,21"
+			]
+		},
+		"16,8": {
+			"adjacentTo": [
+				"16,7",
+				"16,9",
+				"15,8",
+				"17,8"
 			],
 			"type": "path",
 			"column": 8,
-			"row": 23,
-			"cameFrom": "23,9",
-			"distance": 47,
+			"row": 16,
+			"cameFrom": "16,9",
+			"distance": 67,
 			"goesTo": [
-				"23,7"
+				"16,7"
 			]
 		},
-		"23,7": {
+		"16,21": {
 			"adjacentTo": [
-				"23,6",
-				"23,8",
-				"22,7",
-				"24,7"
+				"16,20",
+				"16,22",
+				"15,21",
+				"17,21"
+			],
+			"type": "path",
+			"column": 21,
+			"row": 16,
+			"cameFrom": "16,20",
+			"distance": 68,
+			"goesTo": [
+				"16,22"
+			]
+		},
+		"16,7": {
+			"adjacentTo": [
+				"16,6",
+				"16,8",
+				"15,7",
+				"17,7"
 			],
 			"type": "path",
 			"column": 7,
-			"row": 23,
-			"cameFrom": "23,8",
-			"distance": 48,
+			"row": 16,
+			"cameFrom": "16,8",
+			"distance": 68,
 			"goesTo": [
-				"23,6"
+				"16,6"
 			]
 		},
-		"23,6": {
+		"16,22": {
 			"adjacentTo": [
-				"23,5",
-				"23,7",
-				"22,6",
-				"24,6"
+				"16,21",
+				"16,23",
+				"15,22",
+				"17,22"
+			],
+			"type": "path",
+			"column": 22,
+			"row": 16,
+			"cameFrom": "16,21",
+			"distance": 69,
+			"goesTo": [
+				"16,23"
+			]
+		},
+		"16,6": {
+			"adjacentTo": [
+				"16,5",
+				"16,7",
+				"15,6",
+				"17,6"
 			],
 			"type": "path",
 			"column": 6,
-			"row": 23,
-			"cameFrom": "23,7",
-			"distance": 49,
-			"goesTo": [
-				"23,5"
-			]
-		},
-		"23,5": {
-			"adjacentTo": [
-				"23,4",
-				"23,6",
-				"22,5",
-				"24,5"
-			],
-			"type": "path",
-			"column": 5,
-			"row": 23,
-			"cameFrom": "23,6",
-			"distance": 50,
-			"goesTo": [
-				"22,5"
-			]
-		},
-		"22,5": {
-			"adjacentTo": [
-				"22,4",
-				"22,6",
-				"21,5",
-				"23,5"
-			],
-			"type": "path",
-			"column": 5,
-			"row": 22,
-			"cameFrom": "23,5",
-			"distance": 51,
-			"goesTo": [
-				"21,5"
-			]
-		},
-		"21,5": {
-			"adjacentTo": [
-				"21,4",
-				"21,6",
-				"20,5",
-				"22,5"
-			],
-			"type": "path",
-			"column": 5,
-			"row": 21,
-			"cameFrom": "22,5",
-			"distance": 52,
-			"goesTo": [
-				"20,5"
-			]
-		},
-		"20,5": {
-			"adjacentTo": [
-				"20,4",
-				"20,6",
-				"19,5",
-				"21,5"
-			],
-			"type": "path",
-			"column": 5,
-			"row": 20,
-			"cameFrom": "21,5",
-			"distance": 53,
-			"goesTo": [
-				"19,5"
-			]
-		},
-		"19,5": {
-			"adjacentTo": [
-				"19,4",
-				"19,6",
-				"18,5",
-				"20,5"
-			],
-			"type": "path",
-			"column": 5,
-			"row": 19,
-			"cameFrom": "20,5",
-			"distance": 54,
-			"goesTo": [
-				"18,5"
-			]
-		},
-		"18,5": {
-			"adjacentTo": [
-				"18,4",
-				"18,6",
-				"17,5",
-				"19,5"
-			],
-			"type": "path",
-			"column": 5,
-			"row": 18,
-			"cameFrom": "19,5",
-			"distance": 55,
-			"goesTo": [
-				"17,5"
-			]
-		},
-		"17,5": {
-			"adjacentTo": [
-				"17,4",
-				"17,6",
-				"16,5",
-				"18,5"
-			],
-			"type": "path",
-			"column": 5,
-			"row": 17,
-			"cameFrom": "18,5",
-			"distance": 56,
+			"row": 16,
+			"cameFrom": "16,7",
+			"distance": 69,
 			"goesTo": [
 				"16,5"
+			]
+		},
+		"16,23": {
+			"adjacentTo": [
+				"16,22",
+				"16,24",
+				"15,23",
+				"17,23"
+			],
+			"type": "path",
+			"column": 23,
+			"row": 16,
+			"cameFrom": "16,22",
+			"distance": 70,
+			"goesTo": [
+				"16,24"
 			]
 		},
 		"16,5": {
@@ -1070,427 +2313,826 @@
 			"type": "path",
 			"column": 5,
 			"row": 16,
-			"cameFrom": "17,5",
-			"distance": 57,
+			"cameFrom": "16,6",
+			"distance": 70,
 			"goesTo": [
-				"15,5"
+				"16,4"
 			]
 		},
-		"15,5": {
+		"16,24": {
 			"adjacentTo": [
+				"16,23",
+				"16,25",
+				"15,24",
+				"17,24"
+			],
+			"type": "path",
+			"column": 24,
+			"row": 16,
+			"cameFrom": "16,23",
+			"distance": 71,
+			"goesTo": [
+				"16,25"
+			]
+		},
+		"16,4": {
+			"adjacentTo": [
+				"16,3",
+				"16,5",
 				"15,4",
-				"15,6",
-				"14,5",
-				"16,5"
+				"17,4"
 			],
 			"type": "path",
-			"column": 5,
-			"row": 15,
+			"column": 4,
+			"row": 16,
 			"cameFrom": "16,5",
-			"distance": 58,
+			"distance": 71,
 			"goesTo": [
-				"14,5"
+				"16,3"
 			]
 		},
-		"14,5": {
+		"16,25": {
 			"adjacentTo": [
+				"16,24",
+				"16,26",
+				"15,25",
+				"17,25"
+			],
+			"type": "path",
+			"column": 25,
+			"row": 16,
+			"cameFrom": "16,24",
+			"distance": 72,
+			"goesTo": [
+				"16,26"
+			]
+		},
+		"16,3": {
+			"adjacentTo": [
+				"16,2",
+				"16,4",
+				"15,3",
+				"17,3"
+			],
+			"type": "path",
+			"column": 3,
+			"row": 16,
+			"cameFrom": "16,4",
+			"distance": 72,
+			"goesTo": [
+				"15,3"
+			]
+		},
+		"16,26": {
+			"adjacentTo": [
+				"16,25",
+				"16,27",
+				"15,26",
+				"17,26"
+			],
+			"type": "path",
+			"column": 26,
+			"row": 16,
+			"cameFrom": "16,25",
+			"distance": 73,
+			"goesTo": [
+				"15,26"
+			]
+		},
+		"15,3": {
+			"adjacentTo": [
+				"15,2",
+				"15,4",
+				"14,3",
+				"16,3"
+			],
+			"type": "path",
+			"column": 3,
+			"row": 15,
+			"cameFrom": "16,3",
+			"distance": 73,
+			"goesTo": [
+				"14,3"
+			]
+		},
+		"15,26": {
+			"adjacentTo": [
+				"15,25",
+				"15,27",
+				"14,26",
+				"16,26"
+			],
+			"type": "path",
+			"column": 26,
+			"row": 15,
+			"cameFrom": "16,26",
+			"distance": 74,
+			"goesTo": [
+				"14,26"
+			]
+		},
+		"14,3": {
+			"adjacentTo": [
+				"14,2",
 				"14,4",
-				"14,6",
-				"13,5",
-				"15,5"
+				"13,3",
+				"15,3"
 			],
 			"type": "path",
-			"column": 5,
+			"column": 3,
 			"row": 14,
-			"cameFrom": "15,5",
-			"distance": 59,
+			"cameFrom": "15,3",
+			"distance": 74,
 			"goesTo": [
-				"13,5"
+				"13,3"
 			]
 		},
-		"13,5": {
+		"14,26": {
 			"adjacentTo": [
+				"14,25",
+				"14,27",
+				"13,26",
+				"15,26"
+			],
+			"type": "path",
+			"column": 26,
+			"row": 14,
+			"cameFrom": "15,26",
+			"distance": 75,
+			"goesTo": [
+				"13,26"
+			]
+		},
+		"13,3": {
+			"adjacentTo": [
+				"13,2",
 				"13,4",
-				"13,6",
-				"12,5",
-				"14,5"
+				"12,3",
+				"14,3"
 			],
 			"type": "path",
-			"column": 5,
+			"column": 3,
 			"row": 13,
-			"cameFrom": "14,5",
-			"distance": 60,
+			"cameFrom": "14,3",
+			"distance": 75,
 			"goesTo": [
-				"12,5"
+				"12,3"
 			]
 		},
-		"12,5": {
+		"13,26": {
 			"adjacentTo": [
+				"13,25",
+				"13,27",
+				"12,26",
+				"14,26"
+			],
+			"type": "path",
+			"column": 26,
+			"row": 13,
+			"cameFrom": "14,26",
+			"distance": 76,
+			"goesTo": [
+				"12,26"
+			]
+		},
+		"12,3": {
+			"adjacentTo": [
+				"12,2",
 				"12,4",
-				"12,6",
-				"11,5",
-				"13,5"
+				"11,3",
+				"13,3"
 			],
 			"type": "path",
-			"column": 5,
+			"column": 3,
 			"row": 12,
-			"cameFrom": "13,5",
-			"distance": 61,
+			"cameFrom": "13,3",
+			"distance": 76,
 			"goesTo": [
-				"11,5"
+				"11,3"
 			]
 		},
-		"11,5": {
+		"12,26": {
 			"adjacentTo": [
+				"12,25",
+				"12,27",
+				"11,26",
+				"13,26"
+			],
+			"type": "path",
+			"column": 26,
+			"row": 12,
+			"cameFrom": "13,26",
+			"distance": 77,
+			"goesTo": [
+				"11,26"
+			]
+		},
+		"11,3": {
+			"adjacentTo": [
+				"11,2",
 				"11,4",
-				"11,6",
-				"10,5",
-				"12,5"
+				"10,3",
+				"12,3"
+			],
+			"type": "path",
+			"column": 3,
+			"row": 11,
+			"cameFrom": "12,3",
+			"distance": 77,
+			"goesTo": [
+				"10,3"
+			]
+		},
+		"11,26": {
+			"adjacentTo": [
+				"11,25",
+				"11,27",
+				"10,26",
+				"12,26"
+			],
+			"type": "path",
+			"column": 26,
+			"row": 11,
+			"cameFrom": "12,26",
+			"distance": 78,
+			"goesTo": [
+				"10,26"
+			]
+		},
+		"10,3": {
+			"adjacentTo": [
+				"10,2",
+				"10,4",
+				"9,3",
+				"11,3"
+			],
+			"type": "path",
+			"column": 3,
+			"row": 10,
+			"cameFrom": "11,3",
+			"distance": 78,
+			"goesTo": [
+				"9,3"
+			]
+		},
+		"10,26": {
+			"adjacentTo": [
+				"10,25",
+				"10,27",
+				"9,26",
+				"11,26"
+			],
+			"type": "path",
+			"column": 26,
+			"row": 10,
+			"cameFrom": "11,26",
+			"distance": 79,
+			"goesTo": [
+				"9,26"
+			]
+		},
+		"9,3": {
+			"adjacentTo": [
+				"9,2",
+				"9,4",
+				"8,3",
+				"10,3"
+			],
+			"type": "path",
+			"column": 3,
+			"row": 9,
+			"cameFrom": "10,3",
+			"distance": 79,
+			"goesTo": [
+				"8,3"
+			]
+		},
+		"9,26": {
+			"adjacentTo": [
+				"9,25",
+				"9,27",
+				"8,26",
+				"10,26"
+			],
+			"type": "path",
+			"column": 26,
+			"row": 9,
+			"cameFrom": "10,26",
+			"distance": 80,
+			"goesTo": [
+				"8,26"
+			]
+		},
+		"8,3": {
+			"adjacentTo": [
+				"8,2",
+				"8,4",
+				"7,3",
+				"9,3"
+			],
+			"type": "path",
+			"column": 3,
+			"row": 8,
+			"cameFrom": "9,3",
+			"distance": 80,
+			"goesTo": [
+				"7,3"
+			]
+		},
+		"8,26": {
+			"adjacentTo": [
+				"8,25",
+				"8,27",
+				"7,26",
+				"9,26"
+			],
+			"type": "path",
+			"column": 26,
+			"row": 8,
+			"cameFrom": "9,26",
+			"distance": 81,
+			"goesTo": [
+				"7,26"
+			]
+		},
+		"7,3": {
+			"adjacentTo": [
+				"7,2",
+				"7,4",
+				"6,3",
+				"8,3"
+			],
+			"type": "path",
+			"column": 3,
+			"row": 7,
+			"cameFrom": "8,3",
+			"distance": 81,
+			"goesTo": [
+				"6,3"
+			]
+		},
+		"7,26": {
+			"adjacentTo": [
+				"7,25",
+				"7,27",
+				"6,26",
+				"8,26"
+			],
+			"type": "path",
+			"column": 26,
+			"row": 7,
+			"cameFrom": "8,26",
+			"distance": 82,
+			"goesTo": [
+				"6,26"
+			]
+		},
+		"6,3": {
+			"adjacentTo": [
+				"6,2",
+				"6,4",
+				"5,3",
+				"7,3"
+			],
+			"type": "path",
+			"column": 3,
+			"row": 6,
+			"cameFrom": "7,3",
+			"distance": 82,
+			"goesTo": [
+				"5,3"
+			]
+		},
+		"6,26": {
+			"adjacentTo": [
+				"6,25",
+				"6,27",
+				"5,26",
+				"7,26"
+			],
+			"type": "path",
+			"column": 26,
+			"row": 6,
+			"cameFrom": "7,26",
+			"distance": 83,
+			"goesTo": [
+				"5,26"
+			]
+		},
+		"5,3": {
+			"adjacentTo": [
+				"5,2",
+				"5,4",
+				"4,3",
+				"6,3"
+			],
+			"type": "path",
+			"column": 3,
+			"row": 5,
+			"cameFrom": "6,3",
+			"distance": 83,
+			"goesTo": [
+				"5,4"
+			]
+		},
+		"5,26": {
+			"adjacentTo": [
+				"5,25",
+				"5,27",
+				"4,26",
+				"6,26"
+			],
+			"type": "path",
+			"column": 26,
+			"row": 5,
+			"cameFrom": "6,26",
+			"distance": 84,
+			"goesTo": [
+				"5,25"
+			]
+		},
+		"5,4": {
+			"adjacentTo": [
+				"5,3",
+				"5,5",
+				"4,4",
+				"6,4"
+			],
+			"type": "path",
+			"column": 4,
+			"row": 5,
+			"cameFrom": "5,3",
+			"distance": 84,
+			"goesTo": [
+				"5,5"
+			]
+		},
+		"5,25": {
+			"adjacentTo": [
+				"5,24",
+				"5,26",
+				"4,25",
+				"6,25"
+			],
+			"type": "path",
+			"column": 25,
+			"row": 5,
+			"cameFrom": "5,26",
+			"distance": 85,
+			"goesTo": [
+				"5,24"
+			]
+		},
+		"5,5": {
+			"adjacentTo": [
+				"5,4",
+				"5,6",
+				"4,5",
+				"6,5"
 			],
 			"type": "path",
 			"column": 5,
-			"row": 11,
-			"cameFrom": "12,5",
-			"distance": 62,
+			"row": 5,
+			"cameFrom": "5,4",
+			"distance": 85,
 			"goesTo": [
-				"11,6"
+				"5,6"
 			]
 		},
-		"11,6": {
+		"5,24": {
 			"adjacentTo": [
-				"11,5",
-				"11,7",
-				"10,6",
-				"12,6"
+				"5,23",
+				"5,25",
+				"4,24",
+				"6,24"
+			],
+			"type": "path",
+			"column": 24,
+			"row": 5,
+			"cameFrom": "5,25",
+			"distance": 86,
+			"goesTo": [
+				"5,23"
+			]
+		},
+		"5,6": {
+			"adjacentTo": [
+				"5,5",
+				"5,7",
+				"4,6",
+				"6,6"
 			],
 			"type": "path",
 			"column": 6,
-			"row": 11,
-			"cameFrom": "11,5",
-			"distance": 63,
+			"row": 5,
+			"cameFrom": "5,5",
+			"distance": 86,
 			"goesTo": [
-				"11,7"
+				"5,7"
 			]
 		},
-		"11,7": {
+		"5,23": {
 			"adjacentTo": [
-				"11,6",
-				"11,8",
-				"10,7",
-				"12,7"
+				"5,22",
+				"5,24",
+				"4,23",
+				"6,23"
+			],
+			"type": "path",
+			"column": 23,
+			"row": 5,
+			"cameFrom": "5,24",
+			"distance": 87,
+			"goesTo": [
+				"5,22"
+			]
+		},
+		"5,7": {
+			"adjacentTo": [
+				"5,6",
+				"5,8",
+				"4,7",
+				"6,7"
 			],
 			"type": "path",
 			"column": 7,
-			"row": 11,
-			"cameFrom": "11,6",
-			"distance": 64,
+			"row": 5,
+			"cameFrom": "5,6",
+			"distance": 87,
 			"goesTo": [
-				"11,8"
+				"5,8"
 			]
 		},
-		"11,8": {
+		"5,22": {
 			"adjacentTo": [
-				"11,7",
-				"11,9",
-				"10,8",
-				"12,8"
+				"5,21",
+				"5,23",
+				"4,22",
+				"6,22"
+			],
+			"type": "path",
+			"column": 22,
+			"row": 5,
+			"cameFrom": "5,23",
+			"distance": 88,
+			"goesTo": [
+				"5,21"
+			]
+		},
+		"5,8": {
+			"adjacentTo": [
+				"5,7",
+				"5,9",
+				"4,8",
+				"6,8"
 			],
 			"type": "path",
 			"column": 8,
-			"row": 11,
-			"cameFrom": "11,7",
-			"distance": 65,
+			"row": 5,
+			"cameFrom": "5,7",
+			"distance": 88,
 			"goesTo": [
-				"11,9"
+				"5,9"
 			]
 		},
-		"11,9": {
+		"5,21": {
 			"adjacentTo": [
-				"11,8",
-				"11,10",
-				"10,9",
-				"12,9"
+				"5,20",
+				"5,22",
+				"4,21",
+				"6,21"
+			],
+			"type": "path",
+			"column": 21,
+			"row": 5,
+			"cameFrom": "5,22",
+			"distance": 89,
+			"goesTo": [
+				"5,20"
+			]
+		},
+		"5,9": {
+			"adjacentTo": [
+				"5,8",
+				"5,10",
+				"4,9",
+				"6,9"
 			],
 			"type": "path",
 			"column": 9,
-			"row": 11,
-			"cameFrom": "11,8",
-			"distance": 66,
+			"row": 5,
+			"cameFrom": "5,8",
+			"distance": 89,
 			"goesTo": [
-				"11,10"
+				"5,10"
 			]
 		},
-		"11,10": {
+		"5,20": {
 			"adjacentTo": [
-				"11,9",
-				"11,11",
-				"10,10",
-				"12,10"
+				"5,19",
+				"5,21",
+				"4,20",
+				"6,20"
+			],
+			"type": "path",
+			"column": 20,
+			"row": 5,
+			"cameFrom": "5,21",
+			"distance": 90,
+			"goesTo": [
+				"5,19"
+			]
+		},
+		"5,10": {
+			"adjacentTo": [
+				"5,9",
+				"5,11",
+				"4,10",
+				"6,10"
 			],
 			"type": "path",
 			"column": 10,
-			"row": 11,
-			"cameFrom": "11,9",
-			"distance": 67,
+			"row": 5,
+			"cameFrom": "5,9",
+			"distance": 90,
 			"goesTo": [
-				"11,11"
+				"5,11"
 			]
 		},
-		"11,11": {
+		"5,19": {
 			"adjacentTo": [
-				"11,10",
-				"11,12",
-				"10,11",
-				"12,11"
+				"5,18",
+				"5,20",
+				"4,19",
+				"6,19"
+			],
+			"type": "path",
+			"column": 19,
+			"row": 5,
+			"cameFrom": "5,20",
+			"distance": 91,
+			"goesTo": [
+				"5,18"
+			]
+		},
+		"5,11": {
+			"adjacentTo": [
+				"5,10",
+				"5,12",
+				"4,11",
+				"6,11"
 			],
 			"type": "path",
 			"column": 11,
-			"row": 11,
-			"cameFrom": "11,10",
-			"distance": 68,
+			"row": 5,
+			"cameFrom": "5,10",
+			"distance": 91,
 			"goesTo": [
-				"11,12"
+				"5,12"
 			]
 		},
-		"11,12": {
+		"5,18": {
 			"adjacentTo": [
-				"11,11",
-				"11,13",
-				"10,12",
-				"12,12"
+				"5,17",
+				"5,19",
+				"4,18",
+				"6,18"
+			],
+			"type": "path",
+			"column": 18,
+			"row": 5,
+			"cameFrom": "5,19",
+			"distance": 92,
+			"goesTo": [
+				"5,17"
+			]
+		},
+		"5,12": {
+			"adjacentTo": [
+				"5,11",
+				"5,13",
+				"4,12",
+				"6,12"
 			],
 			"type": "path",
 			"column": 12,
-			"row": 11,
-			"cameFrom": "11,11",
-			"distance": 69,
+			"row": 5,
+			"cameFrom": "5,11",
+			"distance": 92,
 			"goesTo": [
-				"11,13"
+				"5,13"
 			]
 		},
-		"11,13": {
+		"5,17": {
 			"adjacentTo": [
-				"11,12",
-				"11,14",
-				"10,13",
-				"12,13"
+				"5,16",
+				"5,18",
+				"4,17",
+				"6,17"
+			],
+			"type": "path",
+			"column": 17,
+			"row": 5,
+			"cameFrom": "5,18",
+			"distance": 93,
+			"goesTo": [
+				"5,16"
+			]
+		},
+		"5,13": {
+			"adjacentTo": [
+				"5,12",
+				"5,14",
+				"4,13",
+				"6,13"
 			],
 			"type": "path",
 			"column": 13,
-			"row": 11,
-			"cameFrom": "11,12",
-			"distance": 70,
-			"goesTo": [
-				"11,14"
-			]
-		},
-		"11,14": {
-			"adjacentTo": [
-				"11,13",
-				"11,15",
-				"10,14",
-				"12,14"
-			],
-			"type": "path",
-			"column": 14,
-			"row": 11,
-			"cameFrom": "11,13",
-			"distance": 71,
-			"goesTo": [
-				"11,15"
-			]
-		},
-		"11,15": {
-			"adjacentTo": [
-				"11,14",
-				"11,16",
-				"10,15",
-				"12,15"
-			],
-			"type": "path",
-			"column": 15,
-			"row": 11,
-			"cameFrom": "11,14",
-			"distance": 72,
-			"goesTo": [
-				"10,15"
-			]
-		},
-		"10,15": {
-			"adjacentTo": [
-				"10,14",
-				"10,16",
-				"9,15",
-				"11,15"
-			],
-			"type": "path",
-			"column": 15,
-			"row": 10,
-			"cameFrom": "11,15",
-			"distance": 73,
-			"goesTo": [
-				"9,15"
-			]
-		},
-		"9,15": {
-			"adjacentTo": [
-				"9,14",
-				"9,16",
-				"8,15",
-				"10,15"
-			],
-			"type": "path",
-			"column": 15,
-			"row": 9,
-			"cameFrom": "10,15",
-			"distance": 74,
-			"goesTo": [
-				"8,15"
-			]
-		},
-		"8,15": {
-			"adjacentTo": [
-				"8,14",
-				"8,16",
-				"7,15",
-				"9,15"
-			],
-			"type": "path",
-			"column": 15,
-			"row": 8,
-			"cameFrom": "9,15",
-			"distance": 75,
-			"goesTo": [
-				"7,15"
-			]
-		},
-		"7,15": {
-			"adjacentTo": [
-				"7,14",
-				"7,16",
-				"6,15",
-				"8,15"
-			],
-			"type": "path",
-			"column": 15,
-			"row": 7,
-			"cameFrom": "8,15",
-			"distance": 76,
-			"goesTo": [
-				"6,15"
-			]
-		},
-		"6,15": {
-			"adjacentTo": [
-				"6,14",
-				"6,16",
-				"5,15",
-				"7,15"
-			],
-			"type": "path",
-			"column": 15,
-			"row": 6,
-			"cameFrom": "7,15",
-			"distance": 77,
-			"goesTo": [
-				"5,15"
-			]
-		},
-		"5,15": {
-			"adjacentTo": [
-				"5,14",
-				"5,16",
-				"4,15",
-				"6,15"
-			],
-			"type": "path",
-			"column": 15,
 			"row": 5,
-			"cameFrom": "6,15",
-			"distance": 78,
+			"cameFrom": "5,12",
+			"distance": 93,
 			"goesTo": [
-				"4,15"
+				"4,13"
 			]
 		},
-		"4,15": {
+		"5,16": {
 			"adjacentTo": [
-				"4,14",
+				"5,15",
+				"5,17",
 				"4,16",
-				"3,15",
-				"5,15"
+				"6,16"
 			],
 			"type": "path",
-			"column": 15,
+			"column": 16,
+			"row": 5,
+			"cameFrom": "5,17",
+			"distance": 94,
+			"goesTo": [
+				"4,16"
+			]
+		},
+		"4,13": {
+			"adjacentTo": [
+				"4,12",
+				"4,14",
+				"3,13",
+				"5,13"
+			],
+			"type": "path",
+			"column": 13,
 			"row": 4,
-			"cameFrom": "5,15",
-			"distance": 79,
+			"cameFrom": "5,13",
+			"distance": 94,
 			"goesTo": [
-				"3,15"
+				"3,13"
 			]
 		},
-		"3,15": {
+		"4,16": {
 			"adjacentTo": [
-				"3,14",
+				"4,15",
+				"4,17",
 				"3,16",
-				"2,15",
-				"4,15"
+				"5,16"
 			],
 			"type": "path",
-			"column": 15,
-			"row": 3,
-			"cameFrom": "4,15",
-			"distance": 80,
+			"column": 16,
+			"row": 4,
+			"cameFrom": "5,16",
+			"distance": 95,
 			"goesTo": [
-				"2,15"
+				"3,16"
 			]
 		},
-		"2,15": {
+		"3,13": {
 			"adjacentTo": [
-				"2,14",
-				"2,16",
-				"1,15",
-				"3,15"
-			],
-			"type": "path",
-			"column": 15,
-			"row": 2,
-			"cameFrom": "3,15",
-			"distance": 81,
-			"goesTo": [
-				"2,14",
-				"2,16"
-			]
-		},
-		"2,14": {
-			"adjacentTo": [
+				"3,12",
+				"3,14",
 				"2,13",
-				"2,15",
-				"1,14",
-				"3,14"
+				"4,13"
 			],
 			"type": "path",
-			"column": 14,
-			"row": 2,
-			"cameFrom": "2,15",
-			"distance": 82,
+			"column": 13,
+			"row": 3,
+			"cameFrom": "4,13",
+			"distance": 95,
 			"goesTo": [
 				"2,13"
 			]
 		},
-		"2,16": {
+		"3,16": {
 			"adjacentTo": [
-				"2,15",
-				"2,17",
-				"1,16",
-				"3,16"
+				"3,15",
+				"3,17",
+				"2,16",
+				"4,16"
 			],
 			"type": "path",
 			"column": 16,
-			"row": 2,
-			"cameFrom": "2,15",
-			"distance": 82,
+			"row": 3,
+			"cameFrom": "4,16",
+			"distance": 96,
 			"goesTo": [
-				"2,17"
+				"2,16"
 			]
 		},
 		"2,13": {
@@ -1503,372 +3145,84 @@
 			"type": "path",
 			"column": 13,
 			"row": 2,
-			"cameFrom": "2,14",
-			"distance": 83,
+			"cameFrom": "3,13",
+			"distance": 96,
 			"goesTo": [
-				"2,12"
+				"1,13"
 			]
 		},
-		"2,17": {
+		"2,16": {
 			"adjacentTo": [
-				"2,16",
-				"2,18",
-				"1,17",
-				"3,17"
-			],
-			"type": "path",
-			"column": 17,
-			"row": 2,
-			"cameFrom": "2,16",
-			"distance": 83,
-			"goesTo": [
-				"2,18"
-			]
-		},
-		"2,12": {
-			"adjacentTo": [
-				"2,11",
-				"2,13",
-				"1,12",
-				"3,12"
-			],
-			"type": "path",
-			"column": 12,
-			"row": 2,
-			"cameFrom": "2,13",
-			"distance": 84,
-			"goesTo": [
-				"2,11"
-			]
-		},
-		"2,18": {
-			"adjacentTo": [
+				"2,15",
 				"2,17",
-				"2,19",
-				"1,18",
-				"3,18"
+				"1,16",
+				"3,16"
 			],
 			"type": "path",
-			"column": 18,
+			"column": 16,
 			"row": 2,
-			"cameFrom": "2,17",
-			"distance": 84,
+			"cameFrom": "3,16",
+			"distance": 97,
 			"goesTo": [
-				"2,19"
+				"1,16"
 			]
 		},
-		"2,11": {
+		"1,13": {
 			"adjacentTo": [
-				"2,10",
-				"2,12",
-				"1,11",
-				"3,11"
+				"1,12",
+				"1,14",
+				"0,13",
+				"2,13"
 			],
 			"type": "path",
-			"column": 11,
-			"row": 2,
-			"cameFrom": "2,12",
-			"distance": 85,
+			"column": 13,
+			"row": 1,
+			"cameFrom": "2,13",
+			"distance": 97,
 			"goesTo": [
-				"2,10"
+				"0,13"
 			]
 		},
-		"2,19": {
+		"1,16": {
 			"adjacentTo": [
-				"2,18",
-				"2,20",
-				"1,19",
-				"3,19"
+				"1,15",
+				"1,17",
+				"0,16",
+				"2,16"
 			],
 			"type": "path",
-			"column": 19,
-			"row": 2,
-			"cameFrom": "2,18",
-			"distance": 85,
+			"column": 16,
+			"row": 1,
+			"cameFrom": "2,16",
+			"distance": 98,
 			"goesTo": [
-				"2,20"
+				"0,16"
 			]
 		},
-		"2,10": {
+		"0,13": {
 			"adjacentTo": [
-				"2,9",
-				"2,11",
-				"1,10",
-				"3,10"
-			],
-			"type": "path",
-			"column": 10,
-			"row": 2,
-			"cameFrom": "2,11",
-			"distance": 86,
-			"goesTo": [
-				"2,9"
-			]
-		},
-		"2,20": {
-			"adjacentTo": [
-				"2,19",
-				"2,21",
-				"1,20",
-				"3,20"
-			],
-			"type": "path",
-			"column": 20,
-			"row": 2,
-			"cameFrom": "2,19",
-			"distance": 86,
-			"goesTo": [
-				"2,21"
-			]
-		},
-		"2,9": {
-			"adjacentTo": [
-				"2,8",
-				"2,10",
-				"1,9",
-				"3,9"
-			],
-			"type": "path",
-			"column": 9,
-			"row": 2,
-			"cameFrom": "2,10",
-			"distance": 87,
-			"goesTo": [
-				"2,8"
-			]
-		},
-		"2,21": {
-			"adjacentTo": [
-				"2,20",
-				"2,22",
-				"1,21",
-				"3,21"
-			],
-			"type": "path",
-			"column": 21,
-			"row": 2,
-			"cameFrom": "2,20",
-			"distance": 87,
-			"goesTo": [
-				"2,22"
-			]
-		},
-		"2,8": {
-			"adjacentTo": [
-				"2,7",
-				"2,9",
-				"1,8",
-				"3,8"
-			],
-			"type": "path",
-			"column": 8,
-			"row": 2,
-			"cameFrom": "2,9",
-			"distance": 88,
-			"goesTo": [
-				"2,7"
-			]
-		},
-		"2,22": {
-			"adjacentTo": [
-				"2,21",
-				"2,23",
-				"1,22",
-				"3,22"
-			],
-			"type": "path",
-			"column": 22,
-			"row": 2,
-			"cameFrom": "2,21",
-			"distance": 88,
-			"goesTo": [
-				"2,23"
-			]
-		},
-		"2,7": {
-			"adjacentTo": [
-				"2,6",
-				"2,8",
-				"1,7",
-				"3,7"
-			],
-			"type": "path",
-			"column": 7,
-			"row": 2,
-			"cameFrom": "2,8",
-			"distance": 89,
-			"goesTo": [
-				"2,6"
-			]
-		},
-		"2,23": {
-			"adjacentTo": [
-				"2,22",
-				"2,24",
-				"1,23",
-				"3,23"
-			],
-			"type": "path",
-			"column": 23,
-			"row": 2,
-			"cameFrom": "2,22",
-			"distance": 89,
-			"goesTo": [
-				"2,24"
-			]
-		},
-		"2,6": {
-			"adjacentTo": [
-				"2,5",
-				"2,7",
-				"1,6",
-				"3,6"
-			],
-			"type": "path",
-			"column": 6,
-			"row": 2,
-			"cameFrom": "2,7",
-			"distance": 90,
-			"goesTo": [
-				"2,5"
-			]
-		},
-		"2,24": {
-			"adjacentTo": [
-				"2,23",
-				"2,25",
-				"1,24",
-				"3,24"
-			],
-			"type": "path",
-			"column": 24,
-			"row": 2,
-			"cameFrom": "2,23",
-			"distance": 90,
-			"goesTo": [
-				"2,25"
-			]
-		},
-		"2,5": {
-			"adjacentTo": [
-				"2,4",
-				"2,6",
-				"1,5",
-				"3,5"
-			],
-			"type": "path",
-			"column": 5,
-			"row": 2,
-			"cameFrom": "2,6",
-			"distance": 91,
-			"goesTo": [
-				"2,4"
-			]
-		},
-		"2,25": {
-			"adjacentTo": [
-				"2,24",
-				"2,26",
-				"1,25",
-				"3,25"
-			],
-			"type": "path",
-			"column": 25,
-			"row": 2,
-			"cameFrom": "2,24",
-			"distance": 91,
-			"goesTo": [
-				"2,26"
-			]
-		},
-		"2,4": {
-			"adjacentTo": [
-				"2,3",
-				"2,5",
-				"1,4",
-				"3,4"
-			],
-			"type": "path",
-			"column": 4,
-			"row": 2,
-			"cameFrom": "2,5",
-			"distance": 92,
-			"goesTo": [
-				"2,3"
-			]
-		},
-		"2,26": {
-			"adjacentTo": [
-				"2,25",
-				"2,27",
-				"1,26",
-				"3,26"
-			],
-			"type": "path",
-			"column": 26,
-			"row": 2,
-			"cameFrom": "2,25",
-			"distance": 92,
-			"goesTo": [
-				"2,27"
-			]
-		},
-		"2,3": {
-			"adjacentTo": [
-				"2,2",
-				"2,4",
-				"1,3",
-				"3,3"
-			],
-			"type": "path",
-			"column": 3,
-			"row": 2,
-			"cameFrom": "2,4",
-			"distance": 93,
-			"goesTo": [
-				"2,2"
-			]
-		},
-		"2,27": {
-			"adjacentTo": [
-				"2,26",
-				"1,27",
-				"3,27"
+				"0,12",
+				"0,14",
+				"1,13"
 			],
 			"type": "spawn",
-			"column": 27,
-			"row": 2,
-			"cameFrom": "2,26",
-			"distance": 93,
+			"column": 13,
+			"row": 0,
+			"cameFrom": "1,13",
+			"distance": 98,
 			"goesTo": []
 		},
-		"2,2": {
+		"0,16": {
 			"adjacentTo": [
-				"2,1",
-				"2,3",
-				"1,2",
-				"3,2"
-			],
-			"type": "path",
-			"column": 2,
-			"row": 2,
-			"cameFrom": "2,3",
-			"distance": 94,
-			"goesTo": [
-				"2,1"
-			]
-		},
-		"2,1": {
-			"adjacentTo": [
-				"2,2",
-				"1,1",
-				"3,1"
+				"0,15",
+				"0,17",
+				"1,16"
 			],
 			"type": "spawn",
-			"column": 1,
-			"row": 2,
-			"cameFrom": "2,2",
-			"distance": 95,
+			"column": 16,
+			"row": 0,
+			"cameFrom": "1,16",
+			"distance": 99,
 			"goesTo": []
 		}
 	}
