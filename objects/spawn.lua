@@ -1,9 +1,7 @@
 local Enemy = require 'objects.enemies'
 local grid = require 'utilities.grid'
 
-local Spawn = {
-	
-}
+local Spawn = {}
 
 function Spawn:new(o)
 	o = o or {}
@@ -22,6 +20,19 @@ function Spawn:init(id, node, game)
 	self.game = game
 
 	self:createWaves()
+	local opt = {
+		frames = {
+			{x = 0, y = 0, width = 60, height = 60}
+		}
+	}
+	local sheet = graphics.newImageSheet( "Scribblenauts_item_black_hole.png", opt)
+	self.shape = display.newImage( sheet, self.frame)
+	self.shape.x = grid.x(node.column)
+	self.shape.y = grid.y(node.row)
+	self.shape.xScale = 1.5
+	self.shape.yScale = 1.5
+
+	game.parentView:insert(self.shape)
 end
 
 function Spawn:createWaves()
