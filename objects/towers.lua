@@ -162,7 +162,7 @@ function Tower:tap()
 			y = y + 225
 			x = math.ceil( x / 150 )
 			y = math.ceil( y / 150 )
-
+			print(x,y)
 			if ((x == 2 and y == 1) or (x == 3 and y == 1)) then 
 				self:upgrade()
 			elseif  ((x == 0 and y == 3) or (x == 1 and y == 2) or (x == 2 and y == 2) or (x == 2 and y == 3) or (x == 1 and y == 3)) then

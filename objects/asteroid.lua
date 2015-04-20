@@ -62,7 +62,7 @@ function Asteroid:tap(event)
 				local newTower = towers:new()
 				newTower.xLocation = self.shape.x + 15
 				newTower.yLocation = self.shape.y
-				newTower.frame = 10
+				newTower.frame = 1
 				newTower:spawn(self.game, 'aoe', self.id, self.node)
 				isout = false
 				table.insert(self.game.towers, newTower)
