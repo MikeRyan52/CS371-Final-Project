@@ -5,13 +5,12 @@ local Tower = {
 	frame = 1, 
 	xLocation = display.contentCenterX, 
 	yLocation = display.contentCenterY, 
-	cost = 300,
 	value = 100,
 	radius = 4,
+	damage = 50,
 	fireSpeed = 300,
-	damage = 10,
 	towertype = "damage"
-}
+};
 
 function Tower:new (o) --constructor
 	o = o or {};
@@ -55,14 +54,14 @@ function Tower:spawn(game, type, id, node)
 	self.type = type
 	self.game = game
 	self.node = node
-	self.destroy = false
+	self.fired = false;
+	self.destroy = false;
 
 	self.targetNodes = {}
 
 	self:setStats()
 	self:draw()
 	self:findNodes()
-	self:target()
 end
 
 function Tower:setStats()
@@ -133,7 +132,6 @@ function Tower:findNodes()
 	self.nodes = nodes
 end
 
-
 function Tower:target(enemies)
 	if self.type == 'laser' then
 		local targetEnemy = false
@@ -172,6 +170,7 @@ function Tower:target(enemies)
 			end
 			if found then break end
 		end
+
 	elseif self.type == 'aoe' then
 
 		for index,node in ipairs(self.nodes) do
@@ -183,6 +182,7 @@ function Tower:target(enemies)
 		end
 
 	end
+
 
 	self.fired = true
 
