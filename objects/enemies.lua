@@ -4,7 +4,7 @@ local Enemies = {
 	frame=1, 
 	xSpawn = display.contentCenterX, 
 	ySpawn = display.contentCenterY, 
-	HP = 200,
+	HP = 240,
 	speed = 200
 }
 
@@ -21,9 +21,9 @@ local opt =
 {
 
 	frames = { 
-		{x = 100, y = 65, width = 25, height =30},--frame 1
-		{x = 60, y = 35, width = 35, height = 30}, --frame 2
-		{x= 94, y = 35, width = 35, height = 30}, --frame 3
+		{x = 100, y = 65, width = 25, height =30},--frame 1, value 75 
+		{x = 60, y = 35, width = 35, height = 30}, --frame 2, HP 80, speed 400, 50 
+		{x= 94, y = 35, width = 35, height = 30}, --frame 3, HP 800, speed 50, 150
 		{x = 190, y = 224, width = 35, height = 30}, --frame 4
 		{x = 225, y = 219, width = 35, height = 30}, --frame 5
 	}
