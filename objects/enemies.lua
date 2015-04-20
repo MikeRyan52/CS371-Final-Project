@@ -4,7 +4,7 @@ local Enemies = {
 	frame=1, 
 	xSpawn = display.contentCenterX, 
 	ySpawn = display.contentCenterY, 
-	HP = 1,
+	HP = 500,
 	speed = 200
 }
 
@@ -33,6 +33,7 @@ local sheet = graphics.newImageSheet( "spaceships2.png", opt)
 function Enemies:spawn(game, startingId)
 	self.game = game
 	self.startingId = startingId
+	self.nodeId = startingId;
 	self.shape= display.newImage( sheet, self.frame)
 	self.shape.x = self.xSpawn
 	self.shape.y = self.ySpawn
@@ -48,30 +49,52 @@ function Enemies:spawn(game, startingId)
 	return self
 end
 
-function Enemies:hit ()
-	self.HP = self.HP - 1;
-	if (self.HP == 0) then
+function Enemies:hit(damage)
+	self.HP = self.HP - damage;
+	if (self.HP <= 0) then
 		-- die
-		self.shape:removeSelf();
-		self.shape=nil;
-		self = nil;
+		timer.cancel( self.timerRef )
+		transition.cancel( self.transitionRef )
+		
+		self:explode()
 	end
 end
 
-function Enemies:move(startingId)
-	local current = self.game.grid[startingId];
+function Enemies:explode()
+	local x = self.shape.x
+	local y = self.shape.y
+
+	self.shape:removeSelf()
+	self.shape = display.newImage( sheet, 4 )
+	self.shape.x = x
+	self.shape.y = y
+	self.game.parentView:insert(self.shape)
+end
+
+function Enemies:move()
+	local current = self.game.grid[self.nodeId];
 	local target = self.game.grid[current.cameFrom] or {};
-	if not self.pathId then self.pathId = current.id end
 
 	local x = grid.x(target.column)
 	local y = grid.y(target.row)
 	local it = self
 
-	timer.performWithDelay( self.speed / 2, function() 
-		it.pathId = target.id
+	if x > self.shape.x then
+		self.shape.rotation = 180
+	elseif x < self.shape.x then
+		self.shape.rotation = 0
+	elseif y > self.shape.y then
+		self.shape.rotation = 270
+	elseif y < self.shape.y then
+		self.shape.rotation = 90
+	end
+
+
+	self.timerRef = timer.performWithDelay( self.speed / 2, function() 
+		self.nodeId = current.cameFrom
 	end)
 
-	transition.to(self.shape, {
+	self.transitionRef = transition.to(self.shape, {
 		x = x,
 		y = y,
 		time = self.speed,
@@ -79,7 +102,7 @@ function Enemies:move(startingId)
 			if target.type == 'goal' then
 
 			else
-				it:move(current.cameFrom)
+				it:move()
 			end
 		end
 	})

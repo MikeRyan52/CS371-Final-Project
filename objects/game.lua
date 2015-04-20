@@ -74,12 +74,12 @@ function Game:draw(level)
 				rect:setFillColor( 1, 1, 1, 0.7 )
 				self.parentView:insert(rect)
 
-				local meteor = Asteroid:new()
+				local tower = Asteroid:new()
 
-				meteor.xLocation = grid.x(space.column)
-				meteor.yLocation = grid.y(space.row)
+				tower.xLocation = grid.x(space.column)
+				tower.yLocation = grid.y(space.row)
 
-				meteor:spawn(self.parentView, x, y)
+				tower:spawn(id, space, self)
 			end
 
 

@@ -1,8 +1,12 @@
+local json = require 'json'
+
 local Tower = {
 	frame = 1, 
 	xLocation = display.contentCenterX, 
 	yLocation = display.contentCenterY, 
-	value = 100, 
+	value = 100,
+	radius = 4,
+	fireSpeed = 300,
 	towertype = "damage"
 };
 
@@ -40,12 +44,83 @@ local opt2 =
 }
 
 
-function Tower:spawn(parent, type)
+function Tower:spawn(game, type, id, node)
 	self.menuOpen = false
-	self.parentView = parent
+	self.parentView = game.parentView
 	self.type = type
+	self.game = game
+	self.node = node
+
+	self.targetNodes = {}
 
 	self:draw()
+	self:findNodes()
+	self:target()
+end
+
+function Tower:findNodes()
+	local x = self.node.column - self.radius
+	local targetCol = self.node.column + self.radius
+
+	while x <= targetCol do
+		local y = self.node.row - self.radius
+		local targetRow = self.node.row + self.radius
+		while y <= targetRow do
+			table.insert(self.targetNodes, y .. ',' .. x)
+
+			y = y + 1
+		end
+
+		x = x + 1
+	end
+
+	local nodes = {}
+
+	for index,id in ipairs(self.targetNodes) do
+		if self.game.grid[id] then 
+			local space = self.game.grid[id]
+			space.id = id
+			table.insert(nodes, space)
+		end
+	end
+
+	table.sort(nodes, function(first, second)
+		local fDist = first.distance or 0
+		local sDist = second.distance or 0
+
+		return fDist <= sDist
+	end)
+
+	self.nodes = nodes
+end
+
+function Tower:target()
+	local targetEnemy = false
+
+	for index,node in ipairs(self.nodes) do
+		for index,enemy in ipairs(self.game.enemies) do
+			if enemy.nodeId == node.id then
+				targetEnemy = enemy
+				break
+			end
+		end
+
+		if targetEnemy then break end
+	end
+
+	if targetEnemy then 
+		targetEnemy:hit(500) 
+
+		local deltaY = self.shape.y - targetEnemy.shape.y
+		local deltaX = self.shape.x - targetEnemy.shape.x
+		self.shape.rotation = ((math.atan2(deltaY, deltaX) * 180) / math.pi ) + 270
+
+		targetEnemy = false
+	end
+
+	self.targetRef = timer.performWithDelay(self.fireSpeed, function()
+		self:target()
+	end)
 end
 
 function Tower:draw()

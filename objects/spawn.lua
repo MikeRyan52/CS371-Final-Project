@@ -79,6 +79,8 @@ function Spawn:init(id, node, game)
 				enemy.ySpawn = grid.y(node.row)
 
 				enemy:spawn(game, self.id)
+
+				table.insert(game.enemies, enemy)
 			end
 
 			local time = 0
@@ -92,7 +94,7 @@ function Spawn:init(id, node, game)
 	end
 
 	wave()
-	timer.performWithDelay(15000, wave, 10)
+	timer.performWithDelay(15000, wave, 9)
 end
 
 return Spawn
