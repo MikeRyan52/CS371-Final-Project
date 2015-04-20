@@ -1,7 +1,2 @@
 local composer = require 'composer'
-
-composer.gotoScene( 'views.level', {
-	params = {
-		level = 1
-	}
-})
+composer.gotoScene( "menu.menu" )

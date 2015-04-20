@@ -45,8 +45,8 @@ local opt2 =
 
 	frames = {
 		{x = 0, y=0, width = 69, height = 68}, --frame 1 of aoe Tower, cost = 400, value = 200, radius = 3, firespeed = 150, damage = 5
-		{x = 75, y = 0, width = 75, height = 68}, --frame 2 of aoe, cost = 350, value = 300, radius = 4, fireSpeed = 150, damage = 20
-		{x = 150, y = 0, width = 75, height = 68},	--frame 3 of aoe, cost = 400, value = 500, radius = 4, fireSpeed = 350, damage = 20
+		{x = 62, y = 0, width = 69, height = 68}, --frame 2 of aoe, cost = 350, value = 300, radius = 4, fireSpeed = 150, damage = 20
+		{x = 125, y = 0, width = 69, height = 68},	--frame 3 of aoe, cost = 400, value = 500, radius = 4, fireSpeed = 350, damage = 20
 	}
 }
 
