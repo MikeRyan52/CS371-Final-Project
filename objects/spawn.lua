@@ -133,7 +133,8 @@ function Spawn:begin()
 		index = index + 1
 	end
 
-	self.timerRef = timer.performWithDelay(30000, wave, 10)
+	wave()
+	self.timerRef = timer.performWithDelay(30000, wave, 9)
 end
 
 function Spawn:stop()

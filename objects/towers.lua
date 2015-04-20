@@ -1,5 +1,8 @@
 local json = require 'json'
 local TowerTypes = require 'utilities.tower-types'
+local laser = require 'effects.laser'
+local bloom = require 'effects.bloom'
+local explode = require 'effects.explode'
 
 local Tower = {
 	frame = 1, 
@@ -152,6 +155,10 @@ function Tower:target(enemies)
 
 			self:point(targetEnemy)
 
+			laser(self.game.parentView, self.shape, targetEnemy.shape)
+
+			self.shape:toFront()
+
 			targetEnemy = false
 		end
 	elseif self.type == 'cannon' then
@@ -165,20 +172,30 @@ function Tower:target(enemies)
 						self:point(enemy)
 					end
 					enemy:hit(self.damage)
-					found = true
+					found = enemy
 				end
 			end
-			if found then break end
+			if found then
+				explode(self.game.parentView, found.shape, self.radius)
+				break
+			end
 		end
 
 	elseif self.type == 'aoe' then
+		local found = false
 
 		for index,node in ipairs(self.nodes) do
 			for index, enemy in ipairs(enemies) do
 				if enemy.nodeId == node.id and not enemy.exploding then
 					enemy:hit(self.damage)
+					found = true
 				end
 			end
+		end
+
+		if found then
+			bloom(self.game.parentView, self.shape, self.radius)
+			self.shape:toFront()
 		end
 
 	end
