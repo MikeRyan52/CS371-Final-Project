@@ -177,15 +177,45 @@
 		}
 	},
 	"grid": {
+		"49,15": {
+			"adjacentTo": [
+				"49,14",
+				"49,16",
+				"48,15"
+			],
+			"type": "goal",
+			"column": 15,
+			"row": 49,
+			"goesTo": [
+				"48,15"
+			]
+		},
+		"48,15": {
+			"adjacentTo": [
+				"48,14",
+				"48,16",
+				"47,15"
+			],
+			"type": "path",
+			"column": 15,
+			"row": 48,
+			"cameFrom": "49,15",
+			"distance": 1,
+			"goesTo": [
+				"47,15"
+			]
+		},
 		"47,15": {
 			"adjacentTo": [
 				"47,14",
 				"47,16",
 				"46,15"
 			],
-			"type": "goal",
+			"type": "path",
 			"column": 15,
 			"row": 47,
+			"cameFrom": "48,15",
+			"distance": 2,
 			"goesTo": [
 				"46,15"
 			]
@@ -200,7 +230,7 @@
 			"column": 15,
 			"row": 46,
 			"cameFrom": "47,15",
-			"distance": 1,
+			"distance": 3,
 			"goesTo": [
 				"45,15"
 			]
@@ -215,7 +245,7 @@
 			"column": 15,
 			"row": 45,
 			"cameFrom": "46,15",
-			"distance": 2,
+			"distance": 4,
 			"goesTo": [
 				"44,15"
 			]
@@ -230,7 +260,7 @@
 			"column": 15,
 			"row": 44,
 			"cameFrom": "45,15",
-			"distance": 3,
+			"distance": 5,
 			"goesTo": [
 				"43,15"
 			]
@@ -245,7 +275,7 @@
 			"column": 15,
 			"row": 43,
 			"cameFrom": "44,15",
-			"distance": 4,
+			"distance": 6,
 			"goesTo": [
 				"42,15"
 			]
@@ -260,7 +290,7 @@
 			"column": 15,
 			"row": 42,
 			"cameFrom": "43,15",
-			"distance": 5,
+			"distance": 7,
 			"goesTo": [
 				"41,15"
 			]
@@ -275,7 +305,7 @@
 			"column": 15,
 			"row": 41,
 			"cameFrom": "42,15",
-			"distance": 6,
+			"distance": 8,
 			"goesTo": [
 				"40,15"
 			]
@@ -290,7 +320,7 @@
 			"column": 15,
 			"row": 40,
 			"cameFrom": "41,15",
-			"distance": 7,
+			"distance": 9,
 			"goesTo": [
 				"39,15"
 			]
@@ -305,7 +335,7 @@
 			"column": 15,
 			"row": 39,
 			"cameFrom": "40,15",
-			"distance": 8,
+			"distance": 10,
 			"goesTo": [
 				"38,15"
 			]
@@ -320,7 +350,7 @@
 			"column": 15,
 			"row": 38,
 			"cameFrom": "39,15",
-			"distance": 9,
+			"distance": 11,
 			"goesTo": [
 				"37,15"
 			]
@@ -335,7 +365,7 @@
 			"column": 15,
 			"row": 37,
 			"cameFrom": "38,15",
-			"distance": 10,
+			"distance": 12,
 			"goesTo": [
 				"36,15"
 			]
@@ -350,7 +380,7 @@
 			"column": 15,
 			"row": 36,
 			"cameFrom": "37,15",
-			"distance": 11,
+			"distance": 13,
 			"goesTo": [
 				"35,15"
 			]
@@ -365,7 +395,7 @@
 			"column": 15,
 			"row": 35,
 			"cameFrom": "36,15",
-			"distance": 12,
+			"distance": 14,
 			"goesTo": [
 				"34,15"
 			]
@@ -380,7 +410,7 @@
 			"column": 15,
 			"row": 34,
 			"cameFrom": "35,15",
-			"distance": 13,
+			"distance": 15,
 			"goesTo": [
 				"33,15"
 			]
@@ -395,7 +425,7 @@
 			"column": 15,
 			"row": 33,
 			"cameFrom": "34,15",
-			"distance": 14,
+			"distance": 16,
 			"goesTo": [
 				"33,16"
 			]
@@ -410,7 +440,7 @@
 			"column": 16,
 			"row": 33,
 			"cameFrom": "33,15",
-			"distance": 15,
+			"distance": 17,
 			"goesTo": [
 				"33,17"
 			]
@@ -425,7 +455,7 @@
 			"column": 17,
 			"row": 33,
 			"cameFrom": "33,16",
-			"distance": 16,
+			"distance": 18,
 			"goesTo": [
 				"33,18"
 			]
@@ -440,7 +470,7 @@
 			"column": 18,
 			"row": 33,
 			"cameFrom": "33,17",
-			"distance": 17,
+			"distance": 19,
 			"goesTo": [
 				"33,19"
 			]
@@ -455,7 +485,7 @@
 			"column": 19,
 			"row": 33,
 			"cameFrom": "33,18",
-			"distance": 18,
+			"distance": 20,
 			"goesTo": [
 				"33,20"
 			]
@@ -470,7 +500,7 @@
 			"column": 20,
 			"row": 33,
 			"cameFrom": "33,19",
-			"distance": 19,
+			"distance": 21,
 			"goesTo": [
 				"33,21"
 			]
@@ -485,7 +515,7 @@
 			"column": 21,
 			"row": 33,
 			"cameFrom": "33,20",
-			"distance": 20,
+			"distance": 22,
 			"goesTo": [
 				"33,22"
 			]
@@ -500,7 +530,7 @@
 			"column": 22,
 			"row": 33,
 			"cameFrom": "33,21",
-			"distance": 21,
+			"distance": 23,
 			"goesTo": [
 				"33,23"
 			]
@@ -515,7 +545,7 @@
 			"column": 23,
 			"row": 33,
 			"cameFrom": "33,22",
-			"distance": 22,
+			"distance": 24,
 			"goesTo": [
 				"32,23"
 			]
@@ -530,7 +560,7 @@
 			"column": 23,
 			"row": 32,
 			"cameFrom": "33,23",
-			"distance": 23,
+			"distance": 25,
 			"goesTo": [
 				"31,23"
 			]
@@ -545,7 +575,7 @@
 			"column": 23,
 			"row": 31,
 			"cameFrom": "32,23",
-			"distance": 24,
+			"distance": 26,
 			"goesTo": [
 				"30,23"
 			]
@@ -560,7 +590,7 @@
 			"column": 23,
 			"row": 30,
 			"cameFrom": "31,23",
-			"distance": 25,
+			"distance": 27,
 			"goesTo": [
 				"29,23"
 			]
@@ -575,7 +605,7 @@
 			"column": 23,
 			"row": 29,
 			"cameFrom": "30,23",
-			"distance": 26,
+			"distance": 28,
 			"goesTo": [
 				"28,23"
 			]
@@ -591,7 +621,7 @@
 			"column": 23,
 			"row": 28,
 			"cameFrom": "29,23",
-			"distance": 27,
+			"distance": 29,
 			"goesTo": [
 				"27,23"
 			]
@@ -607,7 +637,7 @@
 			"column": 23,
 			"row": 27,
 			"cameFrom": "28,23",
-			"distance": 28,
+			"distance": 30,
 			"goesTo": [
 				"26,23"
 			]
@@ -623,7 +653,7 @@
 			"column": 23,
 			"row": 26,
 			"cameFrom": "27,23",
-			"distance": 29,
+			"distance": 31,
 			"goesTo": [
 				"25,23"
 			]
@@ -639,7 +669,7 @@
 			"column": 23,
 			"row": 25,
 			"cameFrom": "26,23",
-			"distance": 30,
+			"distance": 32,
 			"goesTo": [
 				"24,23"
 			]
@@ -655,7 +685,7 @@
 			"column": 23,
 			"row": 24,
 			"cameFrom": "25,23",
-			"distance": 31,
+			"distance": 33,
 			"goesTo": [
 				"23,23"
 			]
@@ -671,7 +701,7 @@
 			"column": 23,
 			"row": 23,
 			"cameFrom": "24,23",
-			"distance": 32,
+			"distance": 34,
 			"goesTo": [
 				"23,22"
 			]
@@ -687,7 +717,7 @@
 			"column": 22,
 			"row": 23,
 			"cameFrom": "23,23",
-			"distance": 33,
+			"distance": 35,
 			"goesTo": [
 				"23,21"
 			]
@@ -703,7 +733,7 @@
 			"column": 21,
 			"row": 23,
 			"cameFrom": "23,22",
-			"distance": 34,
+			"distance": 36,
 			"goesTo": [
 				"23,20"
 			]
@@ -719,7 +749,7 @@
 			"column": 20,
 			"row": 23,
 			"cameFrom": "23,21",
-			"distance": 35,
+			"distance": 37,
 			"goesTo": [
 				"23,19"
 			]
@@ -735,7 +765,7 @@
 			"column": 19,
 			"row": 23,
 			"cameFrom": "23,20",
-			"distance": 36,
+			"distance": 38,
 			"goesTo": [
 				"23,18"
 			]
@@ -751,7 +781,7 @@
 			"column": 18,
 			"row": 23,
 			"cameFrom": "23,19",
-			"distance": 37,
+			"distance": 39,
 			"goesTo": [
 				"23,17"
 			]
@@ -767,7 +797,7 @@
 			"column": 17,
 			"row": 23,
 			"cameFrom": "23,18",
-			"distance": 38,
+			"distance": 40,
 			"goesTo": [
 				"23,16"
 			]
@@ -783,7 +813,7 @@
 			"column": 16,
 			"row": 23,
 			"cameFrom": "23,17",
-			"distance": 39,
+			"distance": 41,
 			"goesTo": [
 				"23,15"
 			]
@@ -799,7 +829,7 @@
 			"column": 15,
 			"row": 23,
 			"cameFrom": "23,16",
-			"distance": 40,
+			"distance": 42,
 			"goesTo": [
 				"23,14"
 			]
@@ -815,7 +845,7 @@
 			"column": 14,
 			"row": 23,
 			"cameFrom": "23,15",
-			"distance": 41,
+			"distance": 43,
 			"goesTo": [
 				"23,13"
 			]
@@ -831,7 +861,7 @@
 			"column": 13,
 			"row": 23,
 			"cameFrom": "23,14",
-			"distance": 42,
+			"distance": 44,
 			"goesTo": [
 				"23,12"
 			]
@@ -847,7 +877,7 @@
 			"column": 12,
 			"row": 23,
 			"cameFrom": "23,13",
-			"distance": 43,
+			"distance": 45,
 			"goesTo": [
 				"23,11"
 			]
@@ -863,7 +893,7 @@
 			"column": 11,
 			"row": 23,
 			"cameFrom": "23,12",
-			"distance": 44,
+			"distance": 46,
 			"goesTo": [
 				"23,10"
 			]
@@ -879,7 +909,7 @@
 			"column": 10,
 			"row": 23,
 			"cameFrom": "23,11",
-			"distance": 45,
+			"distance": 47,
 			"goesTo": [
 				"23,9"
 			]
@@ -895,7 +925,7 @@
 			"column": 9,
 			"row": 23,
 			"cameFrom": "23,10",
-			"distance": 46,
+			"distance": 48,
 			"goesTo": [
 				"23,8"
 			]
@@ -911,7 +941,7 @@
 			"column": 8,
 			"row": 23,
 			"cameFrom": "23,9",
-			"distance": 47,
+			"distance": 49,
 			"goesTo": [
 				"23,7"
 			]
@@ -927,7 +957,7 @@
 			"column": 7,
 			"row": 23,
 			"cameFrom": "23,8",
-			"distance": 48,
+			"distance": 50,
 			"goesTo": [
 				"23,6"
 			]
@@ -943,7 +973,7 @@
 			"column": 6,
 			"row": 23,
 			"cameFrom": "23,7",
-			"distance": 49,
+			"distance": 51,
 			"goesTo": [
 				"23,5"
 			]
@@ -959,7 +989,7 @@
 			"column": 5,
 			"row": 23,
 			"cameFrom": "23,6",
-			"distance": 50,
+			"distance": 52,
 			"goesTo": [
 				"22,5"
 			]
@@ -975,7 +1005,7 @@
 			"column": 5,
 			"row": 22,
 			"cameFrom": "23,5",
-			"distance": 51,
+			"distance": 53,
 			"goesTo": [
 				"21,5"
 			]
@@ -991,7 +1021,7 @@
 			"column": 5,
 			"row": 21,
 			"cameFrom": "22,5",
-			"distance": 52,
+			"distance": 54,
 			"goesTo": [
 				"20,5"
 			]
@@ -1007,7 +1037,7 @@
 			"column": 5,
 			"row": 20,
 			"cameFrom": "21,5",
-			"distance": 53,
+			"distance": 55,
 			"goesTo": [
 				"19,5"
 			]
@@ -1023,7 +1053,7 @@
 			"column": 5,
 			"row": 19,
 			"cameFrom": "20,5",
-			"distance": 54,
+			"distance": 56,
 			"goesTo": [
 				"18,5"
 			]
@@ -1039,7 +1069,7 @@
 			"column": 5,
 			"row": 18,
 			"cameFrom": "19,5",
-			"distance": 55,
+			"distance": 57,
 			"goesTo": [
 				"17,5"
 			]
@@ -1055,7 +1085,7 @@
 			"column": 5,
 			"row": 17,
 			"cameFrom": "18,5",
-			"distance": 56,
+			"distance": 58,
 			"goesTo": [
 				"16,5"
 			]
@@ -1071,7 +1101,7 @@
 			"column": 5,
 			"row": 16,
 			"cameFrom": "17,5",
-			"distance": 57,
+			"distance": 59,
 			"goesTo": [
 				"15,5"
 			]
@@ -1087,7 +1117,7 @@
 			"column": 5,
 			"row": 15,
 			"cameFrom": "16,5",
-			"distance": 58,
+			"distance": 60,
 			"goesTo": [
 				"14,5"
 			]
@@ -1103,7 +1133,7 @@
 			"column": 5,
 			"row": 14,
 			"cameFrom": "15,5",
-			"distance": 59,
+			"distance": 61,
 			"goesTo": [
 				"13,5"
 			]
@@ -1119,7 +1149,7 @@
 			"column": 5,
 			"row": 13,
 			"cameFrom": "14,5",
-			"distance": 60,
+			"distance": 62,
 			"goesTo": [
 				"12,5"
 			]
@@ -1135,7 +1165,7 @@
 			"column": 5,
 			"row": 12,
 			"cameFrom": "13,5",
-			"distance": 61,
+			"distance": 63,
 			"goesTo": [
 				"11,5"
 			]
@@ -1151,7 +1181,7 @@
 			"column": 5,
 			"row": 11,
 			"cameFrom": "12,5",
-			"distance": 62,
+			"distance": 64,
 			"goesTo": [
 				"11,6"
 			]
@@ -1167,7 +1197,7 @@
 			"column": 6,
 			"row": 11,
 			"cameFrom": "11,5",
-			"distance": 63,
+			"distance": 65,
 			"goesTo": [
 				"11,7"
 			]
@@ -1183,7 +1213,7 @@
 			"column": 7,
 			"row": 11,
 			"cameFrom": "11,6",
-			"distance": 64,
+			"distance": 66,
 			"goesTo": [
 				"11,8"
 			]
@@ -1199,7 +1229,7 @@
 			"column": 8,
 			"row": 11,
 			"cameFrom": "11,7",
-			"distance": 65,
+			"distance": 67,
 			"goesTo": [
 				"11,9"
 			]
@@ -1215,7 +1245,7 @@
 			"column": 9,
 			"row": 11,
 			"cameFrom": "11,8",
-			"distance": 66,
+			"distance": 68,
 			"goesTo": [
 				"11,10"
 			]
@@ -1231,7 +1261,7 @@
 			"column": 10,
 			"row": 11,
 			"cameFrom": "11,9",
-			"distance": 67,
+			"distance": 69,
 			"goesTo": [
 				"11,11"
 			]
@@ -1247,7 +1277,7 @@
 			"column": 11,
 			"row": 11,
 			"cameFrom": "11,10",
-			"distance": 68,
+			"distance": 70,
 			"goesTo": [
 				"11,12"
 			]
@@ -1263,7 +1293,7 @@
 			"column": 12,
 			"row": 11,
 			"cameFrom": "11,11",
-			"distance": 69,
+			"distance": 71,
 			"goesTo": [
 				"11,13"
 			]
@@ -1279,7 +1309,7 @@
 			"column": 13,
 			"row": 11,
 			"cameFrom": "11,12",
-			"distance": 70,
+			"distance": 72,
 			"goesTo": [
 				"11,14"
 			]
@@ -1295,7 +1325,7 @@
 			"column": 14,
 			"row": 11,
 			"cameFrom": "11,13",
-			"distance": 71,
+			"distance": 73,
 			"goesTo": [
 				"11,15"
 			]
@@ -1311,7 +1341,7 @@
 			"column": 15,
 			"row": 11,
 			"cameFrom": "11,14",
-			"distance": 72,
+			"distance": 74,
 			"goesTo": [
 				"10,15"
 			]
@@ -1327,7 +1357,7 @@
 			"column": 15,
 			"row": 10,
 			"cameFrom": "11,15",
-			"distance": 73,
+			"distance": 75,
 			"goesTo": [
 				"9,15"
 			]
@@ -1343,7 +1373,7 @@
 			"column": 15,
 			"row": 9,
 			"cameFrom": "10,15",
-			"distance": 74,
+			"distance": 76,
 			"goesTo": [
 				"8,15"
 			]
@@ -1359,7 +1389,7 @@
 			"column": 15,
 			"row": 8,
 			"cameFrom": "9,15",
-			"distance": 75,
+			"distance": 77,
 			"goesTo": [
 				"7,15"
 			]
@@ -1375,7 +1405,7 @@
 			"column": 15,
 			"row": 7,
 			"cameFrom": "8,15",
-			"distance": 76,
+			"distance": 78,
 			"goesTo": [
 				"6,15"
 			]
@@ -1391,7 +1421,7 @@
 			"column": 15,
 			"row": 6,
 			"cameFrom": "7,15",
-			"distance": 77,
+			"distance": 79,
 			"goesTo": [
 				"5,15"
 			]
@@ -1407,7 +1437,7 @@
 			"column": 15,
 			"row": 5,
 			"cameFrom": "6,15",
-			"distance": 78,
+			"distance": 80,
 			"goesTo": [
 				"4,15"
 			]
@@ -1423,7 +1453,7 @@
 			"column": 15,
 			"row": 4,
 			"cameFrom": "5,15",
-			"distance": 79,
+			"distance": 81,
 			"goesTo": [
 				"3,15"
 			]
@@ -1439,7 +1469,7 @@
 			"column": 15,
 			"row": 3,
 			"cameFrom": "4,15",
-			"distance": 80,
+			"distance": 82,
 			"goesTo": [
 				"2,15"
 			]
@@ -1455,7 +1485,7 @@
 			"column": 15,
 			"row": 2,
 			"cameFrom": "3,15",
-			"distance": 81,
+			"distance": 83,
 			"goesTo": [
 				"2,14",
 				"2,16"
@@ -1472,7 +1502,7 @@
 			"column": 14,
 			"row": 2,
 			"cameFrom": "2,15",
-			"distance": 82,
+			"distance": 84,
 			"goesTo": [
 				"2,13"
 			]
@@ -1488,7 +1518,7 @@
 			"column": 16,
 			"row": 2,
 			"cameFrom": "2,15",
-			"distance": 82,
+			"distance": 84,
 			"goesTo": [
 				"2,17"
 			]
@@ -1504,7 +1534,7 @@
 			"column": 13,
 			"row": 2,
 			"cameFrom": "2,14",
-			"distance": 83,
+			"distance": 85,
 			"goesTo": [
 				"2,12"
 			]
@@ -1520,7 +1550,7 @@
 			"column": 17,
 			"row": 2,
 			"cameFrom": "2,16",
-			"distance": 83,
+			"distance": 85,
 			"goesTo": [
 				"2,18"
 			]
@@ -1536,7 +1566,7 @@
 			"column": 12,
 			"row": 2,
 			"cameFrom": "2,13",
-			"distance": 84,
+			"distance": 86,
 			"goesTo": [
 				"2,11"
 			]
@@ -1552,7 +1582,7 @@
 			"column": 18,
 			"row": 2,
 			"cameFrom": "2,17",
-			"distance": 84,
+			"distance": 86,
 			"goesTo": [
 				"2,19"
 			]
@@ -1568,7 +1598,7 @@
 			"column": 11,
 			"row": 2,
 			"cameFrom": "2,12",
-			"distance": 85,
+			"distance": 87,
 			"goesTo": [
 				"2,10"
 			]
@@ -1584,7 +1614,7 @@
 			"column": 19,
 			"row": 2,
 			"cameFrom": "2,18",
-			"distance": 85,
+			"distance": 87,
 			"goesTo": [
 				"2,20"
 			]
@@ -1600,7 +1630,7 @@
 			"column": 10,
 			"row": 2,
 			"cameFrom": "2,11",
-			"distance": 86,
+			"distance": 88,
 			"goesTo": [
 				"2,9"
 			]
@@ -1616,7 +1646,7 @@
 			"column": 20,
 			"row": 2,
 			"cameFrom": "2,19",
-			"distance": 86,
+			"distance": 88,
 			"goesTo": [
 				"2,21"
 			]
@@ -1632,7 +1662,7 @@
 			"column": 9,
 			"row": 2,
 			"cameFrom": "2,10",
-			"distance": 87,
+			"distance": 89,
 			"goesTo": [
 				"2,8"
 			]
@@ -1648,7 +1678,7 @@
 			"column": 21,
 			"row": 2,
 			"cameFrom": "2,20",
-			"distance": 87,
+			"distance": 89,
 			"goesTo": [
 				"2,22"
 			]
@@ -1664,7 +1694,7 @@
 			"column": 8,
 			"row": 2,
 			"cameFrom": "2,9",
-			"distance": 88,
+			"distance": 90,
 			"goesTo": [
 				"2,7"
 			]
@@ -1680,7 +1710,7 @@
 			"column": 22,
 			"row": 2,
 			"cameFrom": "2,21",
-			"distance": 88,
+			"distance": 90,
 			"goesTo": [
 				"2,23"
 			]
@@ -1696,7 +1726,7 @@
 			"column": 7,
 			"row": 2,
 			"cameFrom": "2,8",
-			"distance": 89,
+			"distance": 91,
 			"goesTo": [
 				"2,6"
 			]
@@ -1712,7 +1742,7 @@
 			"column": 23,
 			"row": 2,
 			"cameFrom": "2,22",
-			"distance": 89,
+			"distance": 91,
 			"goesTo": [
 				"2,24"
 			]
@@ -1728,7 +1758,7 @@
 			"column": 6,
 			"row": 2,
 			"cameFrom": "2,7",
-			"distance": 90,
+			"distance": 92,
 			"goesTo": [
 				"2,5"
 			]
@@ -1744,7 +1774,7 @@
 			"column": 24,
 			"row": 2,
 			"cameFrom": "2,23",
-			"distance": 90,
+			"distance": 92,
 			"goesTo": [
 				"2,25"
 			]
@@ -1760,7 +1790,7 @@
 			"column": 5,
 			"row": 2,
 			"cameFrom": "2,6",
-			"distance": 91,
+			"distance": 93,
 			"goesTo": [
 				"2,4"
 			]
@@ -1776,7 +1806,7 @@
 			"column": 25,
 			"row": 2,
 			"cameFrom": "2,24",
-			"distance": 91,
+			"distance": 93,
 			"goesTo": [
 				"2,26"
 			]
@@ -1792,7 +1822,7 @@
 			"column": 4,
 			"row": 2,
 			"cameFrom": "2,5",
-			"distance": 92,
+			"distance": 94,
 			"goesTo": [
 				"2,3"
 			]
@@ -1808,7 +1838,7 @@
 			"column": 26,
 			"row": 2,
 			"cameFrom": "2,25",
-			"distance": 92,
+			"distance": 94,
 			"goesTo": [
 				"2,27"
 			]
@@ -1824,7 +1854,7 @@
 			"column": 3,
 			"row": 2,
 			"cameFrom": "2,4",
-			"distance": 93,
+			"distance": 95,
 			"goesTo": [
 				"2,2"
 			]
@@ -1832,15 +1862,18 @@
 		"2,27": {
 			"adjacentTo": [
 				"2,26",
+				"2,28",
 				"1,27",
 				"3,27"
 			],
-			"type": "spawn",
+			"type": "path",
 			"column": 27,
 			"row": 2,
 			"cameFrom": "2,26",
-			"distance": 93,
-			"goesTo": []
+			"distance": 95,
+			"goesTo": [
+				"2,28"
+			]
 		},
 		"2,2": {
 			"adjacentTo": [
@@ -1853,22 +1886,68 @@
 			"column": 2,
 			"row": 2,
 			"cameFrom": "2,3",
-			"distance": 94,
+			"distance": 96,
 			"goesTo": [
 				"2,1"
 			]
 		},
+		"2,28": {
+			"adjacentTo": [
+				"2,27",
+				"2,29",
+				"1,28",
+				"3,28"
+			],
+			"type": "path",
+			"column": 28,
+			"row": 2,
+			"cameFrom": "2,27",
+			"distance": 96,
+			"goesTo": [
+				"2,29"
+			]
+		},
 		"2,1": {
 			"adjacentTo": [
+				"2,0",
 				"2,2",
 				"1,1",
 				"3,1"
 			],
-			"type": "spawn",
+			"type": "path",
 			"column": 1,
 			"row": 2,
 			"cameFrom": "2,2",
-			"distance": 95,
+			"distance": 97,
+			"goesTo": [
+				"2,0"
+			]
+		},
+		"2,29": {
+			"adjacentTo": [
+				"2,28",
+				"2,30",
+				"1,29",
+				"3,29"
+			],
+			"type": "spawn",
+			"column": 29,
+			"row": 2,
+			"cameFrom": "2,28",
+			"distance": 97,
+			"goesTo": []
+		},
+		"2,0": {
+			"adjacentTo": [
+				"2,1",
+				"1,0",
+				"3,0"
+			],
+			"type": "spawn",
+			"column": 0,
+			"row": 2,
+			"cameFrom": "2,1",
+			"distance": 98,
 			"goesTo": []
 		}
 	}

@@ -39,7 +39,12 @@ function scene:show( event )
 			composer.gotoScene( "Scenes.howtoplay" )
 		end
 		local function startlevelone ()
-			composer.gotoScene("Scenes.levelone")
+		
+			composer.gotoScene( 'views.level', {
+				params = {
+					level = 1
+				}
+			})
 		end
 		local function Credits()
 			composer.gotoScene( "Scenes.credits" )

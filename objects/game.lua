@@ -99,7 +99,7 @@ function Game:draw(level)
 					CELL_SIZE,
 					CELL_SIZE
 				)
-				rect:setFillColor( 0, 0.3, 0.8, 0.2 )
+				rect:setFillColor( 0, 0.7, 0.3, 0.2 )
 				self.parentView:insert(rect)
 
 				if space.type == 'spawn' then
