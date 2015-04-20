@@ -1,11 +1,19 @@
-local Towers = {frame=1, xLocation = display.contentCenterX, yLocation = display.contentCenterY, value = 100, towertype = "damage"};
-function Towers:new (o) --constructor
+local Tower = {
+	frame = 1, 
+	xLocation = display.contentCenterX, 
+	yLocation = display.contentCenterY, 
+	value = 100, 
+	towertype = "damage"
+};
+
+function Tower:new (o) --constructor
 	o = o or {};
-	--print(o.r, o.g, o.b)
+
 	setmetatable(o, self);
 	self.__index = self;
 	return o;
 end
+
 local opt = 
 {
 
@@ -24,98 +32,98 @@ local opt =
 local opt2 = 
 {
 
-	frames2 = {
-	{x = 0, y=0, width = 100, height = 68}, --frame 1 of aoe towers
-	{x = 75, y = 0, width = 100, height = 68}, --frame 2 of aoe
-	{x = 150, y = 0, width = 100, height = 68},	--frame 3 of aoe
-
-
-
+	frames = {
+		{x = 0, y=0, width = 100, height = 68}, --frame 1 of aoe Tower
+		{x = 75, y = 0, width = 100, height = 68}, --frame 2 of aoe
+		{x = 150, y = 0, width = 100, height = 68},	--frame 3 of aoe
 	}
 }
-local isout = false
-local sheet = graphics.newImageSheet( "towersheetone.png", opt)
-local sheet2 = graphics.newImageSheet( "towersheettwo.png", opt2 )
-function Towers:spawn()
-	if self.towertype == "aoe" then
-	print(self.towertype, self.frame)
-	self.shape = display.newImage( sheet2, self.frame)
+
+
+function Tower:spawn(parent, type)
+	self.menuOpen = false
+	self.parentView = parent
+	self.type = type
+
+	self:draw()
+end
+
+function Tower:draw()
+	local sheet = graphics.newImageSheet( "towersheetone.png", opt)
+	local sheet2 = graphics.newImageSheet( "towersheettwo.png", opt2 )
+
+	if self.type == 'aoe' then
+		self.shape = display.newImage( sheet2, self.frame)
 	else
-	self.shape = display.newImage( sheet, self.frame )
+		self.shape = display.newImage( sheet, self.frame )
 	end
+
 	self.shape.x = self.xLocation
 	self.shape.y = self.yLocation
 	self.shape.xScale = 1
 	self.shape.yScale = 1
 	self.shape.pp = self; -- parent object
 	self.shape.tag = self.tag; -- “enemy”
-	physics.addBody(self.shape, "static");
 
-	local function towermenu()
-		if isout == false then
-		local thistowermenu = display.newImage( "towermenu.png" , self.shape.x, self.shape.y + 40)
-		thistowermenu.xScale = .6
-		thistowermenu.yScale = .6
-		isout = true
-			local function zoneHandler(event)
-			 -- convert the tap position to 3x3 grid position
-			 -- based on the board size
-				local x, y = event.target:contentToLocal(event.x, event.y);
-				x = x + 225; -- conversion
-				y = y + 225; -- conversion
-				x = math.ceil( x/150 );
-				y = math.ceil( y/150 );
-				if ((x == 2 and y == 1) or (x == 3 and y == 1)) then 
-					thistowermenu:removeSelf( )
-					self:Upgrade()
-					isout = false
-				elseif  ((x == 0 and y == 3) or (x == 1 and y == 2) or (x == 2 and y == 2) or (x == 2 and y == 3) or (x == 1 and y == 3)) then
-					thistowermenu:removeSelf( )
-					self.shape:removeSelf()
-					isout = false
-				elseif ((x == 3 and y == 3) or (x == 3 and y == 2) or (x == 4 and y == 3) or (x == 4 and y == 2)) then
-					thistowermenu:removeSelf( )
-					isout = false
-				end
+	self.parentView:insert(self.shape)
+	self.shape:addEventListener("tap", self)
+end
+
+function Tower:tap()
+	if not self.menuOpen then
+		local menu = display.newImage('towermenu.png', self.shape.x, self.shape.y + 40)
+
+		menu.xScale = 0.6
+		menu.yScale = 0.6
+		self.menuOpen = true
+
+		local function zoneHandler(event)
+			local x,y = event.target:contentToLocal(event.x, event.y)
+			x = x + 225
+			y = y + 225
+			x = math.ceil( x / 150 )
+			y = math.ceil( y / 150 )
+
+			if ((x == 2 and y == 1) or (x == 3 and y == 1)) then 
+				self:Upgrade()
+			elseif  ((x == 0 and y == 3) or (x == 1 and y == 2) or (x == 2 and y == 2) or (x == 2 and y == 3) or (x == 1 and y == 3)) then
+				self:sell()
 			end
-				thistowermenu:addEventListener("tap", zoneHandler);
+
+			menu:removeSelf()
+			self.menuOpen = false
 		end
+
+		menu:addEventListener('tap', zoneHandler)
+	end
+end
+
+function Tower:Upgrade()
+	local function regenerate(frame)
+		self.shape:removeSelf()
+		self.frame = frame
+		self:spawn()
 	end
 
-	self.shape:addEventListener("tap", towermenu)
-
-end
-function Towers:Upgrade()
 	if self.frame == 1 then
-		self.shape:removeSelf()
-		self.frame = 2
-		self:spawn()
+		regenerate(2)
 	elseif self.frame == 2 then
-		self.shape:removeSelf()
-		self.frame = 3
-		self:spawn()
+		regenerate(3)
 	elseif self.frame == 4 then
-		self.shape:removeSelf()
-		self.frame = 5
-		self:spawn()
+		regenerate(5)
 	elseif self.frame == 5 then
-		self.shape:removeSelf()
-		self.frame = 6
-		self:spawn()
+		regenerate(6)
 	elseif self.frame == 7 then
-		self.shape:removeSelf()
-		self.frame = 8
-		self:spawn()
+		regenerate(8)
 	elseif self.frame == 8 then
-		self.shape:removeSelf()
-		self.frame = 9
-		self:spawn()
+		regenerate(9)
 	end
 end
 
-function Towers:Sell ()
+function Tower:Sell ()
 	self.shape:removeSelf();
 	self.shape=nil;
 	self = nil;
 end
-return Towers
+
+return Tower

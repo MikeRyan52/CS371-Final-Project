@@ -1,5 +1,10 @@
 local towers = require("objects.towers")
-local Asteroid = {frame=1, xLocation = display.contentCenterX, yLocation = display.contentCenterY, value = 100};
+local Asteroid = {
+	frame=1, 
+	xLocation = display.contentCenterX, 
+	yLocation = display.contentCenterY, 
+	value = 100
+};
 function Asteroid:new (o) --constructor
 	o = o or {};
 	--print(o.r, o.g, o.b)
@@ -9,29 +14,26 @@ function Asteroid:new (o) --constructor
 end
 local opt = 
 {
-
 	frames = { 
-	{x= 22, y = 35, width = 125, height = 100}
-		
-
-}
-
+		{x= 22, y = 35, width = 125, height = 100}
+	}
 }
 local isout = false
 local sheet = graphics.newImageSheet( "meteor2.png", opt)
-function Asteroid:spawn()
+function Asteroid:spawn(parent)
 	self.shape = display.newImage( sheet, 1)
-	self.shape.x = display.contentCenterX
-	self.shape.y = display.contentCenterY
-	self.shape.xScale = .4
-	self.shape.yScale = .4
+	parent:insert(self.shape)
+	self.shape.x = self.xLocation
+	self.shape.y = self.yLocation
+	self.shape.xScale = 0.7
+	self.shape.yScale = 0.7
 	self.shape.pp = self; -- parent object
 	self.shape.tag = self.tag; -- “enemy”
-	physics.addBody(self.shape, "static");
 
 	local function spawnMenu()
 		if isout == false then
 		local towermenu = display.newImage( "buildmenu.png" , self.shape.x +12, self.shape.y -10)
+		parent:insert(towermenu)
 		towermenu.xScale = .6
 		towermenu.yScale = .6
 		isout = true
@@ -50,8 +52,7 @@ function Asteroid:spawn()
 				newTower.xLocation = self.shape.x + 15
 				newTower.yLocation = self.shape.y
 				newTower.frame = 10
-				newTower.towertype = "aoe"
-				newTower:spawn()
+				newTower:spawn(parent, 'aoe')
 				isout = false
 			elseif  ((x == 0 and y == 3) or (x == 1 and y == 2) or (x == 2 and y == 2) or (x == 2 and y == 3) or (x == 1 and y == 3)) then
 				towermenu:removeSelf( )
@@ -59,7 +60,7 @@ function Asteroid:spawn()
 				newTower.xLocation = self.shape.x + 15
 				newTower.yLocation = self.shape.y
 				newTower.frame = 4
-				newTower:spawn()
+				newTower:spawn(parent, 'cannon')
 				isout = false
 				self.shape:removeSelf( )
 			elseif ((x == 3 and y == 3) or (x == 3 and y == 2) or (x == 4 and y == 3) or (x == 4 and y == 2)) then
@@ -68,8 +69,8 @@ function Asteroid:spawn()
 				local newTower = towers:new()
 				newTower.xLocation = self.shape.x + 15
 				newTower.yLocation = self.shape.y
-				newTower:spawn()
-				self.shape:removeSelf( )
+				newTower:spawn(parent, 'laser')
+				self.shape:removeSelf()
 			end
 
 

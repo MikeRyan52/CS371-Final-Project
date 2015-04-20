@@ -30,16 +30,20 @@ local opt =
 }
 
 local sheet = graphics.newImageSheet( "spaceships2.png", opt)
-function Enemies:spawn()
-	self.shape= display.newImage( sheet, 4)
+function Enemies:spawn(game, startingId)
+	self.game = game
+	self.startingId = startingId
+	self.shape= display.newImage( sheet, self.frame)
 	self.shape.x = self.xSpawn
 	self.shape.y = self.ySpawn
-	self.shape.xScale = 1.6
-	self.shape.yScale = 1.6
-	self.shape.y = display.contentCenterY
+	self.shape.xScale = 2.5
+	self.shape.yScale = 2.5
 	self.shape.pp = self; -- parent object
 	self.shape.tag = self.tag; -- “enemy”
-	physics.addBody(self.shape, "static");
+
+	game.parentView:insert(self.shape)
+
+	self:move(startingId)
 
 	return self
 end
@@ -54,9 +58,9 @@ function Enemies:hit ()
 	end
 end
 
-function Enemies:move(startingId, paths)
-	local current = paths[startingId];
-	local target = paths[current.cameFrom] or {};
+function Enemies:move(startingId)
+	local current = self.game.grid[startingId];
+	local target = self.game.grid[current.cameFrom] or {};
 	if not self.pathId then self.pathId = current.id end
 
 	local x = grid.x(target.column)
@@ -73,9 +77,9 @@ function Enemies:move(startingId, paths)
 		time = self.speed,
 		onComplete = function()
 			if target.type == 'goal' then
-				print('finished')
+
 			else
-				it:move(current.cameFrom, paths)
+				it:move(current.cameFrom)
 			end
 		end
 	})
