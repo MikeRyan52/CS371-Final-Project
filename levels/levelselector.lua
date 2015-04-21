@@ -20,20 +20,33 @@ function scene:show( event )
 
 	if ( phase == "will" ) then
 		local bg = display.newImage( sceneGroup,"Space_City_2_by_TLBKlaus.png", display.contentCenterX, display.contentCenterY)
-		bg.xScale = display.contentWidth/ bg.width
-		bg.yScale = display.contentHeight/ bg.height
+		local xScale = display.contentWidth/ bg.width
+		local yScale = display.contentHeight/ bg.height
+
+		if xScale > yScale then
+			bg.xScale = xScale
+			bg.yScale = xScale
+		else
+			bg.xScale = yScale
+			bg.yScale = yScale
+		end
+		local bgOverlay = display.newRect(sceneGroup, display.contentCenterX, display.contentCenterY, display.actualContentWidth, display.actualContentHeight)
+		bgOverlay:setFillColor(0.17, 0.24, 0.31, 0.7)
 		-- Called when the scene is still off screen (but is about to come on screen).
 	elseif ( phase == "did" ) then
 		local levelonebutton = display.newRoundedRect(sceneGroup, display.contentWidth/2, display.contentHeight/2 - 200, 530, 150 , 25)
-		levelonebutton.alpha = .3
+		levelonebutton.alpha = .8
+		levelonebutton:setFillColor(0.2, 0.6, 0.86)
 		local starttext = display.newText( sceneGroup, "Level 1", display.contentWidth/2, display.contentHeight/2 - 200, system.NativeFont, 100 )
 		starttext:setFillColor( 0,0,0 )
 		local leveltwobutton = display.newRoundedRect(sceneGroup, display.contentWidth/2, display.contentHeight/2, 530, 150 , 25)
-		leveltwobutton.alpha = .3
+		leveltwobutton.alpha = .4
+		leveltwobutton:setFillColor(0.16, 0.5, 0.73)
 		local howtoplaytext = display.newText( sceneGroup, "Level 2", display.contentWidth/2, display.contentHeight/2, system.NativeFont, 100 )
 		howtoplaytext:setFillColor( 0,0,0 )
 		local levelthreebutton = display.newRoundedRect(sceneGroup, display.contentWidth/2, display.contentHeight/2 + 200, 530, 150 , 25)
-		levelthreebutton.alpha = .3
+		levelthreebutton.alpha = .4
+		levelthreebutton:setFillColor(0.16, 0.5, 0.73)
 		local creditstext = display.newText( sceneGroup, "Level 3", display.contentWidth/2, display.contentHeight/2 + 200, system.NativeFont, 100 )
 		creditstext:setFillColor( 0,0,0 )
 		local function HowToPlay()
