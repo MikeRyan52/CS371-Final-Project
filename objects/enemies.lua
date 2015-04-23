@@ -18,6 +18,11 @@ function Enemies:new (o) --constructor
 	self.__index = self;
 	return o;
 end
+-- local soundTable = {
+--  shootSound = audio.loadSound( "shoot.wav" ),
+--  hitSound = audio.loadSound( "hit.wav" ),
+--  explodeSound = audio.loadSound( "explode.wav" ),
+-- }
 
 local opt = 
 {

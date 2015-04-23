@@ -14,7 +14,11 @@ local Tower = {
 	fireSpeed = 300,
 	towertype = "damage"
 };
-
+-- local soundTable = {
+--  shootSound = audio.loadSound( "shoot.wav" ),
+--  hitSound = audio.loadSound( "hit.wav" ),
+--  explodeSound = audio.loadSound( "explode.wav" ),
+-- }
 function Tower:new (o) --constructor
 	o = o or {};
 

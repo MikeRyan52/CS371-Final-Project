@@ -23,7 +23,7 @@ end
 
 function Game:init(levelFile, displayGroup, uiGroup)
 	local level = loadLevel(levelFile)
-	self.health = level.health
+	self.health = level.lives
 	self.money = level.money
 	self.waves = level.waves
 	self.grid = level.grid

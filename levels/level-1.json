@@ -1,6 +1,6 @@
 {
 	"name": "Level One",
-	"lives": 20,
+	"lives": 1,
 	"money": 800,
 	"waves": [
 		{
