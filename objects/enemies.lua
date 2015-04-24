@@ -18,11 +18,11 @@ function Enemies:new (o) --constructor
 	self.__index = self;
 	return o;
 end
--- local soundTable = {
---  shootSound = audio.loadSound( "shoot.wav" ),
---  hitSound = audio.loadSound( "hit.wav" ),
---  explodeSound = audio.loadSound( "explode.wav" ),
--- }
+local soundTable = {
+ -- shootSound = audio.loadSound( "shoot.wav" ),
+ -- hitSound = audio.loadSound( "hit.wav" ),
+ explodeSound = audio.loadSound( "Explosion8.wav" ),
+}
 
 local opt = 
 {
@@ -92,6 +92,7 @@ function Enemies:explode()
 	local x = self.shape.x
 	local y = self.shape.y
 	self.exploding = true
+	audio.play( soundTable["explodeSound"] )
 
 	self.shape:removeSelf()
 	self.shape = display.newImage( sheet, 4 )
