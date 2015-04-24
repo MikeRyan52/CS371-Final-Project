@@ -11,7 +11,9 @@ function bloom(displayGroup, originShape, targetRadius)
 		xScale = finalRadius / 30,
 		yScale = finalRadius / 30,
 		onComplete = function()
+		if circle ~= nil then
 			circle:removeSelf()
+		end
 		end
 	})
 end

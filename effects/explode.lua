@@ -35,7 +35,9 @@ function explode(displayGroup, sourceShape, targetShape, radius)
 				yScale = radius * 1.2,
 				alpha = 0,
 				onComplete = function()
+				if explosion ~= nil then 
 					explosion:removeSelf()
+				end 
 				end
 			})
 		end

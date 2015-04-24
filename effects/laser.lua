@@ -7,7 +7,10 @@ function laser(displayGroup, originShape, targetShape)
 		x = targetShape.x,
 		y = targetShape.y,
 		onComplete = function()
+		if circle ~= nil then 
 			circle:removeSelf()
+		end
+		
 		end
 	})
 end
