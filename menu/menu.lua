@@ -10,7 +10,11 @@ function scene:create(event)
 	-- Initialize the scene here.
 	-- Example: add display objects to "sceneGroup", add touch listeners, etc.
 end
-
+local soundTable = {
+ bgmusic = audio.loadSound( "POL-air-sharks-short.wav" ),
+-- hitSound = audio.loadSound( "hit.wav" ),
+ --explodeSound = audio.loadSound( "Explosion8.wav" ),
+}
 
 -- "scene:show()"
 function scene:show( event )
@@ -19,6 +23,7 @@ function scene:show( event )
 	local phase = event.phase
 
 	if ( phase == "will" ) then
+		audio.play(soundTable["bgmusic"], {channel = 1, loops = -1})
 		local bg = display.newImage( sceneGroup,"Space_City_2_by_TLBKlaus.png", display.contentCenterX, display.contentCenterY)
 		local xScale = display.contentWidth/ bg.width
 		local yScale = display.contentHeight/ bg.height
@@ -53,7 +58,7 @@ function scene:show( event )
 			composer.gotoScene( "Scenes.howtoplay" )
 		end
 		local function startlevelone ()
-		
+			audio.stop(1)
 			composer.gotoScene( "levels.levelselector")
 		end
 		local function Credits()
