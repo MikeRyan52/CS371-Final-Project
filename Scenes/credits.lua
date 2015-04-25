@@ -34,6 +34,7 @@ function scene:show( event )
 		local fifthcredit = display.newText( sceneGroup, "http://app.sketchclub.com/sketch/8119607", display.contentCenterX, 440, system.NativeFont, 30 )
 		local sixthcredit = display.newText( sceneGroup, "http://www.playonloop.com/2012-music-loops/air-sharks/", display.contentCenterX, 480, system.NativeFont, 28)
 		local seventhcredit = display.newText( sceneGroup, "http://www.bfxr.net/", display.contentCenterX, 520, system.NativeFont, 30 )
+		local eigthcredit = display.newText( sceneGroup, "Spawn portal from scribblenaughts", display.contentCenterX, 550, system.NativeFont, 30)
 		local function GoToMainMenu()
 			composer.gotoScene( "menu.menu" )
 		end
