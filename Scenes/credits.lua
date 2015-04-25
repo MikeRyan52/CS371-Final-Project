@@ -30,7 +30,10 @@ function scene:show( event )
 		local secondcredit = display.newText( sceneGroup, "http://www.deviantart.com/morelikethis/43030167", display.contentCenterX, 325,  system.NativeFont, 30 )
 		local thirdcredit = display.newText( sceneGroup,
 			"http://freegameassets.blogspot.com/2015/02/free-tower-defence-sets-this-free-tower.html", display.contentCenterX, 370, system.NativeFont, 17 )
-		thirdcredit:setFillColor(0,0,0)
+		local fourthcredit = display.newText( sceneGroup,"http://pixgood.com/16-bit-spaceship-sprite.html", display.contentCenterX, 400, system.NativeFont, 30 )
+		local fifthcredit = display.newText( sceneGroup, "http://app.sketchclub.com/sketch/8119607", display.contentCenterX, 440, system.NativeFont, 30 )
+		local sixthcredit = display.newText( sceneGroup, "http://www.playonloop.com/2012-music-loops/air-sharks/", display.contentCenterX, 480, system.NativeFont, 28)
+		local seventhcredit = display.newText( sceneGroup, "http://www.bfxr.net/", display.contentCenterX, 520, system.NativeFont, 30 )
 		local function GoToMainMenu()
 			composer.gotoScene( "menu.menu" )
 		end

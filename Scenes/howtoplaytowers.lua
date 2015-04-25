@@ -96,7 +96,7 @@ function scene:show( event )
 
 		local displayenemies =  display.newRoundedRect( sceneGroup, display.contentWidth/2 + 200, 1100, 250, 150 , 25 )
 		displayenemies.alpha = .3
-		local enemiestext = display.newText( sceneGroup, "Towers", display.contentWidth/2 + 200, 1100, system.NativeFont, 45 )
+		local enemiestext = display.newText( sceneGroup, "Enemies", display.contentWidth/2 + 200, 1100, system.NativeFont, 45 )
 		enemiestext:setFillColor( 0,0,0 )
 
 		local function Displaytowerinfo()

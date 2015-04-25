@@ -16,8 +16,8 @@ local Tower = {
 };
 local soundTable = {
  shootSound = audio.loadSound( "Laser_Shoot2.wav" ),
--- hitSound = audio.loadSound( "hit.wav" ),
- explodeSound = audio.loadSound( "Explosion8.wav" ),
+ aoeSound = audio.loadSound( "aoeshot.wav" ),
+ cannonsound = audio.loadSound( "bigshot.wav" ),
 }
 function Tower:new (o) --constructor
 	o = o or {};
@@ -167,6 +167,7 @@ function Tower:target(enemies)
 			targetEnemy = false
 		end
 	elseif self.type == 'cannon' then
+		
 
 		for index,node in ipairs(self.nodes) do
 			local found = false
@@ -181,6 +182,7 @@ function Tower:target(enemies)
 				end
 			end
 			if found then
+				audio.play(soundTable["cannonsound"])
 				explode(self.game.parentView, self.shape, found.shape, self.radius)
 				self.shape:toFront()
 				break
@@ -193,6 +195,7 @@ function Tower:target(enemies)
 		for index,node in ipairs(self.nodes) do
 			for index, enemy in ipairs(enemies) do
 				if enemy.nodeId == node.id and not enemy.exploding then
+					audio.play(soundTable["aoeSound"])
 					enemy:hit(self.damage)
 					found = true
 				end
