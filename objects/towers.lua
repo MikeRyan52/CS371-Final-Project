@@ -19,6 +19,8 @@ local soundTable = {
  aoeSound = audio.loadSound( "aoeshot.wav" ),
  cannonsound = audio.loadSound( "bigshot.wav" ),
 }
+
+audio.setMaxVolume( 0.3, 0 )
 function Tower:new (o) --constructor
 	o = o or {};
 

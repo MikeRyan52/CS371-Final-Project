@@ -5,7 +5,7 @@ local loadLevel = require 'utilities.load-level'
 local grid = require 'utilities.grid'
 local CELL_SIZE = grid.cellSize
 local composer = require 'composer'
-
+--initial game stats for a base game
 local Game = {
 	health = 20,
 	money = 10000,
@@ -20,7 +20,7 @@ function Game:new(o)
 
 	return o;
 end
-
+--initialize the value for the paramaters of game, draw the levelm and render the ui
 function Game:init(levelFile, displayGroup, uiGroup)
 	local level = loadLevel(levelFile)
 	self.health = level.lives

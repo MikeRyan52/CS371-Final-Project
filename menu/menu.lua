@@ -15,6 +15,7 @@ local soundTable = {
 -- hitSound = audio.loadSound( "hit.wav" ),
  --explodeSound = audio.loadSound( "Explosion8.wav" ),
 }
+audio.setMaxVolume( 0.2, 0 )
 
 -- "scene:show()"
 function scene:show( event )

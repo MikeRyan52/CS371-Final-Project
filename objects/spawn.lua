@@ -1,5 +1,7 @@
 local Enemy = require 'objects.enemies'
 local grid = require 'utilities.grid'
+local composer = require 'composer'
+local levelcounter = 1
 
 local Spawn = {}
 
@@ -74,8 +76,8 @@ end
 
 function Spawn:begin()
 	local index = 1
-
-	local function wave()
+	local movetonextlevel = 1
+		local function wave()
 		local time = 0
 		for index,shipType in ipairs(self.waves[index]) do
 			local function spawn()
@@ -92,10 +94,24 @@ function Spawn:begin()
 			table.insert(self.timers, timer.performWithDelay(time, spawn))
 		end
 		index = index + 1
+		movetonextlevel = movetonextlevel + 1
 	end
-
-	wave()
-	self.timerRef = timer.performWithDelay(30000, wave, 9)
+	if movetonextlevel ~= 10 then
+		wave()
+    elseif levelcounter == 2 and movetonextlevel == 10 then
+    	composer.gotoScene( 'views.level', {
+			params = {
+				level = 2
+			}
+		})
+    elseif movetonextlevel == 10 and levelcounter == 3 then
+    	composer.gotoScene( 'views.level', {
+			params = {
+				level = 3
+			}
+		})
+    end
+    	self.timerRef = timer.performWithDelay(30000, wave, 9)
 end
 
 function Spawn:stop()

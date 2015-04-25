@@ -26,9 +26,16 @@ function scene:show( event )
 		mainbutton.alpha = .3
 		local maintext = display.newText( sceneGroup, "Main Menu", display.contentWidth/2, 100, system.NativeFont, 100 )
 		maintext:setFillColor( 0,0,0 )
-		local firsttext = display.newText( sceneGroup, "You will click on the space to pull up the menu for tower palcement", 350, 250, system.NativeFont, 20)
-		local secondtext = display.newText( sceneGroup, "There will be three waves per level where enemies will come at your city", 350, 300, system.NativeFont, 20)
-		local thirdtext = display.newText( sceneGroup, "You must create and upgrade towers in order defend your city from the invading ships", 350, 350, system.NativeFont, 17)
+		local firsttext = display.newText( sceneGroup, "You will click on the space to pull up the menu for tower palcement", 350, 250, system.NativeFont, 23)
+		firsttext:setFillColor( 1,1,0 )
+		local secondext = display.newText( sceneGroup, "Upgrading the towers will improve either damage, radius, or fire speed", 350, 275, system.NativeFont, 22 )
+		secondext:setFillColor( 1,1,0 )
+		local thirdtext = display.newText( sceneGroup, "The laser towers hit one unit at a time", 350, 300, system.NativeFont, 25 )
+		thirdtext:setFillColor( 1,1,0 )
+		local fourthtext = display.newText( sceneGroup, "The cannon towers hit a small chunk of units", 350, 325, system.NativeFont, 25 )
+		fourthtext:setFillColor( 1,1,0 )
+		local fifthtext = display.newText( sceneGroup, "The generator will hit all enemies within its radius", 350, 350, system.NativeFont, 25 )
+		fifthtext:setFillColor( 1,1,0 )
 		--local fourthtext = display.newText( sceneGroup, "", x, y, [width, height,], font, fontSize )
 		local opt = 
 		{
@@ -64,7 +71,7 @@ function scene:show( event )
 		displayenemy1.xScale = 1.5
 		displayenemy1.yScale = 1.5
 		local enemyonedesc = display.newText( sceneGroup, "Laser Tower", 375, 450, system.NativeFont, 25)
-		local enemyonedescpt2 = display.newText( sceneGroup, "Damage: 50", 375, 475, system.NativeFont, 25)
+		local enemyonedescpt2 = display.newText( sceneGroup, "Damage: 40", 375, 475, system.NativeFont, 25)
 		local enemyonedescpt3 = display.newText( sceneGroup, "Radius: 4", 375, 500, system.NativeFont, 25)
 		local enemyonedescpt4 = display.newText( sceneGroup, "Firespeed:100", 375, 525, system.NativeFont, 25)
 		local enemyonedescpt5 = display.newText( sceneGroup, "Value: 100", 375, 550, system.NativeFont, 25)
@@ -76,7 +83,7 @@ function scene:show( event )
 		displayenemy2.xScale = 1.5
 		displayenemy2.yScale = 1.5
 		local enemytwodesc = display.newText( sceneGroup, "Cannon Tower", 375, 650, system.NativeFont, 25)
-		local enemytwodescpt2 = display.newText( sceneGroup, "Damage:5", 375, 675, system.NativeFont, 25)
+		local enemytwodescpt2 = display.newText( sceneGroup, "Damage:20", 375, 675, system.NativeFont, 25)
 		local enemytwodescpt3 = display.newText( sceneGroup, "Radius:3", 375, 700, system.NativeFont, 25)
 		local enemytwodescpt4 = display.newText( sceneGroup, "Firespeed:350", 375, 725, system.NativeFont, 25)
 		local enemytwodescpt5 = display.newText( sceneGroup, "Value: 50", 375, 750, system.NativeFont, 25)
